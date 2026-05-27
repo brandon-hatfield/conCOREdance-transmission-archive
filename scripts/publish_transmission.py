@@ -307,7 +307,12 @@ def update_manifest(entry: dict[str, Any]) -> dict[str, Any]:
 def render_index(manifest: dict[str, Any]) -> None:
     card_template = INDEX_CARD_TEMPLATE.read_text(encoding="utf-8")
     cards = []
-    for entry in manifest.get("entries", []):
+    sorted_entries = sorted(
+        manifest.get("entries", []),
+        key=lambda item: (item.get("date", ""), item.get("id", "")),
+        reverse=True,
+    )
+    for entry in sorted_entries:
         cards.append(
             card_template.format(
                 path=html.escape(entry["path"], quote=True),
