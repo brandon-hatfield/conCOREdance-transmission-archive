@@ -448,7 +448,8 @@ def write_outputs(result: dict[str, str]) -> None:
     if output_path:
         with Path(output_path).open("a", encoding="utf-8") as fh:
             for key, value in result.items():
-                fh.write(f"{key}={value}\n")
+                delimiter = f"EOF_{key.upper()}"
+                fh.write(f"{key}<<{delimiter}\n{value}\n{delimiter}\n")
 
 
 def publish(data: dict[str, str]) -> dict[str, str]:
@@ -469,8 +470,11 @@ def publish(data: dict[str, str]) -> dict[str, str]:
 
     return {
         "transmission_id": data["ID"],
+        "transmission_title": data["Title"],
+        "transmission_summary": data["Summary"],
         "transmission_path": str(rel_dir / "transmission.html"),
         "metadata_path": str(rel_dir / "metadata.json"),
+        "transmission_dir": str(rel_dir),
     }
 
 

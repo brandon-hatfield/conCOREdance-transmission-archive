@@ -10,16 +10,19 @@ on:
 permissions:
   contents: write
   issues: write
+  pull-requests: write
 
 jobs:
   publish:
-    name: Publish structured transmission request
+    name: Prepare structured transmission draft PR
     runs-on: ubuntu-latest
-    if: contains(github.event.issue.labels.*.name, 'transmission-request') && !contains(github.event.issue.labels.*.name, 'published')
+    if: contains(github.event.issue.labels.*.name, 'transmission-request') && !contains(github.event.issue.labels.*.name, 'published') && (github.event.action != 'labeled' || github.event.label.name == 'transmission-request')
 
     steps:
       - name: Check out archive
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,33 +33,110 @@ jobs:
         id: publish
         run: python scripts/publish_transmission.py --issue-event "$GITHUB_EVENT_PATH" --output-json /tmp/transmission-result.json
 
-      - name: Commit generated archive update
+      - name: Commit generated archive update to draft branch
         id: commit
         run: |
+          BRANCH="tx/${{ steps.publish.outputs.transmission_id }}"
           git config user.name "ConCOREdance Transmission Publisher"
           git config user.email "actions@github.com"
+          git checkout -B "$BRANCH"
           git add 01_Transmission_Archive
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "Add transmission ${{ steps.publish.outputs.transmission_id }}"
-            git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+          git push --force-with-lease origin "$BRANCH"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
 
-      - name: Mark issue as published
+      - name: Open or update draft pull request
+        id: pull_request
         uses: actions/github-script@v7
         with:
           script: |
-            const id = `${{ steps.publish.outputs.transmission_id }}`;
-            const path = `${{ steps.publish.outputs.transmission_path }}`;
-            const changed = `${{ steps.commit.outputs.changed }}` === 'true';
-            const liveUrl = `https://concoredance.seekingharmony.net/01_Transmission_Archive/${path}`;
-            const body = [
-              `Transmission ${id} has been ${changed ? 'published' : 'processed with no file changes'}.`,
+            const fs = require('fs');
+            const result = JSON.parse(fs.readFileSync('/tmp/transmission-result.json', 'utf8'));
+            const id = result.transmission_id;
+            const title = result.transmission_title;
+            const summary = result.transmission_summary;
+            const path = result.transmission_path;
+            const dir = result.transmission_dir;
+            const branch = `${{ steps.commit.outputs.branch }}`;
+            const issueUrl = context.payload.issue.html_url;
+            const prTitle = `Draft Transmission: ${id}`;
+            const prBody = [
+              `## Transmission Draft`,
               ``,
+              `**Transmission:** ${id}`,
+              `**Title:** ${title}`,
+              ``,
+              `**Summary**`,
+              summary,
+              ``,
+              `**Generated path**`,
+              `\`01_Transmission_Archive/${dir}/\``,
+              ``,
+              `**Transmission page**`,
+              `\`01_Transmission_Archive/${path}\``,
+              ``,
+              `**Originating issue**`,
+              `#${context.issue.number} - ${issueUrl}`,
+              ``,
+              `This draft PR was prepared by the ConCOREdance Transmission Publisher for human editorial review. Merge only after the transmission is approved as canonical archive content.`
+            ].join('\n');
+
+            const existing = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              head: `${context.repo.owner}:${branch}`,
+              base: 'main'
+            });
+
+            let pr;
+            if (existing.data.length > 0) {
+              pr = (await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: existing.data[0].number,
+                title: prTitle,
+                body: prBody
+              })).data;
+            } else {
+              pr = (await github.rest.pulls.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: prTitle,
+                head: branch,
+                base: 'main',
+                body: prBody,
+                draft: true
+              })).data;
+            }
+
+            core.setOutput('number', String(pr.number));
+            core.setOutput('url', pr.html_url);
+
+      - name: Mark issue as drafted
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const result = JSON.parse(fs.readFileSync('/tmp/transmission-result.json', 'utf8'));
+            const id = result.transmission_id;
+            const path = result.transmission_path;
+            const branch = `${{ steps.commit.outputs.branch }}`;
+            const prNumber = `${{ steps.pull_request.outputs.number }}`;
+            const prUrl = `${{ steps.pull_request.outputs.url }}`;
+            const body = [
+              `Transmission ${id} has been prepared for supervised editorial review.`,
+              ``,
+              `Draft branch: \`${branch}\``,
               `Generated path: \`01_Transmission_Archive/${path}\``,
-              `Live URL: ${liveUrl}`
+              `Draft PR: #${prNumber} - ${prUrl}`,
+              ``,
+              `No public archive publication occurs until a human reviews and merges the PR.`
             ].join('\n');
 
             await github.rest.issues.createComment({
@@ -66,16 +146,29 @@ jobs:
               body
             });
 
+            try {
+              await github.rest.issues.getLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: 'draft-pr-created'
+              });
+            } catch (error) {
+              if (error.status === 404) {
+                await github.rest.issues.createLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: 'draft-pr-created',
+                  color: 'e7ad67',
+                  description: 'Transmission request has generated a supervised draft PR'
+                });
+              } else {
+                throw error;
+              }
+            }
+
             await github.rest.issues.addLabels({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              labels: ['published']
-            });
-
-            await github.rest.issues.update({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
-              state: 'closed'
+              labels: ['draft-pr-created']
             });
