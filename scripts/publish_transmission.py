@@ -43,7 +43,6 @@ FIELD_NAMES = [
 
 REQUIRED_FIELDS = [
     "ID",
-    "Title",
     "Date",
     "Type",
     "Layer",
@@ -70,6 +69,16 @@ def read_issue_body_from_event(event_path: Path) -> tuple[str, int | None]:
     if not body.strip():
         raise PublishError("Issue body is empty.")
     return body, number
+
+
+def issue_title_from_event(event_path: Path) -> str:
+    event = json.loads(event_path.read_text(encoding="utf-8"))
+    issue = event.get("issue") or {}
+    title = str(issue.get("title") or "").strip()
+    title = re.sub(r"^Transmission Request:\s*", "", title, flags=re.IGNORECASE).strip()
+    if not title:
+        raise PublishError("Issue title is empty and no Title field was provided.")
+    return title
 
 
 def normalize_label(line: str) -> str | None:
@@ -489,11 +498,15 @@ def main(argv: list[str]) -> int:
     try:
         if args.issue_event:
             body, issue_number = read_issue_body_from_event(args.issue_event)
+            fallback_title = issue_title_from_event(args.issue_event)
         else:
             body = args.request_file.read_text(encoding="utf-8")
             issue_number = None
+            fallback_title = None
 
         data = parse_request(body)
+        if not data.get("Title") and fallback_title:
+            data["Title"] = fallback_title
         result = publish(data)
         if issue_number is not None:
             result["issue_number"] = str(issue_number)

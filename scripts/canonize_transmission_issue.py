@@ -2,8 +2,8 @@
 """Canonize an approved ConCOREdance GitHub issue as durable Markdown.
 
 This script is dependency-free so it can run in GitHub Actions with the stock
-Python runtime. It intentionally writes Markdown, not HTML, because this layer
-is the long-lived source record for approved transmissions.
+Python runtime. Markdown is the long-lived source record; the workflow can then
+render the same issue into the public HTML archive.
 """
 
 from __future__ import annotations

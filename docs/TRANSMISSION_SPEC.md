@@ -29,13 +29,22 @@ approved
 Active Canon
 ```
 
-The canonizer writes:
+The canonizer writes durable Markdown:
 
 ```text
 transmissions/YYYY/CC-TX-YYYY-MM-DD-###.md
 ```
 
-It then commits the Markdown file to `main`, labels the issue `canonized`, and comments with the canonical path. The workflow refuses to run when an issue has `canonized`, `do-not-canonize`, or `needs-revision`.
+It also renders the same approved issue into the public visual archive:
+
+```text
+01_Transmission_Archive/YYYY/CC-TX-YYYY-MM-DD-###/transmission.html
+01_Transmission_Archive/YYYY/CC-TX-YYYY-MM-DD-###/metadata.json
+01_Transmission_Archive/archive_manifest.json
+01_Transmission_Archive/index.html
+```
+
+It then commits both layers to `main`, labels the issue `canonized`, and comments with the canonical and public archive paths. The workflow refuses to run when an issue has `canonized`, `do-not-canonize`, or `needs-revision`.
 
 ## Required Fields
 

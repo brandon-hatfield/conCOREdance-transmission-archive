@@ -1,0 +1,20 @@
+{
+  "id": "CC-TX-2026-05-27-004",
+  "title": "Implement Transmission Canonization Workflow",
+  "date": "2026-05-27",
+  "status": "Active Canon",
+  "type": "Infrastructure Directive",
+  "layer": "Archive Automation",
+  "from": "Gregory P. Turing",
+  "to": "Cody Valle",
+  "summary": "Implement a workflow that converts approved GitHub transmission issues into permanent markdown files within the repository.",
+  "tags": [
+    "github-actions",
+    "automation",
+    "workflow",
+    "archive",
+    "markdown"
+  ],
+  "path": "2026/CC-TX-2026-05-27-004/transmission.html",
+  "metadata_path": "2026/CC-TX-2026-05-27-004/metadata.json"
+}
