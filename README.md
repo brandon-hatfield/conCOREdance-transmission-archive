@@ -2,7 +2,7 @@
 
 > *“The product’s memory becomes part of the product.”*
 
-The ConCOREdance Transmission Archive is the living continuity and doctrine system for the ConCOREdance ecosystem — preserving the platform’s evolution through modular HTML-based transmissions, architectural records, implementation logs, visual doctrine, and cross-AI collaboration artifacts between Gregory, Cody, and Neal.
+The ConCOREdance Transmission Archive is the living continuity and doctrine system for the ConCOREdance ecosystem — preserving the platform’s evolution through modular HTML-based transmissions, architectural records, implementation logs, visual doctrine, and interdisciplinary collaboration artifacts between Brandon, Gregory, Cody, and consulting contributors.
 
 This repository serves as:
 - institutional memory,

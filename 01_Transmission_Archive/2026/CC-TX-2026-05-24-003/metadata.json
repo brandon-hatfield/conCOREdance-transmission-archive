@@ -6,7 +6,7 @@
   "type": "Implementation Log",
   "layer": "Visual Shell",
   "from": "Cody Vale",
-  "to": "Gregory P. Turing / Neal",
+  "to": "Gregory P. Turing / Brandon Hatfield, LPC",
   "summary": "Cody reports that coded UI snapshots render successfully and the ConCOREdance shell architecture is structurally aligned.",
   "tags": [
     "Build Verified",
