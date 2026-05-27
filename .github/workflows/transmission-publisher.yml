@@ -1,0 +1,81 @@
+name: Transmission Publisher
+
+on:
+  issues:
+    types:
+      - opened
+      - edited
+      - labeled
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  publish:
+    name: Publish structured transmission request
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.labels.*.name, 'transmission-request') && !contains(github.event.issue.labels.*.name, 'published')
+
+    steps:
+      - name: Check out archive
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate transmission files
+        id: publish
+        run: python scripts/publish_transmission.py --issue-event "$GITHUB_EVENT_PATH" --output-json /tmp/transmission-result.json
+
+      - name: Commit generated archive update
+        id: commit
+        run: |
+          git config user.name "ConCOREdance Transmission Publisher"
+          git config user.email "actions@github.com"
+          git add 01_Transmission_Archive
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Add transmission ${{ steps.publish.outputs.transmission_id }}"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Mark issue as published
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const id = `${{ steps.publish.outputs.transmission_id }}`;
+            const path = `${{ steps.publish.outputs.transmission_path }}`;
+            const changed = `${{ steps.commit.outputs.changed }}` === 'true';
+            const liveUrl = `https://concoredance.seekingharmony.net/01_Transmission_Archive/${path}`;
+            const body = [
+              `Transmission ${id} has been ${changed ? 'published' : 'processed with no file changes'}.`,
+              ``,
+              `Generated path: \`01_Transmission_Archive/${path}\``,
+              `Live URL: ${liveUrl}`
+            ].join('\n');
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });
+
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['published']
+            });
+
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed'
+            });

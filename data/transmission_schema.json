@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ConCOREdance Transmission Request",
+  "type": "object",
+  "required": [
+    "ID",
+    "Title",
+    "Date",
+    "Type",
+    "Layer",
+    "Status",
+    "From",
+    "To",
+    "Tags",
+    "Summary",
+    "Body"
+  ],
+  "properties": {
+    "ID": {
+      "type": "string",
+      "pattern": "^CC-TX-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{3}$"
+    },
+    "Title": { "type": "string", "minLength": 1 },
+    "Date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "Type": { "type": "string", "minLength": 1 },
+    "Layer": { "type": "string", "minLength": 1 },
+    "Status": { "type": "string", "default": "Active Canon" },
+    "From": { "type": "string", "minLength": 1 },
+    "To": { "type": "string", "minLength": 1 },
+    "Tags": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ]
+    },
+    "Summary": { "type": "string", "minLength": 1 },
+    "Body": { "type": "string", "minLength": 1 },
+    "Decisions": { "type": "string" },
+    "Next Actions": { "type": "string" },
+    "Assets": { "type": "string" }
+  },
+  "additionalProperties": true
+}
