@@ -1,0 +1,119 @@
+name: Transmission Canonizer
+
+on:
+  issues:
+    types:
+      - labeled
+      - closed
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: transmission-canonizer-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  canonize:
+    name: Canonize approved issue as Markdown
+    runs-on: ubuntu-latest
+    if: >
+      !contains(github.event.issue.labels.*.name, 'canonized') &&
+      !contains(github.event.issue.labels.*.name, 'do-not-canonize') &&
+      !contains(github.event.issue.labels.*.name, 'needs-revision') &&
+      (
+        (github.event.action == 'labeled' &&
+          (
+            github.event.label.name == 'canonize' ||
+            github.event.label.name == 'approved' ||
+            github.event.label.name == 'Active Canon' ||
+            github.event.label.name == 'active canon'
+          )
+        ) ||
+        (github.event.action == 'closed' &&
+          (
+            contains(github.event.issue.labels.*.name, 'canonize') ||
+            contains(github.event.issue.labels.*.name, 'approved') ||
+            contains(github.event.issue.labels.*.name, 'Active Canon') ||
+            contains(github.event.issue.labels.*.name, 'active canon')
+          )
+        )
+      )
+
+    steps:
+      - name: Check out archive
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Write canonical Markdown file
+        id: canonize
+        run: python scripts/canonize_transmission_issue.py --issue-event "$GITHUB_EVENT_PATH" --output-json /tmp/canonized-transmission.json
+
+      - name: Commit canonical Markdown
+        id: commit
+        run: |
+          git config user.name "ConCOREdance Transmission Canonizer"
+          git config user.email "actions@github.com"
+          git add transmissions
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Canonize transmission ${{ steps.canonize.outputs.transmission_id }}"
+            git push origin HEAD:main
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Mark issue as canonized
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const result = JSON.parse(fs.readFileSync('/tmp/canonized-transmission.json', 'utf8'));
+            const body = [
+              `Transmission ${result.transmission_id} has been canonized as durable Markdown.`,
+              ``,
+              `Canonical path: \`${result.transmission_path}\``,
+              ``,
+              `This issue now has the \`canonized\` label so the workflow will not duplicate the record.`
+            ].join('\n');
+
+            try {
+              await github.rest.issues.getLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: 'canonized'
+              });
+            } catch (error) {
+              if (error.status === 404) {
+                await github.rest.issues.createLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: 'canonized',
+                  color: '65b7be',
+                  description: 'Approved issue has been written as canonical Markdown'
+                });
+              } else {
+                throw error;
+              }
+            }
+
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['canonized']
+            });
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });

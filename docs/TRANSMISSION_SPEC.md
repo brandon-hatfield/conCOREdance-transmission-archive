@@ -17,6 +17,26 @@ The trusted write operation happens inside GitHub Actions using the repository `
 
 The issue is labeled `draft-pr-created` and receives a comment linking to the draft PR. It is not closed automatically.
 
+## Canonical Markdown Workflow
+
+Approved issues can also become durable Markdown source records. This is separate from the HTML draft publisher so canonical written memory and public archive presentation can evolve independently.
+
+To canonize an issue, apply one of these labels:
+
+```text
+canonize
+approved
+Active Canon
+```
+
+The canonizer writes:
+
+```text
+transmissions/YYYY/CC-TX-YYYY-MM-DD-###.md
+```
+
+It then commits the Markdown file to `main`, labels the issue `canonized`, and comments with the canonical path. The workflow refuses to run when an issue has `canonized`, `do-not-canonize`, or `needs-revision`.
+
 ## Required Fields
 
 ```text
