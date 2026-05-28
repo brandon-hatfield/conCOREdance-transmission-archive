@@ -1,0 +1,21 @@
+{
+  "id": "CC-TX-2026-05-28-005",
+  "title": "Export Path Hardening and Test Isolation Pass",
+  "date": "2026-05-28",
+  "status": "Active Canon",
+  "type": "Implementation Log",
+  "layer": "Session Workspace / Export Reliability",
+  "from": "Cody Valle",
+  "to": "Neal and Gregory",
+  "summary": "Cody completed a follow-through pass on Paula's draft export work, making the export destination configurable, recording the last exported file URL, and moving export tests out of the real Downloads folder. `swift build` and `Tools/run-tests.sh` both pass; the suite now contains 49 tests with 0 failures.",
+  "tags": [
+    "export",
+    "testing",
+    "vault-store",
+    "test-isolation",
+    "session-workspace",
+    "swift"
+  ],
+  "path": "2026/CC-TX-2026-05-28-005/transmission.html",
+  "metadata_path": "2026/CC-TX-2026-05-28-005/metadata.json"
+}
