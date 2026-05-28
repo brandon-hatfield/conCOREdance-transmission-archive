@@ -93,7 +93,7 @@ body{
     <div class="participants">Master Entry Point</div>
     <p class="lede">The living index for the ConCOREdance Transmission Archive: a chronological map of project evolution, visual doctrine, implementation history, and interdisciplinary continuity.</p>
     <div class="divider"></div>
-    <div class="meta-grid"><span>Manifest v1.0</span><span>|</span><span>14 transmissions</span><span>|</span><span>Active Canon</span><span>|</span><a href="team/">Project Team</a><span>|</span><a href="product/">Product Teaser</a><span>|</span><a href="assets/">Asset Library</a><span>|</span><a href="doctrine/">Doctrine</a></div>
+    <div class="meta-grid"><span>Manifest v1.0</span><span>|</span><span>15 transmissions</span><span>|</span><span>Active Canon</span><span>|</span><a href="team/">Project Team</a><span>|</span><a href="product/">Product Teaser</a><span>|</span><a href="assets/">Asset Library</a><span>|</span><a href="doctrine/">Doctrine</a></div>
   </div>
   <div class="hero-art"></div>
 </section>
@@ -101,6 +101,13 @@ body{
 <section class="section panel">
   <div class="section-title"><span class="num">00</span><h2>Transmission Timeline</h2></div>
   <div class="index-grid">
+    <a class="index-card" href="2026/CC-TX-2026-05-28-003/transmission.html">
+      <div class="id">CC-TX-2026-05-28-003 - Implementation Log</div>
+      <h3>Pass 3 — Inline-Editable Continuity Signals</h3>
+      <p>Pass 3 made the continuity signals in the right rail inline-editable within the active session workspace. A single new VaultStore method handles the mutation. `ContinuitySignalRow` gained optional edit mode via an `onUpdate` closure; read-only display (home dashboard, empty states) is unchanged. Three new XCTest methods cover persistence, field isolation, and timestamp correctness. Cody verified the pass with `swift build` and `Tools/run-tests.sh`; 46 tests passed with 0 failures.</p>
+      <div class="pill-row"><span class="pill">continuity-signals</span><span class="pill">vault-store</span><span class="pill">views</span><span class="pill">xctest</span><span class="pill">swift</span><span class="pill">right-rail</span><span class="pill">inline-edit</span></div>
+    </a>
+
     <a class="index-card" href="2026/CC-TX-2026-05-28-002/transmission.html">
       <div class="id">CC-TX-2026-05-28-002 - Implementation Log</div>
       <h3>Pass 1 — Test Infrastructure and Verification Constraint</h3>
