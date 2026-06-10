@@ -72,6 +72,7 @@ The runner writes:
 - `data/google_drive_sync_manifest.json` in the repository
 - JSON reports under `/Volumes/Disk 2/Local Folder/ConCOREdance/04_Sync_Reports`
 - launchd logs under `/Volumes/Disk 2/Local Folder/ConCOREdance/04_Sync_Reports`
+- launchd stdout/stderr under `/Users/neal/Library/Logs`
 
 The manifest records source path, target path, size, modified time, and SHA-256 hash for every allowlisted Drive file. It avoids volatile run timestamps so repeated no-op sync checks do not create pointless Git changes.
 
@@ -97,3 +98,5 @@ Install command:
 ln -sf "/Volumes/Disk 2/Local Folder/conCOREdance-transmission-archive-github/launchd/com.concordance.google-drive-sync.plist" "$HOME/Library/LaunchAgents/com.concordance.google-drive-sync.plist"
 launchctl bootstrap "gui/$(id -u)" "$HOME/Library/LaunchAgents/com.concordance.google-drive-sync.plist"
 ```
+
+On this Mac, manual sync is verified. The launchd schedule may require granting the launching shell or automation host permission to read removable volumes; without that macOS can return `Operation not permitted` when launchd tries to read the Disk 2 script. Leave the job unloaded until that privacy permission is granted.
