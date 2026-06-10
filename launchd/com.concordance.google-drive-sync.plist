@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.concordance.google-drive-sync</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Volumes/Disk 2/Local Folder/conCOREdance-transmission-archive-github/scripts/run_local_google_drive_sync.sh</string>
+  </array>
+  <key>StartInterval</key>
+  <integer>1800</integer>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>/Volumes/Disk 2/Local Folder/ConCOREdance/04_Sync_Reports/launchd.stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Volumes/Disk 2/Local Folder/ConCOREdance/04_Sync_Reports/launchd.stderr.log</string>
+</dict>
+</plist>

@@ -59,12 +59,19 @@ Apply and commit:
 python3 scripts/local_google_drive_sync.py --commit
 ```
 
+Run through the launchd wrapper:
+
+```bash
+scripts/run_local_google_drive_sync.sh
+```
+
 ## Outputs
 
 The runner writes:
 
 - `data/google_drive_sync_manifest.json` in the repository
 - JSON reports under `/Volumes/Disk 2/Local Folder/ConCOREdance/04_Sync_Reports`
+- launchd logs under `/Volumes/Disk 2/Local Folder/ConCOREdance/04_Sync_Reports`
 
 The manifest records source path, target path, size, modified time, and SHA-256 hash for every allowlisted Drive file. It avoids volatile run timestamps so repeated no-op sync checks do not create pointless Git changes.
 
@@ -75,3 +82,18 @@ The manifest records source path, target path, size, modified time, and SHA-256 
 - The runner refuses to write outside the configured repository root.
 - The runner refuses source paths outside the configured Drive root.
 - GitHub push may still require connector publishing if local Git credentials are unavailable.
+
+## Scheduled Job
+
+The included launchd plist runs every 30 minutes:
+
+```text
+launchd/com.concordance.google-drive-sync.plist
+```
+
+Install command:
+
+```bash
+ln -sf "/Volumes/Disk 2/Local Folder/conCOREdance-transmission-archive-github/launchd/com.concordance.google-drive-sync.plist" "$HOME/Library/LaunchAgents/com.concordance.google-drive-sync.plist"
+launchctl bootstrap "gui/$(id -u)" "$HOME/Library/LaunchAgents/com.concordance.google-drive-sync.plist"
+```
