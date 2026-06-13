@@ -18,49 +18,59 @@ jobs:
   canonize:
     name: Canonize approved issue as Markdown
     runs-on: ubuntu-latest
-    if: >
-      !contains(github.event.issue.labels.*.name, 'canonized') &&
-      !contains(github.event.issue.labels.*.name, 'do-not-canonize') &&
-      !contains(github.event.issue.labels.*.name, 'needs-revision') &&
-      (
-        (github.event.action == 'labeled' &&
-          (
-            github.event.label.name == 'canonize' ||
-            github.event.label.name == 'approved' ||
-            github.event.label.name == 'Active Canon' ||
-            github.event.label.name == 'active canon'
-          )
-        ) ||
-        (github.event.action == 'closed' &&
-          (
-            contains(github.event.issue.labels.*.name, 'canonize') ||
-            contains(github.event.issue.labels.*.name, 'approved') ||
-            contains(github.event.issue.labels.*.name, 'Active Canon') ||
-            contains(github.event.issue.labels.*.name, 'active canon')
-          )
-        )
-      )
+    if: ${{ !github.event.issue.pull_request }}
 
     steps:
+      - name: Check canonization labels
+        id: preflight
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const canonical = new Set(['canonize', 'approved', 'active canon']);
+            const blockers = new Set(['canonized', 'do-not-canonize', 'needs-revision']);
+            const labels = (context.payload.issue.labels || [])
+              .map((label) => String(label.name || '').trim().toLowerCase())
+              .filter(Boolean);
+
+            const hasBlocker = labels.some((label) => blockers.has(label));
+            const hasApproval = labels.some((label) => canonical.has(label));
+            const action = context.payload.action;
+            const eventLabel = String((context.payload.label || {}).name || '').trim().toLowerCase();
+
+            const shouldRun = !hasBlocker && (
+              (action === 'labeled' && canonical.has(eventLabel)) ||
+              (action === 'closed' && hasApproval)
+            );
+
+            core.setOutput('should_run', shouldRun ? 'true' : 'false');
+            core.info(shouldRun
+              ? 'Issue is approved for canonization.'
+              : 'Issue is not in a canonization state; skipping archive write.');
+
       - name: Check out archive
+        if: steps.preflight.outputs.should_run == 'true'
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Set up Python
+        if: steps.preflight.outputs.should_run == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
       - name: Write canonical Markdown file
+        if: steps.preflight.outputs.should_run == 'true'
         id: canonize
         run: python scripts/canonize_transmission_issue.py --issue-event "$GITHUB_EVENT_PATH" --output-json /tmp/canonized-transmission.json
 
       - name: Render public archive page
+        if: steps.preflight.outputs.should_run == 'true'
         id: publish
         run: python scripts/publish_transmission.py --issue-event "$GITHUB_EVENT_PATH" --output-json /tmp/published-transmission.json
 
       - name: Commit canonical Markdown and public archive update
+        if: steps.preflight.outputs.should_run == 'true'
         id: commit
         run: |
           git config user.name "ConCOREdance Transmission Canonizer"
@@ -75,6 +85,7 @@ jobs:
           fi
 
       - name: Mark issue as canonized
+        if: steps.preflight.outputs.should_run == 'true'
         uses: actions/github-script@v7
         with:
           script: |

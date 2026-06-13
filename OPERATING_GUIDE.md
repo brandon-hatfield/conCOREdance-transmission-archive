@@ -80,6 +80,9 @@ approved
 Active Canon
 ```
 
+The automation matches these approval labels case-insensitively, but the labels
+above are the canonical spellings to use in GitHub.
+
 The GitHub Action will automatically:
 
 1. Read the issue content.
@@ -141,6 +144,8 @@ canonized
 do-not-canonize
 needs-revision
 ```
+
+Blocking labels are also matched case-insensitively.
 
 Use `needs-revision` when a transmission should pause before becoming permanent.
 

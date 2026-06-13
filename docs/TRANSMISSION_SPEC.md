@@ -29,6 +29,9 @@ approved
 Active Canon
 ```
 
+These labels are matched case-insensitively by the canonizer, but the spellings
+above are canonical.
+
 The canonizer writes durable Markdown:
 
 ```text
@@ -44,7 +47,7 @@ It also renders the same approved issue into the public visual archive:
 01_Transmission_Archive/index.html
 ```
 
-It then commits both layers to `main`, labels the issue `canonized`, and comments with the canonical and public archive paths. The workflow refuses to run when an issue has `canonized`, `do-not-canonize`, or `needs-revision`.
+It then commits both layers to `main`, labels the issue `canonized`, and comments with the canonical and public archive paths. The workflow refuses to run when an issue has `canonized`, `do-not-canonize`, or `needs-revision`; blocking labels are matched case-insensitively.
 
 ## Required Fields
 
