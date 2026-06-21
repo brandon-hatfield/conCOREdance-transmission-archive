@@ -1,6 +1,6 @@
 # ConCOREdance Transmission Archive Operating Guide
 
-This guide explains the normal transmission workflow for Neal, Gregory, and Cody.
+This guide explains the normal transmission workflow for Brandon Hatfield, LPC, Gregory, and Cody.
 
 The short version:
 
@@ -14,7 +14,7 @@ GitHub Issue -> review -> canonize label -> Markdown canon + visual archive -> m
 
 Creates structured transmission issues and preserves the voice, doctrine, and creative intent.
 
-**Neal**
+**Brandon Hatfield, LPC**
 
 Reviews the issue, decides whether it is ready for canon, and confirms the final archive entry.
 
@@ -44,7 +44,7 @@ Body:
 
 `Title:` is optional. If it is missing, the automation uses the GitHub issue title.
 
-`Authorized By:` should name the person who approved the transmission for canon. It is not the same as `From:`; a transmission can be written by Gregory, Paula, or Cody while still being authorized by Neal.
+`Authorized By:` should name the person who approved the transmission for canon. It is not the same as `From:`; a transmission can be written by Gregory, Paula, or Cody while still being authorized by Brandon Hatfield, LPC.
 
 4. Add optional sections when useful:
 
@@ -58,7 +58,7 @@ Assets:
 
 ## Review the Issue
 
-Before canonizing, Neal should confirm:
+Before canonizing, Brandon Hatfield, LPC should confirm:
 
 - The ID uses `CC-TX-YYYY-MM-DD-###`.
 - The `Date` matches the date embedded in the ID.
@@ -111,7 +111,7 @@ transmissions/YYYY/CC-TX-YYYY-MM-DD-###.md
 
 ## Confirm the Result
 
-After the workflow finishes, Neal should check:
+After the workflow finishes, Brandon Hatfield, LPC should check:
 
 1. The issue has the `canonized` label.
 2. The generated Markdown file exists under `transmissions/YYYY/`.

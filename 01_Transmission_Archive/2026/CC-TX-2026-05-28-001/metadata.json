@@ -6,7 +6,7 @@
   "type": "Orientation Log",
   "layer": "Personnel / Project Onboarding",
   "from": "Cody Valle",
-  "to": "Neal, Gregory, and Paula Accord",
+  "to": "Brandon Hatfield, LPC, Gregory, and Paula Accord",
   "summary": "Paula Accord has joined ConCOREdance as a programming consultant, oriented to the transmission archive, current SwiftUI prototype, implementation doctrine, and near-term engineering queue.",
   "tags": [
     "orientation",
@@ -19,5 +19,5 @@
   ],
   "path": "2026/CC-TX-2026-05-28-001/transmission.html",
   "metadata_path": "2026/CC-TX-2026-05-28-001/metadata.json",
-  "authorized_by": "Neal / Brandon Hatfield, LPC"
+  "authorized_by": "Brandon Hatfield, LPC"
 }

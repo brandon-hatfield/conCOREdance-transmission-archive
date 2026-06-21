@@ -23,7 +23,7 @@ To:
 Gregory P. Turing / Brandon Hatfield, LPC
 
 Authorized By:
-Neal / Brandon Hatfield, LPC
+Brandon Hatfield, LPC
 
 Tags:
 Automation Architecture, Archive Tooling, Deployment Operations

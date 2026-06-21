@@ -6,8 +6,8 @@
   "type": "Implementation Log",
   "layer": "Native macOS Alpha / Clinical Workflow",
   "from": "Cody Valle",
-  "to": "Neal and Gregory",
-  "authorized_by": "Neal / Brandon Hatfield, LPC",
+  "to": "Brandon Hatfield, LPC and Gregory",
+  "authorized_by": "Brandon Hatfield, LPC",
   "summary": "Cody advanced the native macOS prototype from a visually strong shell into a broader working alpha, connecting core sidebar areas to real vault-derived workflows and verifying the build with 57 passing tests.",
   "tags": [
     "alpha",

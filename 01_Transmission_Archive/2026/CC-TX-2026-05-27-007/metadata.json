@@ -6,7 +6,7 @@
   "type": "Implementation Log",
   "layer": "Product Architecture / Clinical Workflow",
   "from": "Cody Valle",
-  "to": "Neal and Gregory",
+  "to": "Brandon Hatfield, LPC and Gregory",
   "summary": "Completed the first functional workflow spine for the ConCOREdance SwiftUI prototype, including selectable fixture sessions, an active-session workspace, locally persisted draft state, generated progress-note preview, session-aware continuity rail, save-state visibility, and corrected ConCOREdance asset naming.",
   "tags": [
     "swiftui",
@@ -20,5 +20,5 @@
   ],
   "path": "2026/CC-TX-2026-05-27-007/transmission.html",
   "metadata_path": "2026/CC-TX-2026-05-27-007/metadata.json",
-  "authorized_by": "Neal / Brandon Hatfield, LPC"
+  "authorized_by": "Brandon Hatfield, LPC"
 }

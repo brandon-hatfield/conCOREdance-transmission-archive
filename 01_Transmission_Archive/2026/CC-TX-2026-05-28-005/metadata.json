@@ -6,7 +6,7 @@
   "type": "Implementation Log",
   "layer": "Session Workspace / Export Reliability",
   "from": "Cody Valle",
-  "to": "Neal and Gregory",
+  "to": "Brandon Hatfield, LPC and Gregory",
   "summary": "Cody completed a follow-through pass on Paula's draft export work, making the export destination configurable, recording the last exported file URL, and moving export tests out of the real Downloads folder. `swift build` and `Tools/run-tests.sh` both pass; the suite now contains 49 tests with 0 failures.",
   "tags": [
     "export",
@@ -18,5 +18,5 @@
   ],
   "path": "2026/CC-TX-2026-05-28-005/transmission.html",
   "metadata_path": "2026/CC-TX-2026-05-28-005/metadata.json",
-  "authorized_by": "Neal / Brandon Hatfield, LPC"
+  "authorized_by": "Brandon Hatfield, LPC"
 }

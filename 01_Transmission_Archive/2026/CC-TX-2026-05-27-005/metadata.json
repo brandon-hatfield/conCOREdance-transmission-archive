@@ -6,7 +6,7 @@
   "type": "Implementation Log",
   "layer": "Visual Shell / Interaction Architecture",
   "from": "Cody Valle",
-  "to": "Neal and Gregory",
+  "to": "Brandon Hatfield, LPC and Gregory",
   "summary": "Completed the next SwiftUI shell pass focused on atmospheric cohesion, adaptive narrative panels, identity rail refinement, continuity visibility, and screenshot-backed verification.",
   "tags": [
     "swiftui",
@@ -18,5 +18,5 @@
   ],
   "path": "2026/CC-TX-2026-05-27-005/transmission.html",
   "metadata_path": "2026/CC-TX-2026-05-27-005/metadata.json",
-  "authorized_by": "Neal / Brandon Hatfield, LPC"
+  "authorized_by": "Brandon Hatfield, LPC"
 }

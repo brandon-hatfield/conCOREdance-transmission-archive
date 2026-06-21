@@ -14,7 +14,7 @@ A good transmission log should answer five questions clearly:
 4. How was it verified?
 5. What should happen next?
 
-Write for Neal, Gregory, Cody, and future contributors who need the project memory without reconstructing the whole work session.
+Write for Brandon Hatfield, LPC, Gregory, Cody, and future contributors who need the project memory without reconstructing the whole work session.
 
 ## Voice
 
@@ -129,7 +129,7 @@ To: Cody Valle
 
 ```text
 From: Cody Valle
-To: Neal and Gregory
+To: Brandon Hatfield, LPC and Gregory
 ```
 
 **Tags**
@@ -310,7 +310,7 @@ paula-accord.png
 
 ## Verification Checklist
 
-Before asking Cody or Neal to review:
+Before asking Cody or Brandon Hatfield, LPC to review:
 
 1. Markdown canon file exists:
 
@@ -372,7 +372,7 @@ Layer: Product Layer / Technical Layer
 Status: Active Canon
 From: Paula Accord
 To: Cody Valle
-Authorized By: Neal / Brandon Hatfield, LPC
+Authorized By: Brandon Hatfield, LPC
 Tags: swift, testing, vault-persistence, clinical-workflow, archive
 Summary: One polished sentence that explains the outcome and why it matters.
 Body:

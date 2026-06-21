@@ -22,7 +22,7 @@
       ],
       "path": "2026/CC-TX-2026-05-24-001/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-24-001/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-24-002",
@@ -41,7 +41,7 @@
       ],
       "path": "2026/CC-TX-2026-05-24-002/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-24-002/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-24-003",
@@ -60,7 +60,7 @@
       ],
       "path": "2026/CC-TX-2026-05-24-003/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-24-003/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-26-001",
@@ -79,7 +79,7 @@
       ],
       "path": "2026/CC-TX-2026-05-26-001/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-26-001/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-26-002",
@@ -98,7 +98,7 @@
       ],
       "path": "2026/CC-TX-2026-05-26-002/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-26-002/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-27-001",
@@ -120,7 +120,7 @@
       ],
       "path": "2026/CC-TX-2026-05-27-001/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-27-001/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-27-002",
@@ -142,7 +142,7 @@
       ],
       "path": "2026/CC-TX-2026-05-27-002/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-27-002/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-27-003",
@@ -165,7 +165,7 @@
       ],
       "path": "2026/CC-TX-2026-05-27-003/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-27-003/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-27-004",
@@ -186,7 +186,7 @@
       ],
       "path": "2026/CC-TX-2026-05-27-004/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-27-004/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-27-005",
@@ -196,7 +196,7 @@
       "type": "Implementation Log",
       "layer": "Visual Shell / Interaction Architecture",
       "from": "Cody Valle",
-      "to": "Neal and Gregory",
+      "to": "Brandon Hatfield, LPC and Gregory",
       "summary": "Completed the next SwiftUI shell pass focused on atmospheric cohesion, adaptive narrative panels, identity rail refinement, continuity visibility, and screenshot-backed verification.",
       "tags": [
         "swiftui",
@@ -208,7 +208,7 @@
       ],
       "path": "2026/CC-TX-2026-05-27-005/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-27-005/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-27-006",
@@ -232,7 +232,7 @@
       ],
       "path": "2026/CC-TX-2026-05-27-006/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-27-006/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-27-007",
@@ -242,7 +242,7 @@
       "type": "Implementation Log",
       "layer": "Product Architecture / Clinical Workflow",
       "from": "Cody Valle",
-      "to": "Neal and Gregory",
+      "to": "Brandon Hatfield, LPC and Gregory",
       "summary": "Completed the first functional workflow spine for the ConCOREdance SwiftUI prototype, including selectable fixture sessions, an active-session workspace, locally persisted draft state, generated progress-note preview, session-aware continuity rail, save-state visibility, and corrected ConCOREdance asset naming.",
       "tags": [
         "swiftui",
@@ -256,7 +256,7 @@
       ],
       "path": "2026/CC-TX-2026-05-27-007/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-27-007/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-28-001",
@@ -266,7 +266,7 @@
       "type": "Orientation Log",
       "layer": "Personnel / Project Onboarding",
       "from": "Cody Valle",
-      "to": "Neal, Gregory, and Paula Accord",
+      "to": "Brandon Hatfield, LPC, Gregory, and Paula Accord",
       "summary": "Paula Accord has joined ConCOREdance as a programming consultant, oriented to the transmission archive, current SwiftUI prototype, implementation doctrine, and near-term engineering queue.",
       "tags": [
         "orientation",
@@ -279,7 +279,7 @@
       ],
       "path": "2026/CC-TX-2026-05-28-001/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-28-001/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-28-002",
@@ -305,7 +305,7 @@
       ],
       "path": "2026/CC-TX-2026-05-28-002/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-28-002/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-28-003",
@@ -328,7 +328,7 @@
       ],
       "path": "2026/CC-TX-2026-05-28-003/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-28-003/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-28-004",
@@ -352,7 +352,7 @@
       ],
       "path": "2026/CC-TX-2026-05-28-004/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-28-004/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-05-28-005",
@@ -362,7 +362,7 @@
       "type": "Implementation Log",
       "layer": "Session Workspace / Export Reliability",
       "from": "Cody Valle",
-      "to": "Neal and Gregory",
+      "to": "Brandon Hatfield, LPC and Gregory",
       "summary": "Cody completed a follow-through pass on Paula's draft export work, making the export destination configurable, recording the last exported file URL, and moving export tests out of the real Downloads folder. `swift build` and `Tools/run-tests.sh` both pass; the suite now contains 49 tests with 0 failures.",
       "tags": [
         "export",
@@ -374,7 +374,7 @@
       ],
       "path": "2026/CC-TX-2026-05-28-005/transmission.html",
       "metadata_path": "2026/CC-TX-2026-05-28-005/metadata.json",
-      "authorized_by": "Neal / Brandon Hatfield, LPC"
+      "authorized_by": "Brandon Hatfield, LPC"
     },
     {
       "id": "CC-TX-2026-06-13-001",
@@ -384,8 +384,8 @@
       "type": "Implementation Log",
       "layer": "Native macOS Alpha / Clinical Workflow",
       "from": "Cody Valle",
-      "to": "Neal and Gregory",
-      "authorized_by": "Neal / Brandon Hatfield, LPC",
+      "to": "Brandon Hatfield, LPC and Gregory",
+      "authorized_by": "Brandon Hatfield, LPC",
       "summary": "Cody advanced the native macOS prototype from a visually strong shell into a broader working alpha, connecting core sidebar areas to real vault-derived workflows and verifying the build with 57 passing tests.",
       "tags": [
         "alpha",
