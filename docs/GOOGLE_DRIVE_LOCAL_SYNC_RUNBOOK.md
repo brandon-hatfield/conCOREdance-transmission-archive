@@ -36,8 +36,8 @@ It maps:
 
 The public archive is now generated and published from GitHub, not imported from
 Google Drive. `archive` is the clean public URL path used by
-`https://www.concoredance.com/archive/`. `01_Transmission_Archive` remains in
-the repository only as lightweight legacy redirects for older archive links.
+`https://www.concoredance.com/archive/`; the legacy `01_Transmission_Archive`
+folder has been removed.
 
 Deletes are disabled by default. If a file is missing from Drive, the runner does not remove the GitHub copy.
 

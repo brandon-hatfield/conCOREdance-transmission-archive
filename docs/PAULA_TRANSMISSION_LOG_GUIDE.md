@@ -209,7 +209,7 @@ For assets inside the transmission folder, use:
 assets/file-name.png
 ```
 
-For shared archive assets, use a path that is correct from the final transmission page. Example from `01_Transmission_Archive/2026/CC-TX-.../transmission.html`:
+For shared archive assets, use a path that is correct from the final transmission page. Example from `archive/2026/CC-TX-.../transmission.html`:
 
 ```text
 ../../assets/personnel/paula_accord_headshot.png
@@ -290,7 +290,7 @@ Before publishing an entry with images:
 1. Put transmission-specific images in:
 
 ```text
-01_Transmission_Archive/YYYY/CC-TX-YYYY-MM-DD-###/assets/
+archive/YYYY/CC-TX-YYYY-MM-DD-###/assets/
 ```
 
 2. Use lowercase, hyphenated filenames where possible:
@@ -321,18 +321,18 @@ transmissions/YYYY/CC-TX-YYYY-MM-DD-###.md
 2. Public archive page exists:
 
 ```text
-01_Transmission_Archive/YYYY/CC-TX-YYYY-MM-DD-###/transmission.html
+archive/YYYY/CC-TX-YYYY-MM-DD-###/transmission.html
 ```
 
 3. Metadata exists:
 
 ```text
-01_Transmission_Archive/YYYY/CC-TX-YYYY-MM-DD-###/metadata.json
+archive/YYYY/CC-TX-YYYY-MM-DD-###/metadata.json
 ```
 
 4. `archive_manifest.json` contains the entry.
 
-5. `01_Transmission_Archive/index.html` contains the entry.
+5. `archive/index.html` contains the entry.
 
 6. The local page opens without:
 

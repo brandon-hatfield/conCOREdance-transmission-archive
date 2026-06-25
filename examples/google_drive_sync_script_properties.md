@@ -4,7 +4,7 @@ Use these Script Properties for the proof-of-concept sync job.
 
 ```text
 GITHUB_TOKEN=<fine-grained token with Contents read/write>
-GITHUB_OWNER=brandonhatfield-blip
+GITHUB_OWNER=brandon-hatfield
 GITHUB_REPO=conCOREdance-transmission-archive
 GITHUB_BRANCH=main
 DRIVE_ROOT_FOLDER_ID=<Google Drive folder id>

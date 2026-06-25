@@ -2,11 +2,11 @@
 
 Upload the CONTENTS of this folder into:
 
-Google Drive / ConCOREdance / 01_Transmission_Archive /
+Google Drive / ConCOREdance / archive /
 
 Target structure:
 
-01_Transmission_Archive/
+archive/
 ├── index.html
 ├── archive_manifest.json
 ├── assets/

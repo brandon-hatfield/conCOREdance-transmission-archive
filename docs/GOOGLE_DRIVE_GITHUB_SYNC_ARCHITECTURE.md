@@ -31,7 +31,7 @@ Suggested starting mappings:
 
 | Google Drive Folder | GitHub Path | Notes |
 | --- | --- | --- |
-| `ConCOREdance/01_Transmission_Archive` | `01_Transmission_Archive` | Public visual archive |
+| `ConCOREdance/archive` | `archive` | Public visual archive |
 | `ConCOREdance/transmissions` | `transmissions` | Durable Markdown canon |
 | `ConCOREdance/docs` | `docs` | Operating documentation |
 | `ConCOREdance/examples` | `examples` | Request templates and samples |
@@ -118,7 +118,7 @@ Do not store tokens in Drive files, synced files, source control, or issue bodie
 Recommended additional properties:
 
 ```text
-GITHUB_OWNER=brandonhatfield-blip
+GITHUB_OWNER=brandon-hatfield
 GITHUB_REPO=conCOREdance-transmission-archive
 GITHUB_BRANCH=main
 DRIVE_ROOT_FOLDER_ID=<folder id>
