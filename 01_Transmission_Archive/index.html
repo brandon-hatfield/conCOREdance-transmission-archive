@@ -94,7 +94,7 @@ body{
     <div class="participants">Master Entry Point</div>
     <p class="lede">The living index for the ConCOREdance Transmission Archive: a chronological map of project evolution, visual doctrine, implementation history, and interdisciplinary continuity.</p>
     <div class="divider"></div>
-    <div class="meta-grid"><span>Manifest v1.0</span><span>|</span><span>20 transmissions</span><span>|</span><span>Active Canon</span><span>|</span><a href="team/">Project Team</a><span>|</span><a href="product/">Product Teaser</a><span>|</span><a href="assets/">Asset Library</a><span>|</span><a href="doctrine/">Doctrine</a></div>
+    <div class="meta-grid"><span>Manifest v1.0</span><span>|</span><span>21 transmissions</span><span>|</span><span>Active Canon</span><span>|</span><a href="team/">Project Team</a><span>|</span><a href="product/">Product Teaser</a><span>|</span><a href="assets/">Asset Library</a><span>|</span><a href="doctrine/">Doctrine</a></div>
   </div>
   <div class="hero-art"></div>
 </section>
@@ -102,6 +102,22 @@ body{
 <section class="section panel">
   <div class="section-title"><span class="num">00</span><h2>Transmission Timeline</h2></div>
   <div class="index-grid">
+    <a class="index-card" href="2026/CC-TX-2026-06-25-001/transmission.html">
+      <div class="id">CC-TX-2026-06-25-001 - Platform Architecture Transmission</div>
+      <h3>The Choreography Layer: ConCOREdance as an Intelligent Coordination Platform</h3>
+      <p>A foundational architectural realization emerged during discussion of scheduling, signatures, Google Workspace, Microsoft 365, data ownership, and therapist workflow fragmentation.
+
+The central insight:
+
+<strong>The problem facing therapists is not a lack of tools. The problem is a lack of coordination between tools.</strong>
+
+ConCOREdance should not primarily position itself as another EHR, document repository, calendar application, or practice management platform.
+
+ConCOREdance should position itself as an intelligent coordination layer.</p>
+      <p class="authority">Authorized by Brandon Hatfield, LPC</p>
+      <div class="pill-row"><span class="pill">coordination-layer</span><span class="pill">platform-architecture</span><span class="pill">provider-abstraction</span><span class="pill">calendar-intelligence</span><span class="pill">data-sovereignty</span><span class="pill">signature-provider-layer</span><span class="pill">semantic-scheduling</span><span class="pill">google-workspace</span><span class="pill">microsoft-365</span></div>
+    </a>
+
     <a class="index-card" href="2026/CC-TX-2026-06-21-002/transmission.html">
       <div class="id">CC-TX-2026-06-21-002 - Implementation Review / Design Feedback Request</div>
       <h3>Native Alpha Usability Pass — Import Continuity, Responsive Layout, and Secure Launch Direction</h3>
@@ -129,7 +145,7 @@ body{
     <a class="index-card" href="2026/CC-TX-2026-05-28-005/transmission.html">
       <div class="id">CC-TX-2026-05-28-005 - Implementation Log</div>
       <h3>Export Path Hardening and Test Isolation Pass</h3>
-      <p>Cody completed a follow-through pass on Paula&#x27;s draft export work, making the export destination configurable, recording the last exported file URL, and moving export tests out of the real Downloads folder. `swift build` and `Tools/run-tests.sh` both pass; the suite now contains 49 tests with 0 failures.</p>
+      <p>Cody completed a follow-through pass on Paula's draft export work, making the export destination configurable, recording the last exported file URL, and moving export tests out of the real Downloads folder. `swift build` and `Tools/run-tests.sh` both pass; the suite now contains 49 tests with 0 failures.</p>
       <p class="authority">Authorized by Brandon Hatfield, LPC</p>
       <div class="pill-row"><span class="pill">export</span><span class="pill">testing</span><span class="pill">vault-store</span><span class="pill">test-isolation</span><span class="pill">session-workspace</span><span class="pill">swift</span></div>
     </a>
@@ -137,7 +153,7 @@ body{
     <a class="index-card" href="2026/CC-TX-2026-05-28-004/transmission.html">
       <div class="id">CC-TX-2026-05-28-004 - Implementation Log</div>
       <h3>Pass 4 — Copy to Clipboard and .txt Export from GeneratedDraftPreview</h3>
-      <p>Pass 4 added copy-to-clipboard and `.txt` file export directly from the `GeneratedDraftPreview` card in the active session workspace. A new `exportNoteDraft(for:)` method on VaultStore handles the file write, following the `exportBackup()` pattern. A Copy button uses `NSPasteboard` with a 1.8-second &quot;Copied&quot; confirmation state. Two new XCTest methods cover the observable store side effects of the export path. Cody verified the pass with `swift build` and `Tools/run-tests.sh`; 48 tests passed with 0 failures.</p>
+      <p>Pass 4 added copy-to-clipboard and `.txt` file export directly from the `GeneratedDraftPreview` card in the active session workspace. A new `exportNoteDraft(for:)` method on VaultStore handles the file write, following the `exportBackup()` pattern. A Copy button uses `NSPasteboard` with a 1.8-second "Copied" confirmation state. Two new XCTest methods cover the observable store side effects of the export path. Cody verified the pass with `swift build` and `Tools/run-tests.sh`; 48 tests passed with 0 failures.</p>
       <p class="authority">Authorized by Brandon Hatfield, LPC</p>
       <div class="pill-row"><span class="pill">export</span><span class="pill">clipboard</span><span class="pill">nspasteboard</span><span class="pill">vault-store</span><span class="pill">views</span><span class="pill">xctest</span><span class="pill">swift</span><span class="pill">generated-draft-preview</span></div>
     </a>
@@ -153,7 +169,7 @@ body{
     <a class="index-card" href="2026/CC-TX-2026-05-28-002/transmission.html">
       <div class="id">CC-TX-2026-05-28-002 - Implementation Log</div>
       <h3>Pass 1 — Test Infrastructure and Verification Constraint</h3>
-      <p>Pass 1 established the first Swift test infrastructure for ConCOREdance. A test target was added to Package.swift, VaultStore was made URL-injectable for isolation, VaultCryptoError gained Equatable conformance, and 38 XCTest methods were written across three suites. `swift build` passes; `swift test` is currently blocked in Cody&#x27;s local environment because the selected Command Line Tools install cannot resolve XCTest and does not expose xcodebuild.</p>
+      <p>Pass 1 established the first Swift test infrastructure for ConCOREdance. A test target was added to Package.swift, VaultStore was made URL-injectable for isolation, VaultCryptoError gained Equatable conformance, and 38 XCTest methods were written across three suites. `swift build` passes; `swift test` is currently blocked in Cody's local environment because the selected Command Line Tools install cannot resolve XCTest and does not expose xcodebuild.</p>
       <p class="authority">Authorized by Brandon Hatfield, LPC</p>
       <div class="pill-row"><span class="pill">testing</span><span class="pill">xctest</span><span class="pill">swift</span><span class="pill">package-swift</span><span class="pill">vault-crypto</span><span class="pill">vault-store</span><span class="pill">fixtures</span><span class="pill">archive</span><span class="pill">html</span><span class="pill">manifest</span></div>
     </a>
@@ -249,7 +265,7 @@ body{
     <a class="index-card" href="2026/CC-TX-2026-05-24-002/transmission.html">
       <div class="id">CC-TX-2026-05-24-002 - Role Definition</div>
       <h3>Cody Vale Implementation Role Definition</h3>
-      <p>Gregory defines Cody Vale&#x27;s implementation remit across systems architecture, automation, infrastructure reliability, archive tooling, and deployment operations.</p>
+      <p>Gregory defines Cody Vale's implementation remit across systems architecture, automation, infrastructure reliability, archive tooling, and deployment operations.</p>
       <p class="authority">Authorized by Brandon Hatfield, LPC</p>
       <div class="pill-row"><span class="pill">Implementation Engineering</span><span class="pill">Automation Architecture</span><span class="pill">Deployment Operations</span></div>
     </a>
@@ -257,7 +273,7 @@ body{
     <a class="index-card" href="2026/CC-TX-2026-05-24-001/transmission.html">
       <div class="id">CC-TX-2026-05-24-001 - Team Onboarding</div>
       <h3>Cody Vale Joins the Implementation Team</h3>
-      <p>Brandon formalizes Cody Vale&#x27;s role as Lead Implementation Engineer for the ConCOREdance initiative.</p>
+      <p>Brandon formalizes Cody Vale's role as Lead Implementation Engineer for the ConCOREdance initiative.</p>
       <p class="authority">Authorized by Brandon Hatfield, LPC</p>
       <div class="pill-row"><span class="pill">Team Onboarding</span><span class="pill">Cody Vale</span><span class="pill">Implementation Leadership</span></div>
     </a>

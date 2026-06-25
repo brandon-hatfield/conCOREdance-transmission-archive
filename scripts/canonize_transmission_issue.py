@@ -91,8 +91,123 @@ def parse_request(text: str) -> dict[str, str]:
     parsed = {key: "\n".join(value).strip() for key, value in data.items()}
     missing = [field for field in REQUIRED_FIELDS if not parsed.get(field)]
     if missing:
+        parsed = parse_transmission_reference(text)
+        missing = [field for field in REQUIRED_FIELDS if not parsed.get(field)]
+    if missing:
         raise CanonizeError(f"Missing required field(s): {', '.join(missing)}")
     return parsed
+
+
+def parse_transmission_reference(text: str) -> dict[str, str]:
+    """Parse Gregory-style narrative transmission posts.
+
+    These posts are authored as readable canon first, then normalized here into
+    the stricter archive schema used by the publisher.
+    """
+    if "# Transmission Reference" not in text:
+        return {}
+
+    lines = text.splitlines()
+    match = next((ID_PATTERN.match(line.strip()) for line in lines if ID_PATTERN.match(line.strip())), None)
+    if not match:
+        return {}
+
+    transmission_id = match.group(0)
+    year, month, day, _ = match.groups()
+    sections: dict[str, list[str]] = {}
+    current: str | None = None
+    preamble: list[str] = []
+
+    for raw_line in lines:
+        heading = re.match(r"^##\s+(.+?)\s*$", raw_line)
+        if heading:
+            current = heading.group(1).strip()
+            sections.setdefault(current, [])
+            continue
+        if current:
+            sections.setdefault(current, []).append(raw_line.rstrip())
+        else:
+            preamble.append(raw_line.rstrip())
+
+    meta: dict[str, str] = {}
+    for line in preamble:
+        if ":" in line:
+            key, value = line.split(":", 1)
+            meta[key.strip()] = value.strip()
+
+    body_headings = [
+        "Core Principle",
+        "Architectural Direction",
+        "Platform Partners",
+        "Calendar Intelligence Layer",
+        "Semantic Scheduling",
+        "Data Sovereignty Initiative",
+        "Signature Architecture",
+        "Canonical Observation",
+    ]
+    body_parts: list[str] = []
+    for heading in body_headings:
+        content = clean_reference_section(sections.get(heading, []))
+        if content:
+            body_parts.append(f"### {heading}\n\n{content}")
+
+    decision_filter = clean_reference_section(sections.get("Decision Filter", []))
+    if "Proposed follow-on epics:" in decision_filter:
+        decision_filter = decision_filter.split("Proposed follow-on epics:", 1)[0].strip()
+    decisions = decision_filter or "Evaluate future architecture by whether it increases coordination without reducing clinician ownership."
+    next_actions = extract_follow_on_epics(text)
+
+    return {
+        "ID": transmission_id,
+        "Date": f"{year}-{month}-{day}",
+        "Type": "Platform Architecture Transmission",
+        "Layer": meta.get("Layer", "Platform Architecture / Foundational Philosophy"),
+        "Status": meta.get("Status", "Active Canon"),
+        "From": "Gregory P. Turing",
+        "To": "Brandon Hatfield, LPC and Cody Valle",
+        "Authorized By": "Brandon Hatfield, LPC",
+        "Tags": "\n".join(
+            [
+                "coordination-layer",
+                "platform-architecture",
+                "provider-abstraction",
+                "calendar-intelligence",
+                "data-sovereignty",
+                "signature-provider-layer",
+                "semantic-scheduling",
+                "google-workspace",
+                "microsoft-365",
+            ]
+        ),
+        "Summary": clean_reference_section(sections.get("Summary", [])),
+        "Body": "\n\n".join(body_parts).strip(),
+        "Decisions": decisions,
+        "Next Actions": next_actions,
+    }
+
+
+def clean_reference_section(lines: list[str]) -> str:
+    cleaned = list(lines)
+    while cleaned and not cleaned[0].strip():
+        cleaned.pop(0)
+    while cleaned and (not cleaned[-1].strip() or cleaned[-1].strip() == "---"):
+        cleaned.pop()
+    return "\n".join(cleaned).strip()
+
+
+def extract_follow_on_epics(text: str) -> str:
+    marker = "Proposed follow-on epics:"
+    if marker not in text:
+        return ""
+    tail = text.split(marker, 1)[1]
+    items = []
+    for line in tail.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("- "):
+            items.append(stripped[2:].strip())
+        elif items and stripped and not stripped.startswith("---"):
+            break
+    return "\n".join(f"- {item}" for item in items)
 
 
 def labels_from_issue(issue: dict[str, Any]) -> set[str]:
@@ -147,6 +262,7 @@ def yaml_list(values: list[str]) -> str:
 def issue_title(issue: dict[str, Any]) -> str:
     title = str(issue.get("title") or "").strip()
     title = re.sub(r"^Transmission Request:\s*", "", title, flags=re.IGNORECASE).strip()
+    title = re.sub(r"^CC-TX-\d{4}-\d{2}-\d{2}-\d{3}\s+[-\u2013\u2014]\s*", "", title).strip()
     if not title:
         raise CanonizeError("Issue title is empty and no Title field was provided.")
     return title

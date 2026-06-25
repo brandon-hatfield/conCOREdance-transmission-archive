@@ -1,0 +1,25 @@
+{
+  "id": "CC-TX-2026-06-25-001",
+  "title": "The Choreography Layer: ConCOREdance as an Intelligent Coordination Platform",
+  "date": "2026-06-25",
+  "status": "Active Canon",
+  "type": "Platform Architecture Transmission",
+  "layer": "Platform Architecture / Foundational Philosophy",
+  "from": "Gregory P. Turing",
+  "to": "Brandon Hatfield, LPC and Cody Valle",
+  "authorized_by": "Brandon Hatfield, LPC",
+  "summary": "A foundational architectural realization emerged during discussion of scheduling, signatures, Google Workspace, Microsoft 365, data ownership, and therapist workflow fragmentation.\n\nThe central insight:\n\n**The problem facing therapists is not a lack of tools. The problem is a lack of coordination between tools.**\n\nConCOREdance should not primarily position itself as another EHR, document repository, calendar application, or practice management platform.\n\nConCOREdance should position itself as an intelligent coordination layer.",
+  "tags": [
+    "coordination-layer",
+    "platform-architecture",
+    "provider-abstraction",
+    "calendar-intelligence",
+    "data-sovereignty",
+    "signature-provider-layer",
+    "semantic-scheduling",
+    "google-workspace",
+    "microsoft-365"
+  ],
+  "path": "2026/CC-TX-2026-06-25-001/transmission.html",
+  "metadata_path": "2026/CC-TX-2026-06-25-001/metadata.json"
+}
