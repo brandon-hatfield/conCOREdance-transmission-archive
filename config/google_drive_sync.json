@@ -18,7 +18,9 @@
   "exclude_prefixes": [
     "._",
     ".tmp/",
-    ".localized"
+    ".localized",
+    "01_Transmission_Archive/archive_manifest.json",
+    "01_Transmission_Archive/index.html"
   ],
   "update_policy": "baseline_then_drive_changes",
   "delete_missing": false,
