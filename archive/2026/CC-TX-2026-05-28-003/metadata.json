@@ -1,0 +1,23 @@
+{
+  "id": "CC-TX-2026-05-28-003",
+  "title": "Pass 3 \u2014 Inline-Editable Continuity Signals",
+  "date": "2026-05-28",
+  "status": "Active Canon",
+  "type": "Implementation Log",
+  "layer": "Session Workspace / Continuity Rail",
+  "from": "Paula Accord",
+  "to": "Cody Valle",
+  "summary": "Pass 3 made the continuity signals in the right rail inline-editable within the active session workspace. A single new VaultStore method handles the mutation. `ContinuitySignalRow` gained optional edit mode via an `onUpdate` closure; read-only display (home dashboard, empty states) is unchanged. Three new XCTest methods cover persistence, field isolation, and timestamp correctness. Cody verified the pass with `swift build` and `Tools/run-tests.sh`; 46 tests passed with 0 failures.",
+  "tags": [
+    "continuity-signals",
+    "vault-store",
+    "views",
+    "xctest",
+    "swift",
+    "right-rail",
+    "inline-edit"
+  ],
+  "path": "2026/CC-TX-2026-05-28-003/",
+  "metadata_path": "2026/CC-TX-2026-05-28-003/metadata.json",
+  "authorized_by": "Brandon Hatfield, LPC"
+}

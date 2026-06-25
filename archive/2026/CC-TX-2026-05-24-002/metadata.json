@@ -1,0 +1,19 @@
+{
+  "id": "CC-TX-2026-05-24-002",
+  "title": "Cody Vale Implementation Role Definition",
+  "date": "2026-05-24",
+  "status": "Active Canon",
+  "type": "Role Definition",
+  "layer": "Implementation Operations",
+  "from": "Gregory P. Turing",
+  "to": "Cody Vale",
+  "summary": "Gregory defines Cody Vale's implementation remit across systems architecture, automation, infrastructure reliability, archive tooling, and deployment operations.",
+  "tags": [
+    "Implementation Engineering",
+    "Automation Architecture",
+    "Deployment Operations"
+  ],
+  "authorized_by": "Brandon Hatfield, LPC",
+  "path": "2026/CC-TX-2026-05-24-002/",
+  "metadata_path": "2026/CC-TX-2026-05-24-002/metadata.json"
+}

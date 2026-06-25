@@ -41,10 +41,10 @@ transmissions/YYYY/CC-TX-YYYY-MM-DD-###.md
 It also renders the same approved issue into the public visual archive:
 
 ```text
-01_Transmission_Archive/YYYY/CC-TX-YYYY-MM-DD-###/transmission.html
-01_Transmission_Archive/YYYY/CC-TX-YYYY-MM-DD-###/metadata.json
-01_Transmission_Archive/archive_manifest.json
-01_Transmission_Archive/index.html
+###/transmission.html
+archive/YYYY/CC-TX-YYYY-MM-DD-###/metadata.json
+archive/archive_manifest.json
+archive/index.html
 ```
 
 It then commits both layers to `main`, labels the issue `canonized`, and comments with the canonical and public archive paths. The workflow refuses to run when an issue has `canonized`, `do-not-canonize`, or `needs-revision`; blocking labels are matched case-insensitively.
@@ -146,7 +146,7 @@ If the issue is edited and the workflow runs again, the same branch and draft PR
 ## Current Archive Root
 
 ```text
-01_Transmission_Archive/
+archive/
 ```
 
 Do not move or flatten the archive root.
@@ -154,7 +154,7 @@ Do not move or flatten the archive root.
 ## Live URL
 
 ```text
-https://concoredance.seekingharmony.net/01_Transmission_Archive/
+https://www.concoredance.com/archive/
 ```
 
 The live URL updates only after the draft PR is reviewed and merged.

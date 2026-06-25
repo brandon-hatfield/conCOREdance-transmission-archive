@@ -43,7 +43,7 @@ For the proposed Google Drive to GitHub synchronization layer, see:
 # Repository Structure
 
 ```text
-01_Transmission_Archive/
+archive/
 ├── index.html
 ├── archive_manifest.json
 ├── assets/

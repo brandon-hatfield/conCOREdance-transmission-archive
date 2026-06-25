@@ -95,15 +95,15 @@ transmissions/YYYY/CC-TX-YYYY-MM-DD-###.md
 3. Create the visual archive entry:
 
 ```text
-01_Transmission_Archive/YYYY/CC-TX-YYYY-MM-DD-###/transmission.html
-01_Transmission_Archive/YYYY/CC-TX-YYYY-MM-DD-###/metadata.json
+###/transmission.html
+archive/YYYY/CC-TX-YYYY-MM-DD-###/metadata.json
 ```
 
 4. Update:
 
 ```text
-01_Transmission_Archive/archive_manifest.json
-01_Transmission_Archive/index.html
+archive/archive_manifest.json
+archive/index.html
 ```
 
 5. Add the `canonized` label to the issue.
@@ -115,14 +115,14 @@ After the workflow finishes, Brandon Hatfield, LPC should check:
 
 1. The issue has the `canonized` label.
 2. The generated Markdown file exists under `transmissions/YYYY/`.
-3. The visual transmission page exists under `01_Transmission_Archive/YYYY/`.
+3. The visual transmission page exists under `archive/YYYY/`.
 4. The live archive index includes the new transmission.
 5. The page title, summary, body, decisions, and next actions look right.
 
 Live archive:
 
 ```text
-https://concoredance.seekingharmony.net/01_Transmission_Archive/
+https://www.concoredance.com/archive/
 ```
 
 GitHub Pages may take a minute to update after the commit lands.
@@ -161,7 +161,7 @@ Drafting space, collaboration history, and review trail.
 
 Durable Markdown canon. This is the plain-text historical record.
 
-**01_Transmission_Archive/**
+**archive/**
 
 Public visual archive. This is the reader-facing archive experience.
 

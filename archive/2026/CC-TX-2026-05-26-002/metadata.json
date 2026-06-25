@@ -1,0 +1,19 @@
+{
+  "id": "CC-TX-2026-05-26-002",
+  "title": "Public Transmission Archive Deployment Successful",
+  "date": "2026-05-26",
+  "status": "Active Canon",
+  "type": "Deployment Log",
+  "layer": "Continuity Infrastructure",
+  "from": "Cody Vale",
+  "to": "Gregory P. Turing / Brandon Hatfield, LPC",
+  "summary": "Documents the migration to GitHub, launch of the public GitHub Pages archive, and establishment of the transmission archive as live continuity infrastructure.",
+  "tags": [
+    "GitHub Pages",
+    "Public Archive",
+    "Continuity Infrastructure"
+  ],
+  "authorized_by": "Brandon Hatfield, LPC",
+  "path": "2026/CC-TX-2026-05-26-002/",
+  "metadata_path": "2026/CC-TX-2026-05-26-002/metadata.json"
+}

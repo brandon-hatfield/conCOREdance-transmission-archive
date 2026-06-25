@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Any
 
 
-ARCHIVE_ROOT = Path("01_Transmission_Archive")
+ARCHIVE_ROOT = Path("archive")
 MANIFEST_PATH = ARCHIVE_ROOT / "archive_manifest.json"
 INDEX_PATH = ARCHIVE_ROOT / "index.html"
 TRANSMISSION_TEMPLATE = Path("templates/transmission_template.html")
@@ -382,7 +382,7 @@ def metadata_for(data: dict[str, str], tags: list[str], rel_dir: Path) -> dict[s
         "authorized_by": data.get("Authorized By", ""),
         "summary": data["Summary"],
         "tags": tags,
-        "path": str(rel_dir / "transmission.html"),
+        "path": f"{rel_dir.as_posix()}/",
         "metadata_path": str(rel_dir / "metadata.json"),
     }
 
@@ -415,7 +415,7 @@ def load_manifest() -> dict[str, Any]:
             "version": "1.0",
             "status": "Active Canon",
             "created": datetime.utcnow().isoformat(timespec="seconds"),
-            "canonical_structure": "ConCOREdance/01_Transmission_Archive/index.html + archive_manifest.json + yearly transmission folders",
+            "canonical_structure": "ConCOREdance/archive/index.html + archive_manifest.json + yearly transmission folders",
             "entries": [],
         }
     return json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
@@ -607,7 +607,9 @@ def publish(data: dict[str, str]) -> dict[str, str]:
     full_dir = ARCHIVE_ROOT / rel_dir
     full_dir.mkdir(parents=True, exist_ok=True)
 
-    (full_dir / "transmission.html").write_text(render_transmission(data, tags), encoding="utf-8")
+    rendered = render_transmission(data, tags)
+    (full_dir / "index.html").write_text(rendered, encoding="utf-8")
+    (full_dir / "transmission.html").write_text(rendered, encoding="utf-8")
 
     entry = metadata_for(data, tags, rel_dir)
     (full_dir / "metadata.json").write_text(json.dumps(entry, indent=2) + "\n", encoding="utf-8")
@@ -619,7 +621,7 @@ def publish(data: dict[str, str]) -> dict[str, str]:
         "transmission_id": data["ID"],
         "transmission_title": data["Title"],
         "transmission_summary": data["Summary"],
-        "transmission_path": str(rel_dir / "transmission.html"),
+        "transmission_path": f"{rel_dir.as_posix()}/",
         "metadata_path": str(rel_dir / "metadata.json"),
         "transmission_dir": str(rel_dir),
     }

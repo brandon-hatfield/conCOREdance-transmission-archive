@@ -75,7 +75,7 @@ jobs:
         run: |
           git config user.name "ConCOREdance Transmission Canonizer"
           git config user.email "actions@github.com"
-          git add transmissions 01_Transmission_Archive
+          git add transmissions archive
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
@@ -96,7 +96,7 @@ jobs:
               `Transmission ${canonized.transmission_id} has been canonized as durable Markdown and published into the visual archive.`,
               ``,
               `Canonical Markdown path: \`${canonized.transmission_path}\``,
-              `Public archive path: \`01_Transmission_Archive/${published.transmission_path}\``,
+              `Public archive path: \`archive/${published.transmission_path}\``,
               ``,
               `This issue now has the \`canonized\` label so the workflow will not duplicate the record.`
             ].join('\n');

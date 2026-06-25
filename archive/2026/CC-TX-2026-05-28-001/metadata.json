@@ -1,0 +1,23 @@
+{
+  "id": "CC-TX-2026-05-28-001",
+  "title": "Paula Accord Programming Consultant Orientation",
+  "date": "2026-05-28",
+  "status": "Active Canon",
+  "type": "Orientation Log",
+  "layer": "Personnel / Project Onboarding",
+  "from": "Cody Valle",
+  "to": "Brandon Hatfield, LPC, Gregory, and Paula Accord",
+  "summary": "Paula Accord has joined ConCOREdance as a programming consultant, oriented to the transmission archive, current SwiftUI prototype, implementation doctrine, and near-term engineering queue.",
+  "tags": [
+    "orientation",
+    "onboarding",
+    "personnel",
+    "programming-consultation",
+    "archive",
+    "workflow",
+    "implementation-support"
+  ],
+  "path": "2026/CC-TX-2026-05-28-001/",
+  "metadata_path": "2026/CC-TX-2026-05-28-001/metadata.json",
+  "authorized_by": "Brandon Hatfield, LPC"
+}

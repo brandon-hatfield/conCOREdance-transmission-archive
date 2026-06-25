@@ -40,7 +40,7 @@ jobs:
           git config user.name "ConCOREdance Transmission Publisher"
           git config user.email "actions@github.com"
           git checkout -B "$BRANCH"
-          git add 01_Transmission_Archive
+          git add archive
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
@@ -75,10 +75,10 @@ jobs:
               summary,
               ``,
               `**Generated path**`,
-              `\`01_Transmission_Archive/${dir}/\``,
+              `\`archive/${dir}/\``,
               ``,
               `**Transmission page**`,
-              `\`01_Transmission_Archive/${path}\``,
+              `\`archive/${path}\``,
               ``,
               `**Originating issue**`,
               `#${context.issue.number} - ${issueUrl}`,
@@ -133,7 +133,7 @@ jobs:
               `Transmission ${id} has been prepared for supervised editorial review.`,
               ``,
               `Draft branch: \`${branch}\``,
-              `Generated path: \`01_Transmission_Archive/${path}\``,
+              `Generated path: \`archive/${path}\``,
               `Draft PR: #${prNumber} - ${prUrl}`,
               ``,
               `No public archive publication occurs until a human reviews and merges the PR.`
