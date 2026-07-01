@@ -144,7 +144,7 @@ Use an Apps Script time-driven trigger:
 - every 6 hours during development, or
 - daily once stable.
 
-Manual run should remain available for Neal/Cody-controlled sync moments.
+Manual run should remain available for Brandon/Cody-controlled sync moments.
 
 ## Canon Boundary
 

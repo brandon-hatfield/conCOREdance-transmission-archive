@@ -6,7 +6,7 @@
   "type": "Platform Architecture Transmission",
   "layer": "Platform Architecture / Cloud Interoperability",
   "from": "Ada Vance",
-  "to": "Neal, Gregory P. Turing, Cody Vale, Simon Morneau, and Paula Accord",
+  "to": "Brandon Hatfield, LPC, Gregory P. Turing, Cody Vale, Simon Morneau, and Paula Accord",
   "authorized_by": "Brandon Hatfield, LPC",
   "summary": "To preserve strict clinician data sovereignty, ConCOREdance establishes a zero-knowledge cloud choreography boundary. Instead of requesting broad access to a therapist's entire infrastructure, the local native application restricts its integration footprint strictly to an isolated, app-specific cloud enclave via Google's appdata scope, securely mapping localized VaultStore state diffs without central data ownership.",
   "tags": [
