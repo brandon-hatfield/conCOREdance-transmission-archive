@@ -363,19 +363,23 @@ body{
 .consultant-grid{
   margin-top:22px;
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:22px;
+  align-items:stretch;
 }
 .consultant-grid .consultant-row{
   margin-top:0;
-  grid-template-columns:minmax(170px,.44fr) 1fr;
+  grid-template-columns:1fr;
+  grid-template-rows:250px 1fr;
 }
 .consultant-row .portrait-wrap{
-  min-height:250px;
-  border-right:1px solid rgba(255,255,255,.09);
+  height:250px;
+  min-height:0;
+  border-right:0;
+  border-bottom:1px solid rgba(255,255,255,.09);
 }
 .consultant-row .card-body{
-  padding:28px 30px;
+  padding:24px 24px 26px;
 }
 .portrait-wrap{
   position:relative;
