@@ -1,10 +1,10 @@
 /**
  * ConCOREdance Google Docs -> GitHub transmission issue bridge.
  *
- * This Apps Script scans an allowlisted Google Drive folder for native
- * Google Docs whose titles start with CC-TX READY, reads the structured
- * transmission request text, and creates a GitHub issue that triggers the
- * existing archive publisher/canonizer workflows.
+ * This Apps Script scans an allowlisted Google Drive folder and, by default,
+ * all accessible native Google Docs whose titles start with CC-TX READY. It
+ * reads structured transmission request text and creates a GitHub issue that
+ * triggers the existing archive publisher/canonizer workflows.
  *
  * Required Script Properties:
  *   GITHUB_TOKEN
@@ -16,6 +16,7 @@
  *   INGEST_DRY_RUN=true
  *   INGEST_MODE=draft_pr
  *   READY_TITLE_PREFIX=CC-TX READY
+ *   SEARCH_ALL_READY_DOCS=true
  */
 
 const TRANSMISSION_REQUIRED_FIELDS = [
@@ -35,18 +36,16 @@ const TRANSMISSION_REQUIRED_FIELDS = [
 
 function ingestReadyTransmissionDocs() {
   const config = readTransmissionIngestConfig_();
-  const folder = DriveApp.getFolderById(config.transmissionIntakeFolderId);
   const report = {
     created: [],
     skipped: [],
     failed: [],
     dryRun: config.ingestDryRun,
     mode: config.ingestMode,
+    searchAllReadyDocs: config.searchAllReadyDocs,
   };
 
-  const files = folder.getFilesByType(MimeType.GOOGLE_DOCS);
-  while (files.hasNext()) {
-    const file = files.next();
+  collectReadyTransmissionDocs_(config).forEach((file) => {
     try {
       const result = ingestOneTransmissionDoc_(file, config);
       report[result.status].push(result);
@@ -57,7 +56,7 @@ function ingestReadyTransmissionDocs() {
         error: error.message,
       });
     }
-  }
+  });
 
   Logger.log(JSON.stringify(report, null, 2));
   return report;
@@ -81,11 +80,40 @@ function readTransmissionIngestConfig_() {
   config.ingestDryRun = (props.getProperty("INGEST_DRY_RUN") || "true").toLowerCase() !== "false";
   config.ingestMode = (props.getProperty("INGEST_MODE") || "draft_pr").toLowerCase();
   config.readyTitlePrefix = props.getProperty("READY_TITLE_PREFIX") || "CC-TX READY";
+  config.searchAllReadyDocs = (props.getProperty("SEARCH_ALL_READY_DOCS") || "true").toLowerCase() !== "false";
 
   if (!["draft_pr", "canonize"].includes(config.ingestMode)) {
     throw new Error("INGEST_MODE must be draft_pr or canonize.");
   }
   return config;
+}
+
+function collectReadyTransmissionDocs_(config) {
+  const filesById = {};
+  const folder = DriveApp.getFolderById(config.transmissionIntakeFolderId);
+  const folderFiles = folder.getFilesByType(MimeType.GOOGLE_DOCS);
+
+  while (folderFiles.hasNext()) {
+    const file = folderFiles.next();
+    filesById[file.getId()] = file;
+  }
+
+  if (config.searchAllReadyDocs) {
+    const query = [
+      `mimeType = '${MimeType.GOOGLE_DOCS}'`,
+      `title contains '${config.readyTitlePrefix.replace(/'/g, "\\'")}'`,
+      "trashed = false",
+    ].join(" and ");
+    const searchFiles = DriveApp.searchFiles(query);
+    while (searchFiles.hasNext()) {
+      const file = searchFiles.next();
+      filesById[file.getId()] = file;
+    }
+  }
+
+  return Object.keys(filesById)
+    .map((id) => filesById[id])
+    .sort((left, right) => left.getName().localeCompare(right.getName()));
 }
 
 function ingestOneTransmissionDoc_(file, config) {

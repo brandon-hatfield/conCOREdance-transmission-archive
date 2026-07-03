@@ -150,4 +150,4 @@ When Ada can create native Google Docs in a shared intake folder, use the automa
 docs/GOOGLE_DOCS_TRANSMISSION_INGESTION.md
 ```
 
-That path lets Ada mark a Doc as ready, lets Google Apps Script create the GitHub Issue, and then lets the existing archive workflows publish or canonize the entry.
+That path lets Ada mark a Doc as ready, lets Google Apps Script create the GitHub Issue, and then lets the existing archive workflows publish or canonize the entry. When `SEARCH_ALL_READY_DOCS=true`, Ada does not need to place the Doc in the intake folder manually; the ready title prefix is enough for discovery.

@@ -10,7 +10,7 @@ The bridge does not write archive files directly. It creates a GitHub Issue from
 
 ```text
 Ada Google Doc
--> Google Apps Script folder scan
+-> Google Apps Script ready-doc scan
 -> GitHub Issue
 -> Existing transmission publisher or canonizer
 -> Archive Markdown, HTML, metadata, manifest, and index
@@ -20,7 +20,7 @@ This keeps the publication boundary inside GitHub, where the current archive aut
 
 ## Ada Draft Contract
 
-Ada creates a native Google Doc in the designated intake folder.
+Ada creates a native Google Doc. The designated intake folder remains the preferred home for organization, but the bridge can also scan all accessible Google Docs with the `CC-TX READY` title prefix when `SEARCH_ALL_READY_DOCS=true`.
 
 Title format:
 
@@ -101,6 +101,7 @@ Optional Script Properties:
 INGEST_DRY_RUN=true
 INGEST_MODE=draft_pr
 READY_TITLE_PREFIX=CC-TX READY
+SEARCH_ALL_READY_DOCS=true
 ```
 
 ## Modes
@@ -162,8 +163,9 @@ The script stores processed document IDs in Apps Script Properties. A ready Doc 
 
 ## Safety Rules
 
-- Only scan the designated intake folder.
-- Only process native Google Docs whose titles begin with `CC-TX READY`.
+- Prefer the designated intake folder for organization.
+- Process only native Google Docs whose titles begin with `CC-TX READY`.
+- Keep `SEARCH_ALL_READY_DOCS=true` when Ada cannot create Docs directly inside the intake folder.
 - Require all structured fields before creating a GitHub Issue.
 - Keep the GitHub token in Apps Script Properties, never in the Doc body.
 - Prefer `draft_pr` mode unless Brandon explicitly authorizes direct canonization.
@@ -181,4 +183,4 @@ Ada writes Google Doc
 -> Cody verifies archive result
 ```
 
-This removes Neal from routine copy-paste handling while keeping review and publication boundaries intact.
+This removes Neal from routine copy-paste and drag-and-drop handling while keeping review and publication boundaries intact.
