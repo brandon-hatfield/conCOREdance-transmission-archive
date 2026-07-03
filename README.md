@@ -38,6 +38,10 @@ For the proposed Google Drive to GitHub synchronization layer, see:
 
 [docs/GOOGLE_DRIVE_GITHUB_SYNC_ARCHITECTURE.md](docs/GOOGLE_DRIVE_GITHUB_SYNC_ARCHITECTURE.md)
 
+For Ada-authored transmission intake, see:
+
+[docs/ADA_TRANSMISSION_PIPELINE.md](docs/ADA_TRANSMISSION_PIPELINE.md)
+
 ---
 
 # Repository Structure
