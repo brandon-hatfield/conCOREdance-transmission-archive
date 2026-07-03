@@ -123,28 +123,40 @@ a{color:var(--gold2)}
 .proof b{display:block;color:var(--gold2);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
 .proof span{display:block;color:var(--muted);font-size:14px;line-height:1.45}
 .hero-stack{position:relative;min-height:560px}
-.hero-shot{
+.cover-image{
   position:absolute;
-  inset:8px 0 92px 40px;
-  border:1px solid rgba(231,173,103,.30);
-  border-radius:20px;
-  background:
-    linear-gradient(90deg,rgba(5,9,20,.08),rgba(5,9,20,.42)),
-    url("archive/2026/CC-TX-2026-05-27-007/assets/conCOREdance-session.png") center/cover no-repeat;
-  box-shadow:0 38px 90px rgba(0,0,0,.52);
+  inset:4px 0 92px 10px;
+  border:1px solid rgba(231,173,103,.34);
+  border-radius:22px;
+  overflow:hidden;
+  background:rgba(5,9,20,.58);
+  box-shadow:0 42px 100px rgba(0,0,0,.54);
+}
+.cover-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+.cover-image:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(5,9,20,.08),rgba(5,9,20,.18) 58%,rgba(5,9,20,.50));
+  pointer-events:none;
 }
 .hero-card{
   position:absolute;
   left:0;
-  right:56px;
+  right:34px;
   bottom:0;
   border:1px solid rgba(255,255,255,.13);
   border-radius:18px;
-  padding:18px;
+  padding:20px;
   background:linear-gradient(135deg,rgba(7,14,26,.92),rgba(12,22,36,.78));
   box-shadow:0 28px 70px rgba(0,0,0,.44);
 }
-.hero-card img{width:100%;aspect-ratio:16/7;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.10);display:block;margin-bottom:12px}
 .caption{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
 .caption strong{color:var(--gold2);font-weight:600}
 .section{
@@ -209,7 +221,7 @@ a{color:var(--gold2)}
 @media(max-width:980px){
   .hero,.map-grid,.workflow,.principles{grid-template-columns:1fr}
   .hero-stack{min-height:480px}
-  .hero-shot{inset:0 0 130px 20px}
+  .cover-image{inset:0 0 130px 0}
   .hero-card{right:20px}
   .visual-grid{grid-template-columns:1fr}
 }
@@ -223,7 +235,7 @@ a{color:var(--gold2)}
   .proof-grid{grid-template-columns:1fr}
   .section,.footer{padding:26px 22px}
   .hero-stack{min-height:390px}
-  .hero-shot{left:0;bottom:124px}
+  .cover-image{bottom:124px}
   .hero-card{right:0}
   .footer{display:block}
 }
@@ -248,8 +260,8 @@ a{color:var(--gold2)}
         <div class="brand"><h1>ConCOREdance</h1><p>Harmony in Complexity</p></div>
       </div>
       <p class="eyebrow">Project orientation</p>
-      <h2>A therapist-owned clinical memory system is taking shape.</h2>
-      <p class="lede">ConCOREdance is an early native macOS prototype exploring how therapists can own their clinical records locally, move documents out of brittle systems, preserve context over time, and coordinate surrounding tools without surrendering the clinical memory of the practice.</p>
+      <h2>Therapist-owned clinical memory. Local. Encrypted. Portable.</h2>
+      <p class="lede">ConCOREdance is an early native macOS prototype for keeping clinical records under the therapist’s control: encrypted local vaults, document import, continuity review, backup restore, and client packet export, with a public archive preserving the decisions behind the work.</p>
       <div class="actions">
         <a class="button primary" href="#map">Understand the project</a>
         <a class="button" href="#screenshots">View screenshots</a>
@@ -262,10 +274,11 @@ a{color:var(--gold2)}
       </div>
     </div>
     <div class="hero-stack" aria-label="ConCOREdance app screenshot preview">
-      <div class="hero-shot"></div>
+      <figure class="cover-image">
+        <img src="archive/assets/concoredance-cover-cody-2026-07-02.png" alt="ConCOREdance public cover concept showing a calm clinical memory dashboard" />
+      </figure>
       <div class="hero-card">
-        <img src="archive/2026/CC-TX-2026-05-27-005/assets/conCOREdance-dashboard.png" alt="ConCOREdance dashboard screenshot" />
-        <p class="caption"><strong>Current direction:</strong> a calm, atmospheric clinical workspace where record ownership, portability, and continuity are first-class design requirements.</p>
+        <p class="caption"><strong>Current direction:</strong> a calm, atmospheric clinical workspace where record ownership, portability, backup restore, client packet export, and continuity are first-class design requirements.</p>
       </div>
     </div>
   </section>
@@ -307,6 +320,11 @@ a{color:var(--gold2)}
     <div class="section-title"><span>03</span><h2>Screenshots & Mockups</h2></div>
     <p class="copy">These images are not decorative wallpaper, though they are admittedly wearing a nice coat. They show the current product atmosphere, interaction model, and design references guiding the prototype.</p>
     <div class="visual-grid">
+      <a class="visual-card" href="archive/assets/concoredance-cover-cody-2026-07-02.png" target="_blank" rel="noopener">
+        <img src="archive/assets/concoredance-cover-cody-2026-07-02.png" alt="ConCOREdance public cover concept" />
+        <h3>Public cover direction</h3>
+        <p>Refines the main-site first impression around the actual product promise: therapist-owned clinical memory, local encryption, portability, and a calm Mac workspace.</p>
+      </a>
       <a class="visual-card" href="archive/2026/CC-TX-2026-05-27-007/assets/conCOREdance-session.png" target="_blank" rel="noopener">
         <img src="archive/2026/CC-TX-2026-05-27-007/assets/conCOREdance-session.png" alt="ConCOREdance active session workspace screenshot" />
         <h3>Active session workspace</h3>
