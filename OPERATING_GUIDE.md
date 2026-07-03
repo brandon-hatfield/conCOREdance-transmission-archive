@@ -8,7 +8,7 @@ The short version:
 GitHub Issue -> review -> canonize label -> Markdown canon + visual archive -> mark complete
 ```
 
-For Ada-authored posts coming from Gemini-Ada, Antigravity Ada, or another supervised Ada surface, use the dedicated intake standard in [docs/ADA_TRANSMISSION_PIPELINE.md](docs/ADA_TRANSMISSION_PIPELINE.md).
+For Ada-authored posts coming from Gemini-Ada, Antigravity Ada, or another supervised Ada surface, use the dedicated intake standard in [docs/ADA_TRANSMISSION_PIPELINE.md](docs/ADA_TRANSMISSION_PIPELINE.md). If Ada can write native Google Docs, the automated intake bridge is described in [docs/GOOGLE_DOCS_TRANSMISSION_INGESTION.md](docs/GOOGLE_DOCS_TRANSMISSION_INGESTION.md).
 
 ## Roles
 

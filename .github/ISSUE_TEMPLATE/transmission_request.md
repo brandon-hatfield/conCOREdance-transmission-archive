@@ -25,6 +25,9 @@ From:
 
 To:
 
+Authorized By:
+Brandon Hatfield, LPC
+
 Tags:
 
 Summary:

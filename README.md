@@ -42,6 +42,10 @@ For Ada-authored transmission intake, see:
 
 [docs/ADA_TRANSMISSION_PIPELINE.md](docs/ADA_TRANSMISSION_PIPELINE.md)
 
+For Google Docs based Ada intake automation, see:
+
+[docs/GOOGLE_DOCS_TRANSMISSION_INGESTION.md](docs/GOOGLE_DOCS_TRANSMISSION_INGESTION.md)
+
 ---
 
 # Repository Structure

@@ -141,3 +141,13 @@ Then inspect the generated page locally for:
 If Ada cannot directly access the repository, Brandon may paste the structured draft into the active Cody thread. Cody then converts it into the official request file and publishes through the normal archive tooling.
 
 This is the approved fallback until Ada has a direct GitHub issue, Drive document, or repository-backed intake path.
+
+## Google Docs Automation
+
+When Ada can create native Google Docs in a shared intake folder, use the automated bridge described in:
+
+```text
+docs/GOOGLE_DOCS_TRANSMISSION_INGESTION.md
+```
+
+That path lets Ada mark a Doc as ready, lets Google Apps Script create the GitHub Issue, and then lets the existing archive workflows publish or canonize the entry.
