@@ -1,8 +1,10 @@
 #!/bin/zsh
 set -eu
 
-REPO="/Volumes/Disk 2/Local Folder/conCOREdance-transmission-archive-github"
-LOG_DIR="/Volumes/Disk 2/Local Folder/ConCOREdance/04_Sync_Reports"
+# Resolve the directory of this script
+SCRIPT_DIR="${0:A:h}"
+REPO="${SCRIPT_DIR}/.."
+LOG_DIR="${REPO}/output/reports"
 LOG_FILE="${LOG_DIR}/launchd_local_google_drive_sync.log"
 
 mkdir -p "${LOG_DIR}"

@@ -2,7 +2,7 @@
 
 Status: operational local runner
 
-This runbook describes the Disk 2 sync path used when Google Drive for desktop is mounted on this Mac.
+This runbook describes the local sync path used when Google Drive for desktop is mounted on this Mac. It is the operational local runner for the archive workspace; the broader Apps Script architecture remains a separate proof of concept.
 
 ## Current Source
 
@@ -15,14 +15,16 @@ brandon.hatfield@seekingharmony.net
 Drive source root:
 
 ```text
-/Users/neal/Library/CloudStorage/GoogleDrive-brandon.hatfield@seekingharmony.net/My Drive/ConCOREdance
+~/Library/CloudStorage/GoogleDrive-brandon.hatfield@seekingharmony.net/My Drive/ConCOREdance
 ```
 
 Repository working copy:
 
 ```text
-/Volumes/Disk 2/Local Folder/conCOREdance-transmission-archive-github
+{REPO_ROOT}
 ```
+
+`{REPO_ROOT}` resolves to the directory containing this repository checkout. If the configured Drive path is not present, the runner tries to auto-discover a mounted `GoogleDrive-*` folder under `~/Library/CloudStorage`.
 
 ## Current Allowlist
 
@@ -51,7 +53,7 @@ Preview changes:
 python3 scripts/local_google_drive_sync.py --dry-run
 ```
 
-Apply Drive additions and updates into the Disk 2 repo:
+Apply Drive additions and updates into the local repo:
 
 ```bash
 python3 scripts/local_google_drive_sync.py
@@ -74,9 +76,9 @@ scripts/run_local_google_drive_sync.sh
 The runner writes:
 
 - `data/google_drive_sync_manifest.json` in the repository
-- JSON reports under `/Volumes/Disk 2/Local Folder/ConCOREdance/04_Sync_Reports`
-- launchd logs under `/Volumes/Disk 2/Local Folder/ConCOREdance/04_Sync_Reports`
-- launchd stdout/stderr under `/Users/neal/Library/Logs`
+- JSON reports under `output/reports`
+- launchd wrapper logs under `output/reports`
+- launchd stdout/stderr under `output/reports`
 
 The manifest records source path, target path, size, modified time, and SHA-256 hash for every allowlisted Drive file. It avoids volatile run timestamps so repeated no-op sync checks do not create pointless Git changes.
 
@@ -99,8 +101,9 @@ launchd/com.concordance.google-drive-sync.plist
 Install command:
 
 ```bash
-ln -sf "/Volumes/Disk 2/Local Folder/conCOREdance-transmission-archive-github/launchd/com.concordance.google-drive-sync.plist" "$HOME/Library/LaunchAgents/com.concordance.google-drive-sync.plist"
+mkdir -p "$HOME/Library/LaunchAgents"
+ln -sf "$(pwd)/launchd/com.concordance.google-drive-sync.plist" "$HOME/Library/LaunchAgents/com.concordance.google-drive-sync.plist"
 launchctl bootstrap "gui/$(id -u)" "$HOME/Library/LaunchAgents/com.concordance.google-drive-sync.plist"
 ```
 
-On this Mac, manual sync is verified. The launchd schedule may require granting the launching shell or automation host permission to read removable volumes; without that macOS can return `Operation not permitted` when launchd tries to read the Disk 2 script. Leave the job unloaded until that privacy permission is granted.
+On this Mac, manual sync is verified. The launchd schedule may require granting the launching shell or automation host permission to read Google Drive for desktop or any removable volume that hosts the repository; without that macOS can return `Operation not permitted` when launchd tries to read the mounted files. Leave the job unloaded until that privacy permission is granted.

@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -109,14 +110,45 @@ def iter_mapping_files(source_root: Path, repo_root: Path, mapping: dict[str, st
     return records
 
 
-def collect_records(config: dict[str, Any]) -> list[FileRecord]:
-    source_root = Path(config["source_root"]).expanduser().resolve()
-    repo_root = Path(config["repo_root"]).expanduser().resolve()
-    if not source_root.exists():
-        raise FileNotFoundError(f"Drive source root not found: {source_root}")
-    if not repo_root.exists():
-        raise FileNotFoundError(f"Repository root not found: {repo_root}")
+def resolve_config_path(path_str: str, repo_root: Path) -> Path:
+    expanded = path_str.replace("{REPO_ROOT}", str(repo_root)).replace("{HOME}", str(Path.home()))
+    expanded = os.path.expandvars(expanded)
+    return Path(expanded).expanduser().resolve()
 
+
+def discover_google_drive() -> Path | None:
+    cloud_storage = Path.home() / "Library/CloudStorage"
+    if cloud_storage.exists():
+        for item in cloud_storage.iterdir():
+            if item.is_dir() and item.name.startswith("GoogleDrive-"):
+                drive_path = item / "My Drive/ConCOREdance"
+                if drive_path.exists():
+                    return drive_path
+    return None
+
+
+def resolve_sync_roots(config: dict[str, Any], default_repo_root: Path) -> tuple[Path, Path]:
+    repo_root_str = config.get("repo_root", "{REPO_ROOT}")
+    repo_root = resolve_config_path(repo_root_str, default_repo_root)
+
+    source_root_str = config.get("source_root", "")
+    source_root = resolve_config_path(source_root_str, repo_root)
+
+    if not source_root.exists():
+        discovered = discover_google_drive()
+        if discovered:
+            print(f"Configured source_root not found. Auto-discovered Google Drive at: {discovered}", file=sys.stderr)
+            source_root = discovered
+        else:
+            raise FileNotFoundError(f"Drive source root not found: {source_root_str} (resolved: {source_root})")
+
+    if not repo_root.exists():
+        raise FileNotFoundError(f"Repository root not found: {repo_root_str} (resolved: {repo_root})")
+
+    return source_root, repo_root
+
+
+def collect_records(config: dict[str, Any], source_root: Path, repo_root: Path) -> list[FileRecord]:
     records: list[FileRecord] = []
     for mapping in config["mappings"]:
         records.extend(iter_mapping_files(source_root, repo_root, mapping, config))
@@ -205,16 +237,18 @@ def main() -> int:
     invocation_root = Path.cwd().resolve()
     config_path = resolve_under(invocation_root, args.config)
     config = load_json(config_path)
-    repo_root = Path(config["repo_root"]).expanduser().resolve()
+
+    default_repo_root = Path(__file__).resolve().parent.parent
+    source_root, repo_root = resolve_sync_roots(config, default_repo_root)
 
     manifest_path = resolve_under(repo_root, config["manifest_path"])
-    records = collect_records(config)
+    records = collect_records(config, source_root, repo_root)
     previous_hashes = load_previous_hashes(manifest_path)
     buckets = classify(records, previous_hashes)
     changed = buckets["created"] + buckets["updated"]
     manifest = {
-        "source_root": config["source_root"],
-        "repo_root": config["repo_root"],
+        "source_root": str(source_root),
+        "repo_root": str(repo_root),
         "delete_missing": bool(config.get("delete_missing", False)),
         "file_count": len(records),
         "files": [record_to_manifest(record) for record in records],
@@ -223,8 +257,8 @@ def main() -> int:
     report = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "dry_run": args.dry_run,
-        "source_root": config["source_root"],
-        "repo_root": config["repo_root"],
+        "source_root": str(source_root),
+        "repo_root": str(repo_root),
         "created": [record.target_relative for record in buckets["created"]],
         "updated": [record.target_relative for record in buckets["updated"]],
         "protected": [record.target_relative for record in buckets["protected"]],
@@ -242,7 +276,7 @@ def main() -> int:
     if args.commit and not args.dry_run:
         report["commit_sha"] = maybe_commit(repo_root, config, changed_paths)
 
-    report_dir = Path(config["report_dir"]).expanduser()
+    report_dir = resolve_config_path(config["report_dir"], repo_root)
     report_name = f"google_drive_sync_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
     if not args.dry_run:
         write_json(report_dir / report_name, report)
