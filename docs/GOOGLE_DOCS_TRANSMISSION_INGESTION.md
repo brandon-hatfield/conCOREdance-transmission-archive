@@ -159,7 +159,9 @@ Manual execution should remain available for supervised publication moments.
 
 ## Duplicate Protection
 
-The script stores processed document IDs in Apps Script Properties. A ready Doc is processed once unless the stored property is manually removed.
+The script stores processed document IDs and transmission IDs in Apps Script Properties. A ready Doc is processed once unless the stored property is manually removed.
+
+Before creating a new issue, the script also searches GitHub for an existing issue containing the same `CC-TX-...` ID. If one exists, the Doc is skipped instead of creating a duplicate issue.
 
 ## Safety Rules
 
@@ -168,6 +170,7 @@ The script stores processed document IDs in Apps Script Properties. A ready Doc 
 - Keep `SEARCH_ALL_READY_DOCS=true` when Ada cannot create Docs directly inside the intake folder.
 - Require all structured fields before creating a GitHub Issue.
 - Keep the GitHub token in Apps Script Properties, never in the Doc body.
+- Give the GitHub token Issues read/write permission so duplicate detection and issue creation both work.
 - Prefer `draft_pr` mode unless Brandon explicitly authorizes direct canonization.
 - Do not use this bridge for private clinical data or PHI.
 

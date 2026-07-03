@@ -133,6 +133,31 @@ function ingestOneTransmissionDoc_(file, config) {
   const transmissionId = readField_(body, "ID");
   const transmissionTitle = readField_(body, "Title");
   const issueTitle = `Transmission Request: ${transmissionId} - ${transmissionTitle}`;
+  const idStateKey = `transmission-ingest-id:${transmissionId}`;
+
+  if (props.getProperty(idStateKey)) {
+    return { status: "skipped", reason: "transmission_id_already_processed", title, id: file.getId(), transmissionId };
+  }
+
+  const existing = findExistingGitHubIssue_(transmissionId, config);
+  if (existing) {
+    props.setProperty(idStateKey, JSON.stringify({
+      transmissionId,
+      githubIssueNumber: existing.number,
+      githubIssueUrl: existing.html_url,
+      observedAt: new Date().toISOString(),
+      source: "github_search",
+    }));
+    return {
+      status: "skipped",
+      reason: "transmission_id_exists_in_github",
+      title,
+      id: file.getId(),
+      transmissionId,
+      issueNumber: existing.number,
+      issueUrl: existing.html_url,
+    };
+  }
 
   if (config.ingestDryRun) {
     return {
@@ -159,6 +184,13 @@ function ingestOneTransmissionDoc_(file, config) {
     processedAt: new Date().toISOString(),
     mode: config.ingestMode,
   }));
+  props.setProperty(idStateKey, JSON.stringify({
+    transmissionId,
+    githubIssueNumber: issue.number,
+    githubIssueUrl: issue.html_url,
+    processedAt: new Date().toISOString(),
+    mode: config.ingestMode,
+  }));
 
   return {
     status: "created",
@@ -168,6 +200,24 @@ function ingestOneTransmissionDoc_(file, config) {
     issueUrl: issue.html_url,
     mode: config.ingestMode,
   };
+}
+
+function findExistingGitHubIssue_(transmissionId, config) {
+  const query = [
+    `repo:${config.githubOwner}/${config.githubRepo}`,
+    "is:issue",
+    encodeURIComponent(`"${transmissionId}"`),
+  ].join("+");
+  const response = UrlFetchApp.fetch(`https://api.github.com/search/issues?q=${query}`, {
+    method: "get",
+    headers: githubHeaders_(config),
+    muteHttpExceptions: true,
+  });
+  if (response.getResponseCode() >= 300) {
+    throw new Error(`GitHub issue search failed ${response.getResponseCode()}: ${response.getContentText()}`);
+  }
+  const data = JSON.parse(response.getContentText());
+  return data.items && data.items.length > 0 ? data.items[0] : null;
 }
 
 function validateTransmissionRequestText_(body, title) {
