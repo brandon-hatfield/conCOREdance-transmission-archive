@@ -569,6 +569,31 @@
       ],
       "path": "2026/CC-TX-2026-07-03-001/",
       "metadata_path": "2026/CC-TX-2026-07-03-001/metadata.json"
+    },
+    {
+      "id": "CC-TX-2026-10-02-001",
+      "title": "Recovery Baseline and BPS Reintegration",
+      "date": "2026-10-02",
+      "status": "Active Canon",
+      "type": "Recovery and Implementation Log",
+      "layer": "Native macOS Alpha / Clinical Assessment / Data Portability",
+      "from": "Cody Valle",
+      "to": "Neal and the ConCOREdance project team",
+      "authorized_by": "Neal",
+      "summary": "ConCOREdance returns to a verified recovery baseline: complete encrypted backups now include original attachments, client packets contain readable records and originals, failed saves remain recoverable, and the BPS Assessment is restored to its proper place as an embedded client-linked clinical module with encrypted autosave and resume.",
+      "tags": [
+        "recovery",
+        "BPS assessment",
+        "encrypted autosave",
+        "backup integrity",
+        "client packets",
+        "native macOS",
+        "portability",
+        "clinical records",
+        "storage discipline"
+      ],
+      "path": "2026/CC-TX-2026-10-02-001/",
+      "metadata_path": "2026/CC-TX-2026-10-02-001/metadata.json"
     }
   ]
 }

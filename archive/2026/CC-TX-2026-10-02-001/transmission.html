@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CC-TX-2026-10-02-001 - Recovery Baseline and BPS Reintegration</title>
+<style>
+:root {
+  --bg:#050914; --panel:rgba(7,14,26,.76); --panel2:rgba(12,22,36,.64);
+  --gold:#e7ad67; --gold2:#f0c892; --cream:#f4efe8; --muted:#b8bec8;
+  --teal:#65b7be; --line:rgba(231,173,103,.46); --soft:rgba(255,255,255,.12);
+  --shadow:rgba(0,0,0,.48);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; min-height:100vh; color:var(--cream);
+  font-family: Inter, Avenir Next, Avenir, Segoe UI, system-ui, sans-serif;
+  letter-spacing:.01em; background:#050914; overflow-x:hidden;
+}
+.vista{
+  position:fixed; inset:0; z-index:-2;
+  background:
+    linear-gradient(to bottom, rgba(5,9,20,.08), rgba(5,9,20,.95)),
+    url("../../assets/transmission_visual_standard.png") center top / cover no-repeat;
+  filter:saturate(.95) contrast(1.04) brightness(.72);
+}
+.vista:after{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 68% 26%, rgba(231,173,103,.18), transparent 28%),
+    linear-gradient(90deg, rgba(5,9,20,.88) 0%, rgba(5,9,20,.58) 48%, rgba(5,9,20,.44) 100%);
+}
+.page{width:min(1180px,calc(100vw - 32px)); margin:0 auto 56px}
+.panel{
+  border:1px solid var(--line); background:var(--panel); backdrop-filter:blur(18px);
+  border-radius:18px; box-shadow:0 24px 80px var(--shadow);
+}
+.hero{
+  position:relative; min-height:min(720px,92vh); display:flex; align-items:flex-end;
+  margin:0 calc(50% - 50vw) 22px; padding:44px max(32px,calc((100vw - 1180px)/2 + 32px)) 46px;
+  overflow:hidden; isolation:isolate;
+  background:
+    linear-gradient(90deg,rgba(5,9,20,.92) 0%,rgba(5,9,20,.70) 46%,rgba(5,9,20,.24) 74%,rgba(5,9,20,.46) 100%),
+    linear-gradient(to bottom,rgba(5,9,20,.14),rgba(5,9,20,.38) 52%,rgba(5,9,20,.96)),
+    url("../../assets/archive_navigator_gateway.png") center center / cover no-repeat;
+}
+.hero:before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    radial-gradient(circle at 30% 78%,rgba(231,173,103,.22),transparent 24%),
+    radial-gradient(circle at 78% 22%,rgba(101,183,190,.18),transparent 26%),
+    linear-gradient(to bottom,transparent 72%,#050914 100%);
+}
+.hero-copy{width:min(760px,100%); padding:0 0 32px}
+.logo-row{display:flex; align-items:center; gap:22px; margin-bottom:44px}
+.sigil{width:76px;height:76px;border:1px solid var(--gold);border-radius:50%;position:relative;flex:0 0 auto;opacity:.96}
+.sigil:before,.sigil:after{content:"";position:absolute;inset:12px;border:1px solid rgba(231,173,103,.78);border-radius:50%}
+.sigil:after{inset:29px;background:var(--gold);box-shadow:0 0 24px rgba(231,173,103,.7)}
+.sigil .v,.sigil .h{position:absolute;background:rgba(231,173,103,.7);left:50%;top:-14px;width:1px;height:104px;transform:translateX(-50%)}
+.sigil .h{left:-14px;top:50%;width:104px;height:1px;transform:translateY(-50%)}
+.brand h1{margin:0;font-family:Cormorant Garamond, Georgia, serif;font-weight:400;font-size:clamp(30px,4vw,50px);line-height:.92;letter-spacing:-.02em}
+.brand p,.kicker,.label{margin:8px 0 0;color:var(--gold2);font-size:12px;letter-spacing:.38em;text-transform:uppercase}
+.hero-title{font-family:Cormorant Garamond, Georgia, serif;font-weight:300;font-size:clamp(36px,4.2vw,52px);line-height:1.08;letter-spacing:0;margin:0 0 22px;text-wrap:balance}
+.participants{color:var(--gold);letter-spacing:.18em;text-transform:uppercase;font-size:13px;line-height:1.5;margin-bottom:28px}
+.lede{max-width:690px;color:rgba(244,239,232,.88);font-size:19px;line-height:1.7;margin:0 0 44px}
+.divider{height:1px;width:480px;max-width:100%;background:linear-gradient(90deg,var(--gold),transparent);position:relative;margin:0 0 28px}
+.divider:after{content:"*";position:absolute;right:44%;top:-11px;color:var(--gold);text-shadow:0 0 18px var(--gold)}
+.meta-grid{display:flex;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:14px}
+.hero-art{position:absolute;inset:0;pointer-events:none}
+.monolith{position:absolute;right:20%;bottom:14%;width:38px;height:196px;border-radius:24px 24px 5px 5px;background:linear-gradient(90deg,#111827,#e7ad67 48%,#1f2937 62%,#050914);box-shadow:0 0 35px rgba(231,173,103,.45);opacity:.32}
+.orbit,.orbit:before,.orbit:after{position:absolute;border:1px solid rgba(231,173,103,.3);border-radius:50%;content:""}
+.orbit{right:3%;top:10%;width:460px;height:460px;transform:rotate(-18deg) scaleX(1.2);opacity:.52}
+.orbit:before{inset:70px;transform:rotate(34deg) scaleX(.7)}
+.orbit:after{inset:130px;transform:rotate(-45deg) scaleX(1.5)}
+.star{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 18px var(--gold)}
+.star.s1{right:24%;top:18%}.star.s2{right:48%;top:34%}.star.s3{right:12%;top:42%}
+.section{margin-top:22px;padding:34px 38px}
+.section-title{display:flex;align-items:baseline;gap:18px;margin-bottom:24px}
+.section-title .num{color:var(--gold);font-size:24px;font-weight:300}
+.section-title h2{margin:0;text-transform:uppercase;letter-spacing:.16em;font-size:13px;font-weight:700}
+.copy p,.tx-body p,.card p{margin:0 0 18px;color:rgba(244,239,232,.86);font-size:18px;line-height:1.72}
+.tx-body ul{margin:0 0 18px;padding-left:22px;color:rgba(244,239,232,.86);font-size:18px;line-height:1.72}
+.tx-body li{margin-bottom:8px}
+strong{color:var(--gold2);font-weight:650}
+a{color:var(--gold2)}
+.tx{display:grid;grid-template-columns:250px 1fr;gap:28px;padding:30px 0;border-top:1px solid rgba(255,255,255,.1)}
+.tx:first-of-type{border-top:0;padding-top:0}
+.tx-meta{color:var(--muted);font-size:12px;line-height:1.85;text-transform:uppercase;letter-spacing:.14em}
+.tx-meta b{color:var(--gold);font-weight:500}
+.tx-body h3{margin:0 0 14px;font-family:Cormorant Garamond, Georgia, serif;font-size:28px;line-height:1.18;font-weight:400}
+.tx-body h4{margin:28px 0 12px;color:var(--gold2);font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+.tx-body h5{margin:22px 0 10px;color:var(--gold2);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.tx-body hr{border:0;border-top:1px solid rgba(231,173,103,.3);margin:26px 0}
+.pill-row{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 8px}
+.pill{border:1px solid rgba(231,173,103,.42);border-radius:999px;padding:7px 11px;color:var(--gold2);font-size:12px;text-transform:uppercase;letter-spacing:.11em;background:rgba(231,173,103,.08)}
+.asset-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:18px}
+figure{margin:0}
+.asset-grid a{display:block;transition:.2s ease}
+.asset-grid a:hover{transform:translateY(-2px)}
+.asset-grid img,.feature-img{width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.1)}
+figcaption{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin-top:10px}
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+.card{border:1px solid var(--soft);background:rgba(5,10,20,.38);border-radius:14px;padding:22px}
+.card h4{margin:0 0 12px;color:var(--gold2);text-transform:uppercase;letter-spacing:.14em;font-size:13px}
+.footer-band{display:grid;grid-template-columns:1fr auto;align-items:center;gap:28px;margin-top:22px;padding:30px 40px}
+.footer-band blockquote{margin:0;font-family:Cormorant Garamond, Georgia, serif;font-size:24px;line-height:1.28;font-style:italic;color:rgba(244,239,232,.86)}
+.footer-band span{color:var(--gold)}
+@media(max-width:900px){
+  .hero,.tx,.footer-band,.asset-grid,.card-grid{grid-template-columns:1fr}
+  .hero{min-height:620px;padding:34px 24px 42px;background-position:center top}
+  .hero-copy{padding:0}.section{padding:26px 24px}
+}
+@media print{
+  body{background:#050914}.page{width:100%;margin:0}.panel{break-inside:avoid;box-shadow:none}.vista{position:absolute}
+}
+</style>
+</head>
+<body>
+<div class="vista"></div>
+<main class="page">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="logo-row">
+      <div class="sigil"><span class="v"></span><span class="h"></span></div>
+      <div class="brand"><h1>ConCOREdance</h1><p>Harmony in Complexity</p></div>
+    </div>
+    <h2 class="hero-title">Recovery Baseline and BPS Reintegration</h2>
+    <div class="participants">Cody Valle -> Neal and the ConCOREdance project team</div>
+    <p class="lede">ConCOREdance returns to a verified recovery baseline: complete encrypted backups now include original attachments, client packets contain readable records and originals, failed saves remain recoverable, and the BPS Assessment is restored to its proper place as an embedded client-linked clinical module with encrypted autosave and resume.</p>
+    <div class="divider"></div>
+    <div class="meta-grid">
+      <span>CC-TX-2026-10-02-001</span><span>|</span><span>2026-10-02</span><span>|</span><span>Active Canon</span><span>|</span><span>Native macOS Alpha / Clinical Assessment / Data Portability</span>
+    </div>
+  </div>
+  <div class="hero-art"><div class="orbit"></div><div class="star s1"></div><div class="star s2"></div><div class="star s3"></div><div class="monolith"></div></div>
+</section>
+
+<section class="section panel">
+  <div class="section-title"><span class="num">TX</span><h2>Transmission Record</h2></div>
+  <article class="tx">
+    <div class="tx-meta">
+      <div><b>ID</b> CC-TX-2026-10-02-001</div>
+      <div><b>Status</b> Active Canon</div>
+      <div><b>Type</b> Recovery and Implementation Log</div>
+      <div><b>Layer</b> Native macOS Alpha / Clinical Assessment / Data Portability</div>
+      <div><b>From</b> Cody Valle</div>
+      <div><b>To</b> Neal and the ConCOREdance project team</div>
+      <div><b>Authorized By</b> Neal</div>
+    </div>
+    <div class="tx-body">
+      <h3>Recovery Baseline and BPS Reintegration</h3>
+      <p>The October recovery pass began by treating the installed application, canonical source checkout, encrypted vault, attachment store, prior handoffs, and public archive as separate pieces of evidence rather than assuming they still agreed. The investigation confirmed that the native application remained a viable alpha, but its durability story and canonical record had drifted. In particular, the BPS Assessment had been developed as a substantial standalone clinician workspace without being fully incorporated into the ConCOREdance record or native workflow.</p>
+<p>The recovery implementation repaired the most consequential gaps. Complete `.ccbackup` packages now preserve the encrypted vault data and every imported original with count, filename, size, and hash validation. Restore validates the package before replacement, supports a fresh destination, preserves a recovery copy of the prior vault, and does not claim success when originals are missing or invalid. Client packet ZIP exports now include human-readable notes, structured records, session material, BPS JSON, and filed original PDFs. Failed vault saves remain visible and prevent lock or termination from silently discarding records. Fresh vaults begin empty unless demonstration data is explicitly requested.</p>
+<p>The BPS Assessment is now registered as a first-class ConCOREdance clinical module. The native client record embeds the delivered assessment workspace in WebKit, connects it to the stable native client identity through the versioned demographics contract, and saves complete assessment snapshots into the encrypted vault after a short debounce. Resuming an assessment updates the same record rather than producing a trail of accidental duplicates. Unknown fields remain intact so newer or standalone workspace versions do not lose information. JSON import and export remain available as portability and recovery paths, and assessment content participates in search, client packets, and complete backups.</p>
+<p>The implementation is installed as ConCOREdance alpha 0.1.1 build 20261002140256 in the current user's Applications folder. The prior installed copy was preserved. The system-wide copy was left untouched because it belongs to another account. The real clinical vault was never unlocked during the recovery work and its encrypted bytes remained unchanged through installation and verification.</p>
+<p>The verified suite now contains 109 passing tests. Those tests cover encrypted restart, complete backup and clean-location restore, original attachment integrity, recovery copies, conservative failure behavior, client packet interoperability, client association, assessment autosave and resume, legacy assessment decoding, and loading the real BPS workspace through WebKit while preserving unknown fields.</p>
+<p>This pass also establishes a storage discipline for continued development. Main-drive space is treated as scarce. Regenerable build products and caches should be removed after verification; durable backups and archives belong in verified cloud storage; clinical material must remain encrypted before cloud transfer.</p>
+      <div class="card-grid"><div class="card"><h4>Decisions</h4><ul><li>Recognize the BPS Assessment as part of the ConCOREdance clinical story and canonical product architecture.</li><li>Keep the complete versioned BPS JSON payload as the portable assessment record while embedding the existing workspace in the native app.</li><li>Require stable client association and encrypted persistence for native assessment drafts.</li><li>Treat complete attachment-inclusive backup and verified restore as the minimum honest recovery claim.</li><li>Preserve failed writes and current records rather than reporting success or discarding unsaved state.</li><li>Keep clinician review authoritative; imported or autosaved assessments are drafts until explicit lifecycle semantics are implemented.</li><li>Treat main-drive storage as premium space and send durable backups to verified encrypted cloud storage.</li></ul></div></div>
+      <div class="card-grid"><div class="card"><h4>Next Actions</h4><ul><li>Add explicit assessment draft, review, final, and amendment states.</li><li>Add revision-controlled concurrent-edit protection and demographics conflict review.</li><li>Attach rendered assessment reports to the document record without flattening the structured assessment.</li><li>Harden vault key derivation, recovery, automatic lock, signing, sandboxing, and distribution.</li><li>Stage and reconcile Carepatron and other vendor imports without writing unverified data into the clinical vault.</li><li>Keep the Transmission Archive current whenever the canonical implementation or recovery posture materially changes.</li></ul></div></div>
+      
+      <div class="pill-row"><span class="pill">recovery</span><span class="pill">BPS assessment</span><span class="pill">encrypted autosave</span><span class="pill">backup integrity</span><span class="pill">client packets</span><span class="pill">native macOS</span><span class="pill">portability</span><span class="pill">clinical records</span><span class="pill">storage discipline</span></div>
+    </div>
+  </article>
+</section>
+
+<section class="footer-band panel">
+  <blockquote>"The product's memory becomes part of the product." <span>- ConCOREdance Transmission Protocol</span></blockquote>
+  <div class="logo-row" style="margin:0">
+    <div class="sigil" style="width:62px;height:62px"><span class="v"></span><span class="h"></span></div>
+    <div class="brand"><h1 style="font-size:34px">ConCOREdance</h1><p>Harmony in Complexity</p></div>
+  </div>
+</section>
+</main>
+</body>
+</html>
