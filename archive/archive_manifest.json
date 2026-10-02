@@ -578,8 +578,8 @@
       "type": "Recovery and Implementation Log",
       "layer": "Native macOS Alpha / Clinical Assessment / Data Portability",
       "from": "Cody Valle",
-      "to": "Neal and the ConCOREdance project team",
-      "authorized_by": "Neal",
+      "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+      "authorized_by": "Brandon Hatfield, LPC",
       "summary": "ConCOREdance returns to a verified recovery baseline: complete encrypted backups now include original attachments, client packets contain readable records and originals, failed saves remain recoverable, and the BPS Assessment is restored to its proper place as an embedded client-linked clinical module with encrypted autosave and resume.",
       "tags": [
         "recovery",
