@@ -594,6 +594,30 @@
       ],
       "path": "2026/CC-TX-2026-10-02-001/",
       "metadata_path": "2026/CC-TX-2026-10-02-001/metadata.json"
+    },
+    {
+      "id": "CC-TX-2026-10-03-001",
+      "title": "Verified Recovery Checkpoint and Assessment Report Continuity",
+      "date": "2026-10-03",
+      "status": "Active Canon",
+      "type": "Implementation and Verification Log",
+      "layer": "Native macOS Alpha / Clinical Assessment / Recovery Continuity",
+      "from": "Cody Valle",
+      "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+      "authorized_by": "Brandon Hatfield, LPC",
+      "summary": "ConCOREdance establishes a verified recovery checkpoint with 116 passing tests, append-only assessment review notes, clinician-confirmed report links, restart-tested native PDF preview, and a private cloud source checkpoint.",
+      "tags": [
+        "recovery checkpoint",
+        "BPS assessment",
+        "review notes",
+        "report linking",
+        "amendment history",
+        "encrypted originals",
+        "UI verification",
+        "storage discipline"
+      ],
+      "path": "2026/CC-TX-2026-10-03-001/",
+      "metadata_path": "2026/CC-TX-2026-10-03-001/metadata.json"
     }
   ]
 }
