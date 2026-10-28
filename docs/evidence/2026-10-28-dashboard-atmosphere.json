@@ -1,0 +1,19 @@
+{
+  "source_commit": "06e19eb3830c879fa49fa17abf1c6d87deede2f8",
+  "source_branch": "beta/clinical-preview-2026-10-28",
+  "fresh_checks": [
+    "native build and ad hoc bundle verification",
+    "synthetic vault unlock",
+    "midday dashboard rendering"
+  ],
+  "not_rerun": [
+    "full XCTest suite"
+  ],
+  "not_verified": [
+    "night-mode rendering",
+    "full accessibility acceptance"
+  ],
+  "clinical_data_used": false,
+  "background_opacity": 0.18,
+  "build_log_sha256": "f3c42b3e12692af416621f17d7f161567348a739d8686b403a75d6d8bae9faf9"
+}

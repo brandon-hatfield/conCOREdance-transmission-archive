@@ -2,9 +2,13 @@
 
 Reconciled October 28, 2026. This file is the current-state entry point into the transmission archive. Historical transmissions preserve what was known at their dates; later corrections take precedence where explicitly stated. A statement is authoritative only within its stated evidence and verification limits.
 
+## Latest visual refinement — October 28
+
+Latest source: private branch `beta/clinical-preview-2026-10-28`, commit `06e19eb3830c879fa49fa17abf1c6d87deede2f8`. The dashboard now has a stationary 18 percent landscape layer behind opaque clinical panels. Native build/bundle checks and synthetic midday rendering passed. [Dashboard refinement](archive/2026/CC-TX-2026-10-28-004/). The clinical beta gates below remain open.
+
 ## Current beta development — October 28
 
-Latest preserved source: private branch `beta/clinical-preview-2026-10-28`, commit `d1cae768c3c4f2a46fd22f36e85af737fa9aebf8`, packaged development build `20261028173535`. Vault and dashboard visual changes are implemented; native build/signature checks and synthetic unlock passed. Full workflow, night-mode and accessibility visual acceptance remain open. [Visual and beta milestone](archive/2026/CC-TX-2026-10-28-003/).
+Preceding visual milestone source: private branch `beta/clinical-preview-2026-10-28`, commit `d1cae768c3c4f2a46fd22f36e85af737fa9aebf8`, packaged development build `20261028173535`. Vault and dashboard visual changes are implemented; native build/signature checks and synthetic unlock passed. Full workflow, night-mode and accessibility visual acceptance remain open. [Visual and beta milestone](archive/2026/CC-TX-2026-10-28-003/).
 
 The intended private beta uses real clinical records. **The current app remains a synthetic-data development preview.** The completed static security review of the preceding reconstructed baseline recorded two medium findings, still open. Reviewed key derivation/recovery, restore/failure/sleep checks, clinical workflow, migration and trusted distribution remain release gates. Security details are private. No real clinical vault was opened in this work.
 
@@ -44,6 +48,8 @@ See [reconstruction and verification](archive/2026/CC-TX-2026-10-28-002/) and [v
 The October 3 report-continuity entry already existed in GitHub main and the live site. An earlier web retrieval and a separate June SSD checkout were stale. October 3 privacy/Print follow-through and October 14–15 milestones were absent from the archive and are now recorded retrospectively. The reason the original handoff was omitted is unestablished. Historical test logs are not represented as fresh validation. See the [artifact fingerprints and test inventory](docs/evidence/2026-10-28-ssd-audit.json).
 
 ## Transmission index
+
+- [CC-TX-2026-10-28-004 — Faint Landscape Layer Behind Dashboard Panels](archive/2026/CC-TX-2026-10-28-004/)
 
 - [CC-TX-2026-10-28-003 — Private Clinical Beta Target and First Visual Implementation](archive/2026/CC-TX-2026-10-28-003/)
 

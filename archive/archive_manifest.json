@@ -741,6 +741,25 @@
       ],
       "path": "2026/CC-TX-2026-10-28-003/",
       "metadata_path": "2026/CC-TX-2026-10-28-003/metadata.json"
+    },
+    {
+      "id": "CC-TX-2026-10-28-004",
+      "title": "Faint Landscape Layer Behind Dashboard Panels",
+      "date": "2026-10-28",
+      "status": "Active Canon",
+      "type": "Visual Implementation Log",
+      "layer": "Native macOS / Dashboard",
+      "from": "Cody Valle",
+      "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+      "authorized_by": "Brandon Hatfield, LPC",
+      "summary": "A faint stationary landscape now sits behind dashboard panels, with opaque work surfaces preserving readability.",
+      "tags": [
+        "dashboard",
+        "atmosphere",
+        "visual refinement"
+      ],
+      "path": "2026/CC-TX-2026-10-28-004/",
+      "metadata_path": "2026/CC-TX-2026-10-28-004/metadata.json"
     }
   ]
 }
