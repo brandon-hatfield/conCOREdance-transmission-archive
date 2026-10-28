@@ -1,0 +1,21 @@
+{
+  "id": "CC-TX-2026-10-28-003",
+  "title": "Private Clinical Beta Target and First Visual Implementation",
+  "date": "2026-10-28",
+  "status": "Active Canon",
+  "type": "Implementation and Beta Readiness Log",
+  "layer": "Native macOS / Visual Design / Clinical Beta Gates",
+  "from": "Cody Valle",
+  "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+  "authorized_by": "Brandon Hatfield, LPC",
+  "summary": "Vault and dashboard visual changes are implemented and preserved. The intended beta uses real clinical records, but security, recovery and workflow gates remain open.",
+  "tags": [
+    "private beta",
+    "visual implementation",
+    "vault",
+    "dashboard",
+    "verification limits"
+  ],
+  "path": "2026/CC-TX-2026-10-28-003/",
+  "metadata_path": "2026/CC-TX-2026-10-28-003/metadata.json"
+}

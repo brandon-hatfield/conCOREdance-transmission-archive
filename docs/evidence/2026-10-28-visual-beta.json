@@ -1,0 +1,30 @@
+{
+  "source_commit": "d1cae768c3c4f2a46fd22f36e85af737fa9aebf8",
+  "source_branch": "beta/clinical-preview-2026-10-28",
+  "app_build": "20261028173535",
+  "fresh_checks": [
+    "native build",
+    "ad hoc signature verification",
+    "synthetic vault unlock",
+    "vault and midday dashboard native rendering"
+  ],
+  "not_rerun": [
+    "full XCTest suite after visual changes"
+  ],
+  "pending": [
+    "security findings remediation",
+    "reviewed key derivation and recovery",
+    "restore and failure exercises",
+    "actual sleep",
+    "remaining clinical workflow and visual acceptance",
+    "trusted distribution"
+  ],
+  "clinical_data_used": false,
+  "security_review": {
+    "baseline": "f9707fb570a37fdd9d38f040f6ae8045569cd7a2",
+    "scope": "static source review",
+    "open_medium_findings": 2,
+    "details": "private"
+  },
+  "build_log_sha256": "aff4d6adec58383814afa6e4e9975e1e95adfaf29bcd3546890841cde4077288"
+}
