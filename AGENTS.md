@@ -1,0 +1,3 @@
+# Transmission archive working rules
+
+Read CANON.md and OPERATING_GUIDE.md before status reviews or edits. Fetch the current archive branch before editing, preserve unrelated work, and verify the live site after publishing. Every implementation milestone must have an evidence-backed transmission and a current-state update before being reported as closed. Explicitly distinguish historical tests, fresh tests, partial source and complete source commits. Corrections must preserve historical entries and identify the superseded claim. Never include clinical records or credentials. Follow the current user authorization for publication.

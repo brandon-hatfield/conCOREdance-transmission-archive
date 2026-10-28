@@ -1,0 +1,20 @@
+{
+  "id": "CC-TX-2026-10-14-001",
+  "title": "Clinical Note Finalization and Linked Amendment Evidence",
+  "date": "2026-10-14",
+  "status": "Active Canon",
+  "type": "Retrospective Implementation Record",
+  "layer": "Native macOS Alpha / Project Continuity",
+  "from": "Cody Valle",
+  "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+  "authorized_by": "Brandon Hatfield, LPC",
+  "summary": "Retained Swift source and an October 14 log support clinical note finalization, linked amendments and save-failure rollback; the historical suite reached 126 passing tests.",
+  "tags": [
+    "evidence",
+    "archive continuity",
+    "retrospective verification",
+    "source preservation"
+  ],
+  "path": "2026/CC-TX-2026-10-14-001/",
+  "metadata_path": "2026/CC-TX-2026-10-14-001/metadata.json"
+}

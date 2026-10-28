@@ -179,3 +179,17 @@ Common causes:
 - The issue already has `canonized`, `needs-revision`, or `do-not-canonize`.
 
 Fix the issue body or labels, then apply the approval label again.
+
+## Authoritative status and milestone closure — October 28, 2026
+
+Begin status reviews with [CANON.md](CANON.md) and the latest transmissions. Verify GitHub HEAD and the live site; an old checkout or cached web view is not evidence that an entry is absent. Source and tests substantiate archive claims; discrepancies require an explicit correction.
+
+A milestone is complete only after its archive handoff is complete:
+
+1. Identify the exact source commit/tree, or explicitly state that only partial source is preserved.
+2. Record implemented behavior separately from proposals, historical test results and fresh verification. Include limits and remaining work.
+3. Preserve the structured request and matching Markdown, HTML, metadata and manifest entry. Date retrospective entries explicitly; do not imply contemporaneous publication.
+4. Publish within the user's authorization, verify the deployment and read back the live entry, manifest and current-state index. A failed or pending deployment remains an open handoff.
+5. Update CANON.md to reflect the new evidence. Preserve earlier entries; corrections must name the superseded claim.
+
+Do not publish clinical records, credentials or decrypted vault content. Public evidence inventories may identify source/test artifact hashes and verification scope. A passing historical log does not establish a fresh test run or a complete reproducible source checkout.

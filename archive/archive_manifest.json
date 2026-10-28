@@ -618,6 +618,86 @@
       ],
       "path": "2026/CC-TX-2026-10-03-001/",
       "metadata_path": "2026/CC-TX-2026-10-03-001/metadata.json"
+    },
+    {
+      "id": "CC-TX-2026-10-03-002",
+      "title": "Automatic Privacy Protection and Native Print Delivery",
+      "date": "2026-10-03",
+      "status": "Active Canon",
+      "type": "Retrospective Implementation Record",
+      "layer": "Native macOS Alpha / Project Continuity",
+      "from": "Cody Valle",
+      "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+      "authorized_by": "Brandon Hatfield, LPC",
+      "summary": "October 3 privacy protection and native Print delivery are supported by the retained source checkpoint and 120-test historical verification.",
+      "tags": [
+        "evidence",
+        "archive continuity",
+        "retrospective verification",
+        "source preservation"
+      ],
+      "path": "2026/CC-TX-2026-10-03-002/",
+      "metadata_path": "2026/CC-TX-2026-10-03-002/metadata.json"
+    },
+    {
+      "id": "CC-TX-2026-10-14-001",
+      "title": "Clinical Note Finalization and Linked Amendment Evidence",
+      "date": "2026-10-14",
+      "status": "Active Canon",
+      "type": "Retrospective Implementation Record",
+      "layer": "Native macOS Alpha / Project Continuity",
+      "from": "Cody Valle",
+      "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+      "authorized_by": "Brandon Hatfield, LPC",
+      "summary": "Retained Swift source and an October 14 log support clinical note finalization, linked amendments and save-failure rollback; the historical suite reached 126 passing tests.",
+      "tags": [
+        "evidence",
+        "archive continuity",
+        "retrospective verification",
+        "source preservation"
+      ],
+      "path": "2026/CC-TX-2026-10-14-001/",
+      "metadata_path": "2026/CC-TX-2026-10-14-001/metadata.json"
+    },
+    {
+      "id": "CC-TX-2026-10-15-001",
+      "title": "Structured Note Templates and Responsive Unlock Verification",
+      "date": "2026-10-15",
+      "status": "Active Canon",
+      "type": "Retrospective Implementation Record",
+      "layer": "Native macOS Alpha / Project Continuity",
+      "from": "Cody Valle",
+      "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+      "authorized_by": "Brandon Hatfield, LPC",
+      "summary": "October 15 logs record 130 passing tests after template work and 136 after unlock work; retained source snapshots and an app bundle corroborate further development beyond the cloud checkpoint.",
+      "tags": [
+        "evidence",
+        "archive continuity",
+        "retrospective verification",
+        "source preservation"
+      ],
+      "path": "2026/CC-TX-2026-10-15-001/",
+      "metadata_path": "2026/CC-TX-2026-10-15-001/metadata.json"
+    },
+    {
+      "id": "CC-TX-2026-10-28-001",
+      "title": "Archive Reconciliation and Authoritative Status Contract",
+      "date": "2026-10-28",
+      "status": "Active Canon",
+      "type": "Reconciliation and Operating Decision",
+      "layer": "Native macOS Alpha / Project Continuity",
+      "from": "Cody Valle",
+      "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+      "authorized_by": "Brandon Hatfield, LPC",
+      "summary": "The transmission archive is the authoritative project history. This audit reconciles October 3\u201315 evidence, corrects stale-view conclusions and explicitly identifies source-preservation and verification gaps.",
+      "tags": [
+        "evidence",
+        "archive continuity",
+        "retrospective verification",
+        "source preservation"
+      ],
+      "path": "2026/CC-TX-2026-10-28-001/",
+      "metadata_path": "2026/CC-TX-2026-10-28-001/metadata.json"
     }
   ]
 }

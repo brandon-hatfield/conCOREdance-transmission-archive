@@ -60,3 +60,7 @@ archive/
     ├── CC-TX-2026-05-24-002/
     ├── CC-TX-2026-05-24-003/
     └── CC-TX-2026-05-26-001/
+
+## Authoritative project status
+
+Start with [CANON.md](CANON.md) for current implementation, evidence limits, preserved source and outstanding work. See the October 28 reconciliation transmission for the archive gap audit.

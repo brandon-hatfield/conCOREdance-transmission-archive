@@ -1,0 +1,20 @@
+{
+  "id": "CC-TX-2026-10-15-001",
+  "title": "Structured Note Templates and Responsive Unlock Verification",
+  "date": "2026-10-15",
+  "status": "Active Canon",
+  "type": "Retrospective Implementation Record",
+  "layer": "Native macOS Alpha / Project Continuity",
+  "from": "Cody Valle",
+  "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+  "authorized_by": "Brandon Hatfield, LPC",
+  "summary": "October 15 logs record 130 passing tests after template work and 136 after unlock work; retained source snapshots and an app bundle corroborate further development beyond the cloud checkpoint.",
+  "tags": [
+    "evidence",
+    "archive continuity",
+    "retrospective verification",
+    "source preservation"
+  ],
+  "path": "2026/CC-TX-2026-10-15-001/",
+  "metadata_path": "2026/CC-TX-2026-10-15-001/metadata.json"
+}
