@@ -1,0 +1,20 @@
+{
+  "id": "CC-TX-2026-10-28-005",
+  "title": "Apple Passwords Access from the Vault Entrance",
+  "date": "2026-10-28",
+  "status": "Active Canon",
+  "type": "Implementation and Authentication Design Log",
+  "layer": "Native macOS / Vault Entrance",
+  "from": "Cody Valle",
+  "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+  "authorized_by": "Brandon Hatfield, LPC",
+  "summary": "An explicit vault-screen button opens Apple Passwords. Biometric and passkey decryption remain proposed work, with no credential enrollment performed.",
+  "tags": [
+    "vault",
+    "Apple Passwords",
+    "Touch ID proposal",
+    "verification limits"
+  ],
+  "path": "2026/CC-TX-2026-10-28-005/",
+  "metadata_path": "2026/CC-TX-2026-10-28-005/metadata.json"
+}

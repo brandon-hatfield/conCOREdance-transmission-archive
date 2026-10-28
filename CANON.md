@@ -2,9 +2,13 @@
 
 Reconciled October 28, 2026. This file is the current-state entry point into the transmission archive. Historical transmissions preserve what was known at their dates; later corrections take precedence where explicitly stated. A statement is authoritative only within its stated evidence and verification limits.
 
-## Latest visual refinement — October 28
+## Latest vault convenience — October 28
 
-Latest source: private branch `beta/clinical-preview-2026-10-28`, commit `06e19eb3830c879fa49fa17abf1c6d87deede2f8`. The dashboard now has a stationary 18 percent landscape layer behind opaque clinical panels. Native build/bundle checks and synthetic midday rendering passed. [Dashboard refinement](archive/2026/CC-TX-2026-10-28-004/). The clinical beta gates below remain open.
+Latest source: private branch `beta/clinical-preview-2026-10-28`, commit `f90fe379e14d84c900408afb6c6edb606bb82ce4`. An explicit **Open Passwords** button opens Apple Passwords from the vault entrance. Native build/bundle checks and synthetic entrance/launcher checks passed. This does not implement autofill, Touch ID key access or passkey unlock; no credentials were enrolled. [Vault convenience milestone](archive/2026/CC-TX-2026-10-28-005/). Existing clinical-beta gates remain open.
+
+## Dashboard visual refinement — October 28
+
+Dashboard refinement source: private branch `beta/clinical-preview-2026-10-28`, commit `06e19eb3830c879fa49fa17abf1c6d87deede2f8`. The dashboard now has a stationary 18 percent landscape layer behind opaque clinical panels. Native build/bundle checks and synthetic midday rendering passed. [Dashboard refinement](archive/2026/CC-TX-2026-10-28-004/). The clinical beta gates below remain open.
 
 ## Current beta development — October 28
 
@@ -48,6 +52,8 @@ See [reconstruction and verification](archive/2026/CC-TX-2026-10-28-002/) and [v
 The October 3 report-continuity entry already existed in GitHub main and the live site. An earlier web retrieval and a separate June SSD checkout were stale. October 3 privacy/Print follow-through and October 14–15 milestones were absent from the archive and are now recorded retrospectively. The reason the original handoff was omitted is unestablished. Historical test logs are not represented as fresh validation. See the [artifact fingerprints and test inventory](docs/evidence/2026-10-28-ssd-audit.json).
 
 ## Transmission index
+
+- [CC-TX-2026-10-28-005 — Apple Passwords Access from the Vault Entrance](archive/2026/CC-TX-2026-10-28-005/)
 
 - [CC-TX-2026-10-28-004 — Faint Landscape Layer Behind Dashboard Panels](archive/2026/CC-TX-2026-10-28-004/)
 
