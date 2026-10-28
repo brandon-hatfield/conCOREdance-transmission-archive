@@ -552,7 +552,7 @@ body{{
     <div class="participants">Master Entry Point</div>
     <p class="lede">The living index for the ConCOREdance Transmission Archive: a chronological map of project evolution, visual doctrine, implementation history, and interdisciplinary continuity.</p>
     <div class="divider"></div>
-    <div class="meta-grid"><span>Manifest v1.0</span><span>|</span><span>{count} {plural}</span><span>|</span><span>Active Canon</span><span>|</span><a href="team/">Project Team</a><span>|</span><a href="product/">Product Teaser</a><span>|</span><a href="assets/">Asset Library</a><span>|</span><a href="doctrine/">Doctrine</a></div>
+    <div class="meta-grid"><span>Manifest v1.0</span><span>|</span><span>{count} {plural}</span><span>|</span><span>Active Canon</span><span>|</span><a href="../CANON.md">Current State</a><span>|</span><a href="team/">Project Team</a><span>|</span><a href="product/">Product Teaser</a><span>|</span><a href="assets/">Asset Library</a><span>|</span><a href="doctrine/">Doctrine</a></div>
   </div>
   <div class="hero-art"></div>
 </section>

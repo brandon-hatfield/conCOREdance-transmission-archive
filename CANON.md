@@ -2,6 +2,12 @@
 
 Reconciled October 28, 2026. This file is the current-state entry point into the transmission archive. Historical transmissions preserve what was known at their dates; later corrections take precedence where explicitly stated. A statement is authoritative only within its stated evidence and verification limits.
 
+## Latest development baseline — October 28
+
+A complete **reconstructed** source baseline is now preserved on private branch `recovery/reconstructed-alpha-2026-10-28`, commit `f9707fb570a37fdd9d38f040f6ae8045569cd7a2`. It builds on this Mac. A fresh full suite passed 136 tests; 16 focused tests passed after a UI-found save-banner correction. This supersedes the earlier current-state gap for having a usable complete later-feature source baseline. The exact original October 15 source remains unlocated.
+
+See [reconstruction and verification](archive/2026/CC-TX-2026-10-28-002/) and [verification inventory](docs/evidence/2026-10-28-reconstruction.json). The original historical table below remains evidence about the October artifacts, not the verification status of the new reconstruction.
+
 ## Current implementation and evidence
 
 | Area | Supported state | Verification boundary |
@@ -21,7 +27,7 @@ Reconciled October 28, 2026. This file is the current-state entry point into the
 
 ## Outstanding work
 
-1. Recover the complete October 15 source and preserve an identifiable commit; rerun build/tests and validate the rendered workflows with synthetic data.
+1. Complete the corrected template-dialog replace/save, long-note rendering and native finalization checks on the October 28 reconstruction. Exact original October 15 source recovery remains separate; the complete new reconstruction is preserved and freshly tested.
 2. Review key derivation, recovery design and security/failure behavior independently.
 3. Validate actual device sleep, large backups and migration scale.
 4. Complete automatic assessment-report rendering, demographics conflict handling and vendor/Carepatron migration.
@@ -32,6 +38,8 @@ Reconciled October 28, 2026. This file is the current-state entry point into the
 The October 3 report-continuity entry already existed in GitHub main and the live site. An earlier web retrieval and a separate June SSD checkout were stale. October 3 privacy/Print follow-through and October 14–15 milestones were absent from the archive and are now recorded retrospectively. The reason the original handoff was omitted is unestablished. Historical test logs are not represented as fresh validation. See the [artifact fingerprints and test inventory](docs/evidence/2026-10-28-ssd-audit.json).
 
 ## Transmission index
+
+- [CC-TX-2026-10-28-002 — Reconstructed Alpha Source and Fresh Verification Baseline](archive/2026/CC-TX-2026-10-28-002/)
 
 - [CC-TX-2026-10-28-001 — Archive Reconciliation and Authoritative Status Contract](archive/2026/CC-TX-2026-10-28-001/)
 - [CC-TX-2026-10-15-001 — Structured Note Templates and Responsive Unlock Verification](archive/2026/CC-TX-2026-10-15-001/)

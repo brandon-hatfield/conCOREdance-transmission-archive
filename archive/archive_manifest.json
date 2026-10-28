@@ -698,6 +698,28 @@
       ],
       "path": "2026/CC-TX-2026-10-28-001/",
       "metadata_path": "2026/CC-TX-2026-10-28-001/metadata.json"
+    },
+    {
+      "id": "CC-TX-2026-10-28-002",
+      "title": "Reconstructed Alpha Source and Fresh Verification Baseline",
+      "date": "2026-10-28",
+      "status": "Active Canon",
+      "type": "Implementation and Verification Log",
+      "layer": "Source Reconstruction / Native macOS Alpha",
+      "from": "Cody Valle",
+      "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+      "authorized_by": "Brandon Hatfield, LPC",
+      "summary": "A complete reconstructed alpha source now builds on this Mac and is preserved on a private GitHub branch. Fresh verification passed 136 tests, followed by 16 focused tests after a UI-found correction; remaining UI checks are explicit.",
+      "tags": [
+        "source reconstruction",
+        "fresh verification",
+        "note lifecycle",
+        "templates",
+        "responsive unlock",
+        "synthetic UI"
+      ],
+      "path": "2026/CC-TX-2026-10-28-002/",
+      "metadata_path": "2026/CC-TX-2026-10-28-002/metadata.json"
     }
   ]
 }

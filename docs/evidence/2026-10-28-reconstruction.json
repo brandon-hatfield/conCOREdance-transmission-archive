@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-28",
+  "source_commit": "f9707fb570a37fdd9d38f040f6ae8045569cd7a2",
+  "source_tree": "5f7731d68fa0291f6ca2bc9d05c3a9054b126b0d",
+  "source_branch": "recovery/reconstructed-alpha-2026-10-28",
+  "full_suite": {
+    "tests": 136,
+    "failures": 0,
+    "scope": "Before the save-banner UI correction"
+  },
+  "focused_suite": {
+    "tests": 16,
+    "failures": 0,
+    "scope": "After correction; includes deferred-audit banner regression assertion"
+  },
+  "synthetic_fixture_test": {
+    "tests": 1,
+    "failures": 0
+  },
+  "ui_verified": [
+    "Synthetic-vault unlock",
+    "Final note read-only presentation",
+    "Linked amendment creation and save",
+    "Restart persistence of both records",
+    "Corrected unlock without misleading unsaved-work warning"
+  ],
+  "ui_pending": [
+    "Corrected template alert replace-and-save",
+    "Long-note rendering",
+    "Native finalization confirmation"
+  ],
+  "logs": [
+    {
+      "name": "reconstructed-tests.log",
+      "sha256": "d101df4c0bb763847b8f859d545896b536e1c1bced06e08ba285ad25ff80c0e5",
+      "bytes": 35742
+    },
+    {
+      "name": "reconstructed-focused.log",
+      "sha256": "8843961b0466c8235d63ce11bb25181bb0dde25871490bcdd75edb3ca1aa32ce",
+      "bytes": 5557
+    },
+    {
+      "name": "ui-fixture-tests.log",
+      "sha256": "d10440bf57dec61f40456df55ad977fb3e97fda7837d253e9c17a96f6d305644",
+      "bytes": 1135
+    },
+    {
+      "name": "reconstructed-build.log",
+      "sha256": "2b987d3071ff29b7c7ce2502b89fad7295d79e3fa9329a761c98056b485f4112",
+      "bytes": 313
+    }
+  ]
+}
