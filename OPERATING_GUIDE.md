@@ -193,3 +193,5 @@ A milestone is complete only after its archive handoff is complete:
 5. Update CANON.md to reflect the new evidence. Preserve earlier entries; corrections must name the superseded claim.
 
 Do not publish clinical records, credentials or decrypted vault content. Public evidence inventories may identify source/test artifact hashes and verification scope. A passing historical log does not establish a fresh test run or a complete reproducible source checkout.
+
+The archive is a static site. Keep `.nojekyll` at the repository root so GitHub Pages preserves Markdown records and structured requests at their recorded URLs. Verify these links after deployment along with rendered HTML and metadata.
