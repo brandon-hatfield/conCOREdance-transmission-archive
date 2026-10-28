@@ -780,6 +780,27 @@
       ],
       "path": "2026/CC-TX-2026-10-28-005/",
       "metadata_path": "2026/CC-TX-2026-10-28-005/metadata.json"
+    },
+    {
+      "id": "CC-TX-2026-10-28-006",
+      "title": "Explicit Device-Only Touch ID Enrollment and Vault Unlock",
+      "date": "2026-10-28",
+      "status": "Active Canon",
+      "type": "Implementation and Verification Log",
+      "layer": "Native macOS / Keychain / Vault Authentication",
+      "from": "Cody Valle",
+      "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+      "authorized_by": "Brandon Hatfield, LPC",
+      "summary": "Explicit per-device Touch ID enrollment and unlock are implemented; 143 tests pass. Native hardware enrollment/read remains a human-operated verification handoff.",
+      "tags": [
+        "Touch ID",
+        "Keychain",
+        "enrollment",
+        "recovery",
+        "verification limits"
+      ],
+      "path": "2026/CC-TX-2026-10-28-006/",
+      "metadata_path": "2026/CC-TX-2026-10-28-006/metadata.json"
     }
   ]
 }

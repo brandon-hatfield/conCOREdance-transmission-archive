@@ -2,9 +2,15 @@
 
 Reconciled October 28, 2026. This file is the current-state entry point into the transmission archive. Historical transmissions preserve what was known at their dates; later corrections take precedence where explicitly stated. A statement is authoritative only within its stated evidence and verification limits.
 
-## Latest vault convenience — October 28
+## Latest authentication implementation — October 28
 
-Latest source: private branch `beta/clinical-preview-2026-10-28`, commit `f90fe379e14d84c900408afb6c6edb606bb82ce4`. An explicit **Open Passwords** button opens Apple Passwords from the vault entrance. Native build/bundle checks and synthetic entrance/launcher checks passed. This does not implement autofill, Touch ID key access or passkey unlock; no credentials were enrolled. [Vault convenience milestone](archive/2026/CC-TX-2026-10-28-005/). Existing clinical-beta gates remain open.
+Latest source: private branch `beta/clinical-preview-2026-10-28`, commit `060a4c25bcaa0721fcdb160f109bd75dce55edb6`, development build `20261028204408`. Explicit Touch ID enrollment, Keychain-enforced retrieval, locked-vault unlock and protected-session return are implemented. The full suite passed **143 tests**, including seven mock biometric tests. Native synthetic password unlock, enrollment controls and initiation of the system enrollment request were checked. **Successful fingerprint enrollment and Keychain read remain unverified**, pending human participation and valid signing/entitlement access. [Touch ID implementation and verification limits](archive/2026/CC-TX-2026-10-28-006/).
+
+This supersedes the preceding statement that Touch ID was only proposed. Password recovery, the existing vault format and the open clinical beta gates remain. No clinical records or real credentials were enrolled. This is still a synthetic-data development preview.
+
+## Preceding vault convenience — October 28
+
+Passwords launcher source: private branch `beta/clinical-preview-2026-10-28`, commit `f90fe379e14d84c900408afb6c6edb606bb82ce4`. An explicit **Open Passwords** button opens Apple Passwords from the vault entrance. Native build/bundle checks and synthetic entrance/launcher checks passed. This does not implement autofill, Touch ID key access or passkey unlock; no credentials were enrolled. [Vault convenience milestone](archive/2026/CC-TX-2026-10-28-005/). Existing clinical-beta gates remain open.
 
 ## Dashboard visual refinement — October 28
 
@@ -52,6 +58,8 @@ See [reconstruction and verification](archive/2026/CC-TX-2026-10-28-002/) and [v
 The October 3 report-continuity entry already existed in GitHub main and the live site. An earlier web retrieval and a separate June SSD checkout were stale. October 3 privacy/Print follow-through and October 14–15 milestones were absent from the archive and are now recorded retrospectively. The reason the original handoff was omitted is unestablished. Historical test logs are not represented as fresh validation. See the [artifact fingerprints and test inventory](docs/evidence/2026-10-28-ssd-audit.json).
 
 ## Transmission index
+
+- [CC-TX-2026-10-28-006 — Explicit Device-Only Touch ID Enrollment and Vault Unlock](archive/2026/CC-TX-2026-10-28-006/)
 
 - [CC-TX-2026-10-28-005 — Apple Passwords Access from the Vault Entrance](archive/2026/CC-TX-2026-10-28-005/)
 

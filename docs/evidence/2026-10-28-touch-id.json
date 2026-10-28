@@ -1,0 +1,27 @@
+{
+  "source_commit": "060a4c25bcaa0721fcdb160f109bd75dce55edb6",
+  "source_branch": "beta/clinical-preview-2026-10-28",
+  "build": "20261028204408",
+  "full_suite": {
+    "tests": 143,
+    "failures": 0,
+    "new_mock_biometric_tests": 7
+  },
+  "native_verified": [
+    "synthetic password unlock",
+    "Touch ID enrollment controls",
+    "initiated system biometric enrollment request"
+  ],
+  "pending": [
+    "successful human fingerprint enrollment and real Keychain read",
+    "valid signing/entitlement access",
+    "restart/update and changed-fingerprint checks",
+    "protected editor and failure-path hardware checks"
+  ],
+  "clinical_data_used": false,
+  "real_credentials_enrolled": false,
+  "logs_sha256": {
+    "biometric-final-tests.log": "f9a822a90983b00212ff834b647a1f029992d28e2283b87acfdc822d6fde4ee4",
+    "biometric-build.log": "4370e4d8591329d11c139bbb8e4dd82b22e188dc4376ea870465019bf93c4276"
+  }
+}
