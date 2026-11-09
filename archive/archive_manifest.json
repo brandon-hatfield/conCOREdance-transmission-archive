@@ -801,6 +801,27 @@
       ],
       "path": "2026/CC-TX-2026-10-28-006/",
       "metadata_path": "2026/CC-TX-2026-10-28-006/metadata.json"
+    },
+    {
+      "id": "CC-TX-2026-11-09-001",
+      "title": "Protected Manual Locking and Failed-Save Recovery",
+      "date": "2026-11-09",
+      "status": "Active Canon",
+      "type": "Implementation and Verification Log",
+      "layer": "Native macOS / Vault Privacy / Recovery",
+      "from": "Cody Valle",
+      "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+      "authorized_by": "Brandon Hatfield, LPC",
+      "summary": "Manual locking now retains failed saves behind authentication; 147 fresh tests and packaged synthetic UI checks pass. Clinical release gates remain open.",
+      "tags": [
+        "manual lock",
+        "privacy",
+        "save recovery",
+        "accessibility",
+        "verification"
+      ],
+      "path": "2026/CC-TX-2026-11-09-001/",
+      "metadata_path": "2026/CC-TX-2026-11-09-001/metadata.json"
     }
   ]
 }

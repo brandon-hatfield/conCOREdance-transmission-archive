@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-09",
+  "source_repository": "brandon-hatfield/ConCOREdance",
+  "source_branch": "fix/manual-lock-save-failure-2026-11-09",
+  "source_commit": "418a8e986274dc101d13867cbc31930f41b630ee",
+  "integration": "draft PR against beta/clinical-preview-2026-10-28; unmerged",
+  "full_suite": {
+    "tests": 147,
+    "failures": 0,
+    "fresh": true
+  },
+  "focused_suite": {
+    "tests": 8,
+    "failures": 0,
+    "fresh": true
+  },
+  "native_bundle": {
+    "build": "20261109164512",
+    "revision_field": "060a4c2-modified",
+    "signature": "ad hoc; verified"
+  },
+  "native_check": [
+    "isolated synthetic vault password unlock",
+    "forced write failure and toolbar Lock",
+    "rendered protection and absent dashboard accessibility",
+    "wrong password rejected; correct password returned",
+    "deferred error dialog; repaired destination and successful retry",
+    "subsequent successful ordinary lock"
+  ],
+  "limits": [
+    "UI cover retains plaintext in process memory",
+    "no real clinical data or credentials used",
+    "not clinical release approval or independent security review",
+    "PDF intake, key/recovery, hardware biometrics, sleep/wake and distribution acceptance remain open"
+  ],
+  "artifact_fingerprints": {
+    "final_full_tests": {
+      "sha256": "5b80f30d26ee42168762632ef19ef9ce78a5e748ec69079effd6bb5feae3e8d4",
+      "bytes": 37615
+    },
+    "focused_lock_tests": {
+      "sha256": "9c2ef05345709fd2c644618d9b2176bfc6abd1f89d48f19bbe17c68b58aa7cc3",
+      "bytes": 3273
+    },
+    "native_build": {
+      "sha256": "31069c5bce339320a5d10405050f7fee24a4e9ce5613d93aeeb521ef94aad539",
+      "bytes": 260
+    },
+    "synthetic_protected_screen": {
+      "sha256": "fd06f5d5b278ec0a9c7a5a7257710d5cfc48cd797c7b86256a9d00dad9a2a67f",
+      "bytes": 133475
+    }
+  }
+}

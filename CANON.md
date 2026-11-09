@@ -1,6 +1,12 @@
 # ConCOREdance authoritative project state
 
-Reconciled October 28, 2026. This file is the current-state entry point into the transmission archive. Historical transmissions preserve what was known at their dates; later corrections take precedence where explicitly stated. A statement is authoritative only within its stated evidence and verification limits.
+Reconciled October 28, 2026; updated November 9, 2026. This file is the current-state entry point into the transmission archive. Historical transmissions preserve what was known at their dates; later corrections take precedence where explicitly stated. A statement is authoritative only within its stated evidence and verification limits.
+
+## Latest lock implementation — November 9
+
+Manual locking during failed saves is implemented and freshly verified on private branch `fix/manual-lock-save-failure-2026-11-09`, commit `418a8e986274dc101d13867cbc31930f41b630ee`. The source is proposed in a draft PR against the clinical-preview branch and is not yet merged. **147 full-suite tests and eight focused lock tests passed with zero failures.** Packaged native synthetic checks verified the failure screen, hidden dashboard accessibility, wrong-password rejection, authenticated recovery, retry/save and ordinary lock. [Implementation and limits](archive/2026/CC-TX-2026-11-09-001/) · [Verification inventory](docs/evidence/2026-11-09-manual-lock.json).
+
+This supersedes the earlier current-state claim that the manual-lock save-failure finding remained unremediated. Failed saves and editors remain in process memory behind authentication, so this is UI protection rather than cryptographic locking of that retained memory. The PDF intake finding, reviewed key derivation/recovery, independent security/failure review, hardware Touch ID, sleep/wake, trusted distribution and clinical workflow acceptance remain open. The app remains a synthetic-data development preview. GitHub source cloning and local build paths allowed development without the SSD; no clinical record backup claim follows from source availability.
 
 ## Latest authentication implementation — October 28
 
@@ -20,7 +26,7 @@ Dashboard refinement source: private branch `beta/clinical-preview-2026-10-28`, 
 
 Preceding visual milestone source: private branch `beta/clinical-preview-2026-10-28`, commit `d1cae768c3c4f2a46fd22f36e85af737fa9aebf8`, packaged development build `20261028173535`. Vault and dashboard visual changes are implemented; native build/signature checks and synthetic unlock passed. Full workflow, night-mode and accessibility visual acceptance remain open. [Visual and beta milestone](archive/2026/CC-TX-2026-10-28-003/).
 
-The intended private beta uses real clinical records. **The current app remains a synthetic-data development preview.** The completed static security review of the preceding reconstructed baseline recorded two medium findings, still open. Reviewed key derivation/recovery, restore/failure/sleep checks, clinical workflow, migration and trusted distribution remain release gates. Security details are private. No real clinical vault was opened in this work.
+The intended private beta uses real clinical records. **The current app remains a synthetic-data development preview.** The October 28 static security review of the preceding reconstructed baseline recorded two open medium findings at that time. The November 9 entry above supersedes the manual-lock implementation status; PDF intake and independent validation remain open. Reviewed key derivation/recovery, restore/failure/sleep checks, clinical workflow, migration and trusted distribution remain release gates. Security details are private. No real clinical vault was opened in this work.
 
 ## Reconstructed source baseline — October 28
 
@@ -48,7 +54,7 @@ See [reconstruction and verification](archive/2026/CC-TX-2026-10-28-002/) and [v
 ## Outstanding work
 
 1. Complete the corrected template-dialog replace/save, long-note rendering and native finalization checks on the October 28 reconstruction. Exact original October 15 source recovery remains separate; the complete new reconstruction is preserved and freshly tested.
-2. Remediate and verify the two open medium security findings. Complete reviewed key derivation, recovery design and security/failure validation before real-record beta use.
+2. Remediate bounded responsive PDF intake; review/integrate and independently validate the November 9 manual-lock implementation. Complete reviewed key derivation, recovery design and security/failure validation before real-record beta use.
 3. Validate actual device sleep, large backups and migration scale.
 4. Complete automatic assessment-report rendering, demographics conflict handling and vendor/Carepatron migration.
 5. Finish accessibility and signed sandboxed distribution.
@@ -58,6 +64,8 @@ See [reconstruction and verification](archive/2026/CC-TX-2026-10-28-002/) and [v
 The October 3 report-continuity entry already existed in GitHub main and the live site. An earlier web retrieval and a separate June SSD checkout were stale. October 3 privacy/Print follow-through and October 14–15 milestones were absent from the archive and are now recorded retrospectively. The reason the original handoff was omitted is unestablished. Historical test logs are not represented as fresh validation. See the [artifact fingerprints and test inventory](docs/evidence/2026-10-28-ssd-audit.json).
 
 ## Transmission index
+
+- [CC-TX-2026-11-09-001 — Protected Manual Locking and Failed-Save Recovery](archive/2026/CC-TX-2026-11-09-001/)
 
 - [CC-TX-2026-10-28-006 — Explicit Device-Only Touch ID Enrollment and Vault Unlock](archive/2026/CC-TX-2026-10-28-006/)
 
