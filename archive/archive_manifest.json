@@ -822,6 +822,27 @@
       ],
       "path": "2026/CC-TX-2026-11-09-001/",
       "metadata_path": "2026/CC-TX-2026-11-09-001/metadata.json"
+    },
+    {
+      "id": "CC-TX-2026-11-09-002",
+      "title": "Bounded Cancellable PDF Intake and Expanded Audio Beta Scope",
+      "date": "2026-11-09",
+      "status": "Active Canon",
+      "type": "Implementation and Verification Log",
+      "layer": "Native macOS / Document Intake / Beta Scope",
+      "from": "Cody Valle",
+      "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+      "authorized_by": "Brandon Hatfield, LPC",
+      "summary": "Bounded cancellable PDF intake is implemented with 159 passing tests; microphone/call capture and Apple audio-to-note drafting are now required beta scope, pending implementation.",
+      "tags": [
+        "PDF intake",
+        "cancellation",
+        "privacy",
+        "beta scope",
+        "Apple audio"
+      ],
+      "path": "2026/CC-TX-2026-11-09-002/",
+      "metadata_path": "2026/CC-TX-2026-11-09-002/metadata.json"
     }
   ]
 }

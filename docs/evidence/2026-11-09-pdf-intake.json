@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-09",
+  "source_commit": "57e1709aa29aadff2c5272e4368260e58ac48631",
+  "source_branch": "feature/bounded-pdf-intake-2026-11-09",
+  "integration": "draft stacked PR; unmerged",
+  "full_suite": {
+    "tests": 159,
+    "failures": 0,
+    "fresh": true
+  },
+  "new_intake_tests": 12,
+  "native_build": "20261109171422",
+  "bundle_revision_field": "418a8e9-modified",
+  "native_scope": [
+    "synthetic local vault",
+    "Open/file-picker intake",
+    "duplicate skipping",
+    "limit/review UI",
+    "30 MiB file rejected"
+  ],
+  "controlled_async_scope": [
+    "late result discarded after lock/re-unlock",
+    "cancellation preserves completed originals",
+    "parent task cancellation",
+    "bounded waiting tray",
+    "restore/termination interlocks"
+  ],
+  "limits": [
+    "basic header check is not full PDF parsing",
+    "existing final metadata save remains synchronous",
+    "cooperative cancellation may wait on a blocked syscall",
+    "File Provider fixture open stalled; temporary local fixture worked",
+    "audio-to-note gate newly required, not implemented here",
+    "no clinical release approval"
+  ],
+  "artifacts": {
+    "full_suite": {
+      "sha256": "e4932c80470fcbdd727901fb70c52d1f2df32ba69d8691de355c5f9f2f18d604",
+      "bytes": 41486
+    },
+    "initial_focused_suite": {
+      "sha256": "c5c03fbfbe9af1aa430f7e8970324c485e575ccc78efe2ce087595f8abf8dbf7",
+      "bytes": 3999
+    },
+    "native_build": {
+      "sha256": "93a604b7a5d0e5c1417e974d9bb24943cb1a45085b71f72927aa8b1513e4e2ed",
+      "bytes": 348
+    }
+  }
+}
