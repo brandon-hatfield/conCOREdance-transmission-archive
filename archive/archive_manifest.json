@@ -843,6 +843,27 @@
       ],
       "path": "2026/CC-TX-2026-11-09-002/",
       "metadata_path": "2026/CC-TX-2026-11-09-002/metadata.json"
+    },
+    {
+      "id": "CC-TX-2026-11-10-001",
+      "title": "Apple Session Audio and Reviewed Progress-Note Development Workflow",
+      "date": "2026-11-10",
+      "status": "Active Canon",
+      "type": "Development Implementation and Verification Handoff",
+      "layer": "Native macOS / Apple Audio / Reviewed Clinical Documentation",
+      "from": "Cody Valle",
+      "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+      "authorized_by": "Brandon Hatfield, LPC",
+      "summary": "Apple audio-to-note development workflow is implemented; 178 tests and a real synthetic-text Apple model call pass. Native audio, permissions and screen acceptance remain open.",
+      "tags": [
+        "Apple speech",
+        "session audio",
+        "reviewed notes",
+        "provenance",
+        "verification limits"
+      ],
+      "path": "2026/CC-TX-2026-11-10-001/",
+      "metadata_path": "2026/CC-TX-2026-11-10-001/metadata.json"
     }
   ]
 }

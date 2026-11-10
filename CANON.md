@@ -1,12 +1,18 @@
 # ConCOREdance authoritative project state
 
-Reconciled October 28, 2026; updated November 9, 2026. This file is the current-state entry point into the transmission archive. Historical transmissions preserve what was known at their dates; later corrections take precedence where explicitly stated. A statement is authoritative only within its stated evidence and verification limits.
+Reconciled October 28, 2026; updated November 10, 2026. This file is the current-state entry point into the transmission archive. Historical transmissions preserve what was known at their dates; later corrections take precedence where explicitly stated. A statement is authoritative only within its stated evidence and verification limits.
+
+## Latest Apple audio development — November 10
+
+The microphone/call audio → Apple transcription → reviewed progress-note workflow is implemented as a development feature on private branch `feature/apple-session-audio-2026-11-09`, commit `5ed878ba443d1f2beed029d9c21ebfb497e58413`. It is in an unmerged draft PR stacked on PDF intake. **178 fresh tests passed with zero failures and no skips**, including nineteen audio tests and a real Apple on-device model call using synthetic text. Native bundle `20261110152745` identifies implementation commit `1be9b62`; the final documentation checkpoint preserves its Sources tree. [Implementation and verification handoff](archive/2026/CC-TX-2026-11-10-001/) · [Evidence inventory](docs/evidence/2026-11-10-apple-audio.json).
+
+This supersedes the November 9 pending-implementation statement. **Actual microphone/call capture and SpeechTranscriber output remain unverified**: English assets require setup and the owner must grant the intended macOS permissions. Native screen review was blocked by repeated computer-use timeouts, including after a reset/fresh launch; no visual acceptance is asserted. Timing/echo, long sessions, devices, sleep/permissions, representative clinical quality and independent security/recovery/release checks remain open. The app remains a synthetic-data development preview, not approved for clinical records.
 
 ## Latest intake implementation and beta scope — November 9
 
 Bounded cancellable PDF intake is implemented on private branch `feature/bounded-pdf-intake-2026-11-09`, commit `57e1709aa29aadff2c5272e4368260e58ac48631`, in a draft PR stacked on the manual-lock branch. **159 fresh full-suite tests passed with zero failures**, including twelve new intake tests. A packaged synthetic native check covered file selection, duplicate skipping, review limits and oversized rejection. [Implementation and scope](archive/2026/CC-TX-2026-11-09-002/) · [Verification inventory](docs/evidence/2026-11-09-pdf-intake.json).
 
-This supersedes the preceding unremediated PDF-intake status. Both November 9 changes remain unmerged development implementations, with independent review and broader failure/provider validation still open. The owner now requires **microphone plus call-audio capture, Apple on-device transcription and editable Apple Intelligence progress-note drafts with clinician review** before clinical beta acceptance. That new audio-to-note gate is pending implementation at this milestone. The app remains a synthetic-data development preview.
+This supersedes the preceding unremediated PDF-intake status. Both November 9 changes remain unmerged development implementations, with independent review and broader failure/provider validation still open. The owner now requires **microphone plus call-audio capture, Apple on-device transcription and editable Apple Intelligence progress-note drafts with clinician review** before clinical beta acceptance. At this November 9 milestone, the new audio-to-note gate was pending implementation; the November 10 entry above supersedes development status while retaining the acceptance gate. The app remains a synthetic-data development preview.
 
 ## Latest lock implementation — November 9
 
@@ -64,13 +70,15 @@ See [reconstruction and verification](archive/2026/CC-TX-2026-10-28-002/) and [v
 3. Validate actual device sleep, large backups and migration scale.
 4. Complete automatic assessment-report rendering, demographics conflict handling and vendor/Carepatron migration.
 5. Finish accessibility and signed sandboxed distribution.
-6. Implement and validate the newly required microphone/call capture → Apple transcription → clinician-reviewed Apple Intelligence progress-note workflow.
+6. Complete the November 10 audio workflow's hands-on model/permission/capture, visual, long-session and clinical-quality acceptance; review/integrate the development source.
 
 ## Reconciliation findings
 
 The October 3 report-continuity entry already existed in GitHub main and the live site. An earlier web retrieval and a separate June SSD checkout were stale. October 3 privacy/Print follow-through and October 14–15 milestones were absent from the archive and are now recorded retrospectively. The reason the original handoff was omitted is unestablished. Historical test logs are not represented as fresh validation. See the [artifact fingerprints and test inventory](docs/evidence/2026-10-28-ssd-audit.json).
 
 ## Transmission index
+
+- [CC-TX-2026-11-10-001 — Apple Session Audio and Reviewed Progress-Note Development Workflow](archive/2026/CC-TX-2026-11-10-001/)
 
 - [CC-TX-2026-11-09-002 — Bounded Cancellable PDF Intake and Expanded Audio Beta Scope](archive/2026/CC-TX-2026-11-09-002/)
 

@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-10",
+  "source_commit": "5ed878ba443d1f2beed029d9c21ebfb497e58413",
+  "implementation_commit": "1be9b62",
+  "sources_tree": "d0290d06f74bbc1ee6397e7da16839fb969b1061",
+  "source_branch": "feature/apple-session-audio-2026-11-09",
+  "integration": "draft PR stacked on PDF-intake branch; unmerged",
+  "final_full_suite": {
+    "tests": 178,
+    "failures": 0,
+    "skips": 0,
+    "fresh": true
+  },
+  "audio_tests": 19,
+  "real_apple_model": {
+    "executed": true,
+    "input": "simple synthetic text only",
+    "result": "source-validated facts and DAP draft",
+    "clinical_quality_validated": false
+  },
+  "capture_and_transcription_tests": "controlled doubles; not real audio hardware",
+  "bundle": {
+    "build": "20261110152745",
+    "revision": "1be9b62",
+    "signature": "ad hoc; strict verification passed",
+    "launch": "isolated synthetic fixture; process started"
+  },
+  "native_visual_acceptance": {
+    "verified": false,
+    "reason": "repeated computer-use app-state timeouts for prior/fresh builds, including reset",
+    "cause_established": false
+  },
+  "runtime_capabilities": {
+    "apple_intelligence": "available",
+    "speech_transcriber": "supported",
+    "english_assets": "supported; not installed"
+  },
+  "native_audio": {
+    "captured": false,
+    "speech_transcriber_output_verified": false,
+    "microphone_or_call_permissions_granted": false
+  },
+  "remaining": [
+    "English asset setup and consented mic/call capture",
+    "native screen acceptance",
+    "echo/timing, long sessions, device and sleep/permission handling",
+    "representative clinical-content/model-refusal quality",
+    "independent security/recovery, key derivation, signing/distribution and clinical operating acceptance"
+  ],
+  "artifacts": {
+    "final_full_suite": {
+      "sha256": "780dfb9a215a39f23bfdac63242c36894f81301310a731c76eff549a1d892ada",
+      "bytes": 46620
+    },
+    "native_bundle_build": {
+      "sha256": "875b480c55b66461f98d48f1535a28c42fa2002cef49a075062fd73187279fca",
+      "bytes": 363
+    },
+    "runtime_capabilities": {
+      "sha256": "4ea045a52394ab022f4f4248a3de34946a6c644f31ce0fe13c45f21b00e2e35c",
+      "bytes": 112
+    }
+  }
+}
