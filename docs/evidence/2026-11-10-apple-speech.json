@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-10",
+  "source_commit": "238b07bc787c7fd4c05c4e411cf9e9e7d839a756",
+  "source_branch": "feature/apple-session-audio-2026-11-09",
+  "integration": "unmerged draft PR 3",
+  "full_suite": {
+    "tests": 179,
+    "failures": 0,
+    "skips": 0,
+    "audio_tests": 20
+  },
+  "real_apple_speech": {
+    "executed": true,
+    "input": "locally generated synthetic speech file; both source tracks",
+    "before_fix": "audio input timestamp overlaps or precedes prior audio input",
+    "after_fix": "recognizable speech from both tracks; no error callbacks"
+  },
+  "real_apple_model": "synthetic-text fact extraction and DAP draft passed",
+  "physical_capture_verified": false,
+  "native_visual_acceptance": false,
+  "clinical_beta_approved": false,
+  "remaining": [
+    "physical microphone/call capture and permissions",
+    "installed-app asset readiness",
+    "native screen acceptance",
+    "long sessions, echo/timing, devices, sleep/permissions",
+    "clinical-quality and independent security/recovery/signing"
+  ],
+  "log_sha256": "8bc49463deee068a7606c948779465465f932598424e7474bfa69d1a7e697e8e"
+}

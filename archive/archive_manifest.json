@@ -864,6 +864,26 @@
       ],
       "path": "2026/CC-TX-2026-11-10-001/",
       "metadata_path": "2026/CC-TX-2026-11-10-001/metadata.json"
+    },
+    {
+      "id": "CC-TX-2026-11-10-002",
+      "title": "Real Apple Speech Verification and Resampling Timestamp Correction",
+      "date": "2026-11-10",
+      "status": "Active Canon",
+      "type": "Runtime Verification and Correctness Fix",
+      "layer": "Native macOS / Apple Speech",
+      "from": "Cody Valle",
+      "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+      "authorized_by": "Brandon Hatfield, LPC",
+      "summary": "Actual dual-source Apple speech processing passes after fixing resampled timestamp overlap; 179 tests pass. Physical capture acceptance remains open.",
+      "tags": [
+        "SpeechAnalyzer",
+        "resampling",
+        "timestamps",
+        "synthetic verification"
+      ],
+      "path": "2026/CC-TX-2026-11-10-002/",
+      "metadata_path": "2026/CC-TX-2026-11-10-002/metadata.json"
     }
   ]
 }

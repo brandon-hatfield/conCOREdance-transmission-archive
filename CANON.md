@@ -2,6 +2,12 @@
 
 Reconciled October 28, 2026; updated November 10, 2026. This file is the current-state entry point into the transmission archive. Historical transmissions preserve what was known at their dates; later corrections take precedence where explicitly stated. A statement is authoritative only within its stated evidence and verification limits.
 
+## Latest real Apple speech verification — November 10
+
+Actual Apple transcription of generated synthetic audio now passes for both source tracks after fixing overlap in resampled input timestamps. The full suite passed **179 tests, zero failures and no skips**, including twenty audio tests with actual Apple speech and note-model integrations enabled. Private source commit `238b07bc787c7fd4c05c4e411cf9e9e7d839a756` remains in unmerged draft PR 3. [Runtime correction and evidence](archive/2026/CC-TX-2026-11-10-002/) · [Evidence inventory](docs/evidence/2026-11-10-apple-speech.json).
+
+This supersedes the preceding unverified SpeechTranscriber-output status. It does not verify physical microphone/call capture or ScreenCaptureKit permissions. Installed-app asset readiness, native visual acceptance (computer-use timeouts), echo/timing, long sessions, devices, sleep/permissions, clinical quality and independent security/recovery/signing remain open. The app remains a synthetic-data development preview, not approved for clinical records.
+
 ## Latest Apple audio development — November 10
 
 The microphone/call audio → Apple transcription → reviewed progress-note workflow is implemented as a development feature on private branch `feature/apple-session-audio-2026-11-09`, commit `5ed878ba443d1f2beed029d9c21ebfb497e58413`. It is in an unmerged draft PR stacked on PDF intake. **178 fresh tests passed with zero failures and no skips**, including nineteen audio tests and a real Apple on-device model call using synthetic text. Native bundle `20261110152745` identifies implementation commit `1be9b62`; the final documentation checkpoint preserves its Sources tree. [Implementation and verification handoff](archive/2026/CC-TX-2026-11-10-001/) · [Evidence inventory](docs/evidence/2026-11-10-apple-audio.json).
@@ -77,6 +83,8 @@ See [reconstruction and verification](archive/2026/CC-TX-2026-10-28-002/) and [v
 The October 3 report-continuity entry already existed in GitHub main and the live site. An earlier web retrieval and a separate June SSD checkout were stale. October 3 privacy/Print follow-through and October 14–15 milestones were absent from the archive and are now recorded retrospectively. The reason the original handoff was omitted is unestablished. Historical test logs are not represented as fresh validation. See the [artifact fingerprints and test inventory](docs/evidence/2026-10-28-ssd-audit.json).
 
 ## Transmission index
+
+- [CC-TX-2026-11-10-002 — Real Apple Speech Verification and Resampling Timestamp Correction](archive/2026/CC-TX-2026-11-10-002/)
 
 - [CC-TX-2026-11-10-001 — Apple Session Audio and Reviewed Progress-Note Development Workflow](archive/2026/CC-TX-2026-11-10-001/)
 
