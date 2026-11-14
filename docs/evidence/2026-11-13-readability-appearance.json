@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-13",
+  "source_commit": "09b23dddcd733a74760ebcab43b840e535e48fcd",
+  "source_scope": "complete development source, unmerged draft PR 4 stacked on Apple session audio",
+  "tests": {
+    "executed": 188,
+    "skipped": 2,
+    "failures": 0,
+    "skipped_scope": "optional real Apple speech and Foundation Models integrations",
+    "new_tests": {
+      "text_size": 3,
+      "color_contrast": 3,
+      "appearance_storage": 3
+    }
+  },
+  "native_checks": [
+    "installed vault, dashboard, Settings, session drafting and previews",
+    "live text-size selection and saved preference",
+    "selected provider photo displayed in sidebar",
+    "owner-reported Touch ID enrollment, continued enrollment detection",
+    "native Passwords chooser and owner-reported focus suggestion after restart"
+  ],
+  "signing_probe": {
+    "synthetic_protected_item_add": 0,
+    "synthetic_item_delete": 0,
+    "real_vault_credential_used": false,
+    "distribution": "Apple Development / Personal Team, not notarized",
+    "profile_expiry_utc": "2026-11-21T02:01:01Z"
+  },
+  "limitations": [
+    "no domain-associated Password AutoFill configuration",
+    "no exhaustive visual acceptance of every state and arbitrary logo",
+    "no broad native biometric cancellation/change/lockout/recovery acceptance",
+    "historical Apple integration checks not rerun",
+    "multi-provider roles and hot switching are roadmap only",
+    "independent security, clinical workflow and release gates remain open"
+  ],
+  "publication_privacy": "No clinical records, user images, secrets, private keys or signing profiles included."
+}

@@ -1,6 +1,14 @@
 # ConCOREdance authoritative project state
 
-Reconciled October 28, 2026; updated November 10, 2026. This file is the current-state entry point into the transmission archive. Historical transmissions preserve what was known at their dates; later corrections take precedence where explicitly stated. A statement is authoritative only within its stated evidence and verification limits.
+Reconciled October 28, 2026; updated November 13, 2026. This file is the current-state entry point into the transmission archive. Historical transmissions preserve what was known at their dates; later corrections take precedence where explicitly stated. A statement is authoritative only within its stated evidence and verification limits.
+
+## Latest readability, appearance and local signing — November 13
+
+Complete development source `09b23dddcd733a74760ebcab43b840e535e48fcd` is published on private branch `codex/readability-and-practice-branding`, in unmerged draft PR 4 stacked on the Apple session-audio branch. Persistent text sizing (125% default), shared readable surface/text roles, native password hints, confirmed-enrollment status, expandable audit history, provider photos and optional practice-logo/sidebar/watermark behavior are implemented. The final fresh suite ran **188 tests, two optional Apple integrations skipped, zero failures**. [Transmission](archive/2026/CC-TX-2026-11-13-001/) · [Verification inventory](docs/evidence/2026-11-13-readability-appearance.json).
+
+Xcode 27.3 beta supplied a fresh Apple Development identity and Personal Team profile. An isolated biometric-protected random Keychain item add/delete probe passed; owner-reported enrollment remained detected in the installed app after updates. Selected native vault, dashboard, Settings, drafting and preview screens were inspected. This updates the earlier local signing/native-screen blockers only within that scope. The development profile expires November 21 at 02:01 UTC; this is not a notarized release. Domain-matched Password AutoFill, exhaustive visual/hardware failure/recovery acceptance, independent security, physical audio capture and clinical-release gates remain open. November 10 real Apple integration results below are historical, not fresh results for this update.
+
+**Planned only:** the owner requested practice-level supervisory/admin credentials, managed provider profiles under shared practice branding and secure provider switching on shared workstations. Current appearance preferences do not provide provider accounts or record-access isolation. Role boundaries, per-provider authentication/storage, protected handoff, cache clearing, recovery and migration remain design work.
 
 ## Latest real Apple speech verification — November 10
 
