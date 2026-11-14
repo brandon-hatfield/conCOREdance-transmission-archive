@@ -1,0 +1,22 @@
+{
+  "id": "CC-TX-2026-11-13-001",
+  "title": "Readable Clinical Workspace, Practice Appearance and Local Touch ID Signing",
+  "date": "2026-11-13",
+  "status": "Active Canon",
+  "type": "Implementation and Local Verification",
+  "layer": "Native macOS / Readability / Local Identity",
+  "from": "Cody Valle",
+  "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+  "authorized_by": "Brandon Hatfield, LPC",
+  "summary": "Persistent text sizing, coherent surface colors, optional provider/practice imagery and development-signed Keychain access are implemented; 188 tests ran with two optional integrations skipped and zero failures. Shared-practice provider administration remains planned.",
+  "tags": [
+    "readability",
+    "accessibility",
+    "Touch ID",
+    "signing",
+    "practice appearance",
+    "roadmap"
+  ],
+  "path": "2026/CC-TX-2026-11-13-001/",
+  "metadata_path": "2026/CC-TX-2026-11-13-001/metadata.json"
+}
