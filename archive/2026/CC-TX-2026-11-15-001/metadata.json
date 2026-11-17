@@ -1,0 +1,22 @@
+{
+  "id": "CC-TX-2026-11-15-001",
+  "title": "Reusable Clinical Workflows and Backup-Verified Vault Protection",
+  "date": "2026-11-15",
+  "status": "Active Canon",
+  "type": "Implementation and Verification",
+  "layer": "Native macOS / Clinical Workflow / Vault Protection",
+  "from": "Cody Valle",
+  "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+  "authorized_by": "Brandon Hatfield, LPC",
+  "summary": "Reusable note templates, deliberate signature images, resumable onboarding and backup-verified vault protection were implemented during November 14\u201315. Historical synthetic verification passed; independent security and native clinical acceptance remain open.",
+  "tags": [
+    "templates",
+    "signatures",
+    "onboarding",
+    "encryption",
+    "recovery",
+    "beta"
+  ],
+  "path": "2026/CC-TX-2026-11-15-001/",
+  "metadata_path": "2026/CC-TX-2026-11-15-001/metadata.json"
+}

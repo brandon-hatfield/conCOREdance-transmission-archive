@@ -1,6 +1,35 @@
 # ConCOREdance authoritative project state
 
-Reconciled October 28, 2026; updated November 13, 2026. This file is the current-state entry point into the transmission archive. Historical transmissions preserve what was known at their dates; later corrections take precedence where explicitly stated. A statement is authoritative only within its stated evidence and verification limits.
+Reconciled October 28, 2026; updated November 17, 2026. This file is the current-state entry point into the transmission archive. Historical transmissions preserve what was known at their dates; later corrections take precedence where explicitly stated. A statement is authoritative only within its stated evidence and verification limits.
+
+## Current checkpoint — November 17
+
+Complete local development source is preserved in `9cbbb6aaec864915441f43027442ed270575dc43`, with partner-choice and future-profile documentation in `d8e98860c5b5ea9cde2f932d87ed8f95dac5d2f6`, on `codex/readability-and-practice-branding`. These are complete **local** checkpoints. This archive publication does not push or merge the private app source; source review and remote preservation remain separate work. [Current transmission](archive/2026/CC-TX-2026-11-17-001/) · [Public verification inventory](docs/evidence/2026-11-17-beta-caseload.json) · [Current public roadmap](roadmap/).
+
+Implemented development capabilities include custom note templates/revisions, readable note sections, deliberate signature snapshots, resumable onboarding, release-authorization tracking, client corrections and explicit merge/deletion, portrait layouts, selectable/sortable caseload columns and search. Editable billing/admin attribution supports listed or custom partners, changes after onboarding, clearing, and offline logo thumbnails. The list does not restrict the therapist and client's choice. Partner-specific documentation profiles and per-service partner-history automation are **planned**, not implemented. Future profiles need verified sources/effective versions and must preserve prior signed content. Separate practice/provider identities remain planned architecture work.
+
+The latest schema-3 full suite ran **245 tests, four optional skips, zero failures** during the November 17 app-development pass. Earlier that day, the expanded schema-2 suite passed **244 tests with no failures or skips**, including all native render checks and actual Apple speech/model integrations; six final focused caseload tests passed. These are recorded development runs, not app tests freshly rerun for archive publication. An initial model-service failure followed by passing repeats remains recorded as intermittent behavior, not a resolved reliability gate.
+
+The standalone synthetic recovery scenario makes the source directory unavailable, restores into a fresh destination, reopens the encrypted vault and independently extracts client packets. Signature, assessment and original-document bytes are compared. This demonstrates same-Mac synthetic recovery, not an actual clinical-backup restore or independent-device exercise.
+
+Record **storage schema 3** protects partner metadata from older schema-2 writers; encryption remains **envelope v2**. Schema-1/2 vaults require an explicit backup-verified format update. The separate synthetic acceptance bundle, build `20261117200902` from `9cbbb6a`, passed deep/strict signature verification, storage-pin and bundled-logo checks. Native launch was not verified and it did not replace or migrate the owner's clinical app/vault. Its Apple Development profile expires **November 20, 2026 at 9:01:01 p.m. Eastern** (November 21 at 02:01:01 UTC). No Developer ID or notarized distribution is asserted.
+
+**Backup destination clarification:** exported `.ccbackup` files currently write to the local Downloads directory. Format-update recovery copies are also local, adjacent to the vault. Automatic Google Drive upload/sync is not implemented or verified; any manual copy to Drive is separate. The public roadmap marks configurable/Drive destinations as future work.
+
+## Owner installation and earlier workflow milestones — November 14–16
+
+[November 14–15 workflows and protection](archive/2026/CC-TX-2026-11-15-001/) and [November 16 client management and owner checkpoint](archive/2026/CC-TX-2026-11-16-001/) are retrospective entries published November 17. Their original work was uncommitted at those dates and is now consolidated in the complete November 17 local checkpoint. Historical 213-test and 237-test records are not substituted for the latest 245-test run.
+
+**Explicit correction to the earlier blanket synthetic-only current-state claim:** November 16 owner-approved work completed the v2 clinical-vault upgrade, reopened existing records, saved a demographic correction and completed a full encrypted backup. The obsolete-app launch route was repaired and redundant app bundles archived without restoring the vault. This records scoped owner use, **not independent clinical-release approval**. Today's schema-3 acceptance app remains isolated from that owner installation. Earlier dated entries below retain their historical meaning; they do not describe the current candidate.
+
+## Current beta acceptance priorities
+
+1. Owner-observed native launch/update, Touch ID enrollment/cancellation/relaunch and password fallback in the isolated candidate.
+2. Consented physical microphone/call capture; permissions, timing/echo, devices, long sessions and sleep/lock behavior. Follow up on model-service reliability.
+3. Full synthetic clinical-day walkthrough, long-note/signed-output checks, keyboard and VoiceOver acceptance.
+4. Independent clean-destination/device recovery and independent security/key-management review, including filesystem/crash/power-loss and scale checks.
+5. Review and remotely preserve the latest private source; renew development signing before expiration and establish durable signed/notarized installation/update distribution.
+6. Keep future partner documentation profiles, shared-practice identity/access architecture and broader vendor/integration work distinct from beta acceptance.
 
 ## Latest readability, appearance and local signing — November 13
 
@@ -48,7 +77,7 @@ Passwords launcher source: private branch `beta/clinical-preview-2026-10-28`, co
 
 Dashboard refinement source: private branch `beta/clinical-preview-2026-10-28`, commit `06e19eb3830c879fa49fa17abf1c6d87deede2f8`. The dashboard now has a stationary 18 percent landscape layer behind opaque clinical panels. Native build/bundle checks and synthetic midday rendering passed. [Dashboard refinement](archive/2026/CC-TX-2026-10-28-004/). The clinical beta gates below remain open.
 
-## Current beta development — October 28
+## Historical beta target — October 28
 
 Preceding visual milestone source: private branch `beta/clinical-preview-2026-10-28`, commit `d1cae768c3c4f2a46fd22f36e85af737fa9aebf8`, packaged development build `20261028173535`. Vault and dashboard visual changes are implemented; native build/signature checks and synthetic unlock passed. Full workflow, night-mode and accessibility visual acceptance remain open. [Visual and beta milestone](archive/2026/CC-TX-2026-10-28-003/).
 
@@ -60,7 +89,7 @@ A complete **reconstructed** source baseline is now preserved on private branch 
 
 See [reconstruction and verification](archive/2026/CC-TX-2026-10-28-002/) and [verification inventory](docs/evidence/2026-10-28-reconstruction.json). The original historical table below remains evidence about the October artifacts, not the verification status of the new reconstruction.
 
-## Current implementation and evidence
+## Historical implementation and evidence — October 28 snapshot
 
 | Area | Supported state | Verification boundary |
 | --- | --- | --- |
@@ -72,12 +101,14 @@ See [reconstruction and verification](archive/2026/CC-TX-2026-10-28-002/) and [v
 
 ## Source preservation
 
+- Latest complete local source: `9cbbb6aaec864915441f43027442ed270575dc43`; documentation follow-up: `d8e98860c5b5ea9cde2f932d87ed8f95dac5d2f6`. Latest private remote publication is not asserted by this archive update.
+
 - Complete verified baseline: private repository `brandon-hatfield/ConCOREdance`, branch `recovery/verified-alpha-2026-10-03`, commit `0420865c8bb742354218ae7684ee17e80c781245`.
 - Matching SSD source tree: `08e63aaf41036f41f63514442294c7059e9787f0`, local commit `00c31a9`, checkout `Build Scratch/ConCOREdance/recovery-checkpoint-20261003` relative to Disk 2.
 - Later SSD artifacts: partial Swift snapshots under `Build Scratch/ConCOREdance/checkpoints`, historical test logs, and app bundle build `20261015065700`. The bundle revision `089b2a4-modified` is not a unique final-source checkpoint.
 - Source preservation does not establish clinical-record backup coverage. No clinical vault was opened during reconciliation.
 
-## Outstanding work
+## Historical outstanding work — preceding snapshots
 
 1. Complete the corrected template-dialog replace/save, long-note rendering and native finalization checks on the October 28 reconstruction. Exact original October 15 source recovery remains separate; the complete new reconstruction is preserved and freshly tested.
 2. Review/integrate and independently validate the November 9 manual-lock and PDF-intake implementations. Complete reviewed key derivation, recovery design and security/failure validation before real-record beta use.
@@ -91,6 +122,11 @@ See [reconstruction and verification](archive/2026/CC-TX-2026-10-28-002/) and [v
 The October 3 report-continuity entry already existed in GitHub main and the live site. An earlier web retrieval and a separate June SSD checkout were stale. October 3 privacy/Print follow-through and October 14–15 milestones were absent from the archive and are now recorded retrospectively. The reason the original handoff was omitted is unestablished. Historical test logs are not represented as fresh validation. See the [artifact fingerprints and test inventory](docs/evidence/2026-10-28-ssd-audit.json).
 
 ## Transmission index
+
+- [CC-TX-2026-11-17-001 — Sortable Caseload, Partner Choice and Standalone Recovery Acceptance](archive/2026/CC-TX-2026-11-17-001/)
+- [CC-TX-2026-11-16-001 — Client Management, Release Tracking and the Owner Upgrade Checkpoint](archive/2026/CC-TX-2026-11-16-001/)
+- [CC-TX-2026-11-15-001 — Reusable Clinical Workflows and Backup-Verified Vault Protection](archive/2026/CC-TX-2026-11-15-001/)
+- [CC-TX-2026-11-13-001 — Readable Clinical Workspace, Practice Appearance and Local Touch ID Signing](archive/2026/CC-TX-2026-11-13-001/)
 
 - [CC-TX-2026-11-10-002 — Real Apple Speech Verification and Resampling Timestamp Correction](archive/2026/CC-TX-2026-11-10-002/)
 

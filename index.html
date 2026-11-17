@@ -1,382 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ConCOREdance Project Orientation</title>
-<style>
-:root{
-  --bg:#050914;
-  --panel:rgba(7,14,26,.80);
-  --panel2:rgba(12,22,36,.64);
-  --gold:#e7ad67;
-  --gold2:#f0c892;
-  --cream:#f4efe8;
-  --muted:#b8bec8;
-  --teal:#65b7be;
-  --line:rgba(231,173,103,.42);
-  --soft:rgba(255,255,255,.12);
-  --shadow:rgba(0,0,0,.48);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  min-height:100vh;
-  color:var(--cream);
-  background:#050914;
-  overflow-x:hidden;
-  font-family:Inter,Avenir Next,Avenir,Segoe UI,system-ui,sans-serif;
-}
-.vista{
-  position:fixed;
-  inset:0;
-  z-index:-2;
-  background:
-    radial-gradient(circle at 76% 14%,rgba(101,183,190,.16),transparent 30%),
-    radial-gradient(circle at 24% 30%,rgba(231,173,103,.12),transparent 30%),
-    linear-gradient(135deg,#050914 0%,#07101e 42%,#050914 100%);
-}
-.vista:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(to bottom,rgba(5,9,20,.12),rgba(5,9,20,.94) 84%),
-    linear-gradient(90deg,rgba(5,9,20,.72),rgba(5,9,20,.38) 50%,rgba(5,9,20,.72));
-}
-a{color:var(--gold2)}
-.page{width:min(1180px,calc(100vw - 32px));margin:0 auto 64px}
-.nav{
-  position:sticky;
-  top:0;
-  z-index:10;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-  padding:14px 0 12px;
-  background:linear-gradient(to bottom,rgba(5,9,20,.95),rgba(5,9,20,.68),transparent);
-  backdrop-filter:blur(12px);
-}
-.nav a{
-  color:var(--gold2);
-  text-decoration:none;
-  border:1px solid var(--line);
-  border-radius:999px;
-  padding:8px 12px;
-  background:rgba(231,173,103,.08);
-  font-size:12px;
-  letter-spacing:.13em;
-  text-transform:uppercase;
-  transition:.2s ease;
-}
-.nav a:hover{border-color:var(--gold);transform:translateY(-1px)}
-.hero{
-  min-height:min(760px,92vh);
-  display:grid;
-  grid-template-columns:.95fr 1.05fr;
-  gap:38px;
-  align-items:center;
-  padding:58px 0 48px;
-}
-.brand-row{display:flex;align-items:center;gap:18px;margin-bottom:38px}
-.sigil{width:70px;height:70px;border:1px solid var(--gold);border-radius:50%;position:relative;opacity:.94}
-.sigil:before,.sigil:after{content:"";position:absolute;inset:12px;border:1px solid rgba(231,173,103,.72);border-radius:50%}
-.sigil:after{inset:27px;background:var(--gold);box-shadow:0 0 24px rgba(231,173,103,.65)}
-.sigil .v,.sigil .h{position:absolute;background:rgba(231,173,103,.68);left:50%;top:-12px;width:1px;height:94px;transform:translateX(-50%)}
-.sigil .h{left:-12px;top:50%;width:94px;height:1px;transform:translateY(-50%)}
-.brand h1{margin:0;font-family:Cormorant Garamond,Georgia,serif;font-size:42px;font-weight:400;line-height:.95}
-.brand p{margin:7px 0 0;color:var(--gold2);font-size:11px;letter-spacing:.32em;text-transform:uppercase}
-.eyebrow{color:var(--teal);letter-spacing:.18em;text-transform:uppercase;font-size:13px;margin:0 0 14px}
-.hero h2{
-  margin:0 0 24px;
-  font-family:Cormorant Garamond,Georgia,serif;
-  font-size:clamp(38px,4.8vw,58px);
-  line-height:1.04;
-  font-weight:300;
-  letter-spacing:0;
-  text-wrap:balance;
-}
-.lede{font-size:20px;line-height:1.65;color:rgba(244,239,232,.88);max-width:760px;margin:0 0 34px}
-.actions{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:32px}
-.button{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  border-radius:999px;
-  padding:13px 17px;
-  border:1px solid var(--line);
-  text-decoration:none;
-  color:var(--cream);
-  background:rgba(231,173,103,.12);
-  font-size:13px;
-  letter-spacing:.11em;
-  text-transform:uppercase;
-  transition:.2s ease;
-}
-.button.primary{background:linear-gradient(135deg,rgba(231,173,103,.34),rgba(101,183,190,.18));border-color:rgba(231,173,103,.66)}
-.button:hover{transform:translateY(-2px);border-color:var(--gold)}
-.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:780px}
-.proof{border:1px solid var(--soft);border-radius:14px;padding:16px;background:rgba(5,10,20,.44)}
-.proof b{display:block;color:var(--gold2);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
-.proof span{display:block;color:var(--muted);font-size:14px;line-height:1.45}
-.hero-stack{position:relative;min-height:560px}
-.cover-image{
-  position:absolute;
-  inset:12px 0 96px 0;
-  border:1px solid rgba(231,173,103,.34);
-  border-radius:22px;
-  overflow:hidden;
-  background:rgba(5,9,20,.58);
-  box-shadow:0 42px 100px rgba(0,0,0,.54);
-}
-.cover-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-  display:block;
-}
-.cover-image:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,rgba(5,9,20,.08),rgba(5,9,20,.18) 58%,rgba(5,9,20,.50));
-  pointer-events:none;
-}
-.hero-card{
-  position:absolute;
-  left:0;
-  right:24px;
-  bottom:0;
-  border:1px solid rgba(255,255,255,.13);
-  border-radius:18px;
-  padding:20px;
-  background:linear-gradient(135deg,rgba(7,14,26,.92),rgba(12,22,36,.78));
-  box-shadow:0 28px 70px rgba(0,0,0,.44);
-}
-.caption{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
-.caption strong{color:var(--gold2);font-weight:600}
-.section{
-  margin-top:22px;
-  padding:36px 38px;
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:var(--panel);
-  backdrop-filter:blur(18px);
-  box-shadow:0 24px 80px var(--shadow);
-}
-.section-title{display:flex;align-items:baseline;gap:18px;margin-bottom:26px}
-.section-title span{color:var(--gold);font-size:24px;font-weight:300}
-.section-title h2{margin:0;text-transform:uppercase;letter-spacing:.16em;font-size:13px}
-.copy{max-width:900px;color:rgba(244,239,232,.84);font-size:18px;line-height:1.68;margin:0 0 20px}
-.map-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.map-card,.visual-card,.principle,.step{
-  border:1px solid var(--soft);
-  border-radius:16px;
-  background:rgba(5,10,20,.42);
-  padding:20px;
-}
-.map-card h3,.visual-card h3,.principle h3,.step h3{
-  margin:0 0 10px;
-  color:var(--gold2);
-  letter-spacing:.11em;
-  text-transform:uppercase;
-  font-size:13px;
-}
-.map-card p,.principle p,.step p{margin:0;color:var(--muted);line-height:1.58}
-.tag{display:inline-block;margin:0 0 14px;color:var(--teal);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
-.workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:steps}
-.step{position:relative;padding-top:48px}
-.step:before{
-  counter-increment:steps;
-  content:"0" counter(steps);
-  position:absolute;
-  top:16px;
-  left:20px;
-  color:var(--gold);
-  font-size:13px;
-  letter-spacing:.16em;
-}
-.visual-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.visual-card{display:block;color:var(--cream);text-decoration:none;padding:14px;transition:.2s ease}
-.visual-card:hover{border-color:var(--gold);transform:translateY(-2px)}
-.visual-card img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.10);display:block;margin-bottom:14px}
-.visual-card p{margin:0;color:var(--muted);line-height:1.55}
-.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.footer{
-  margin-top:22px;
-  padding:32px 38px;
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:rgba(7,14,26,.78);
-  display:flex;
-  justify-content:space-between;
-  gap:28px;
-  align-items:center;
-}
-.footer blockquote{margin:0;font-family:Cormorant Garamond,Georgia,serif;font-size:24px;line-height:1.28;font-style:italic;color:rgba(244,239,232,.88)}
-@media(max-width:980px){
-  .hero,.map-grid,.workflow,.principles{grid-template-columns:1fr}
-  .hero-stack{min-height:480px}
-  .cover-image{inset:0 0 130px 0}
-  .hero-card{right:20px}
-  .visual-grid{grid-template-columns:1fr}
-}
-@media(max-width:680px){
-  .page{width:min(calc(100% - 24px),1180px)}
-  .brand-row{gap:12px}
-  .brand h1{font-size:34px}
-  .brand p{letter-spacing:.22em}
-  .sigil{width:58px;height:58px}
-  .hero{gap:0;padding-top:30px}
-  .proof-grid{grid-template-columns:1fr}
-  .section,.footer{padding:26px 22px}
-  .hero-stack{min-height:390px}
-  .cover-image{bottom:124px}
-  .hero-card{right:0}
-  .footer{display:block}
-}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ConCOREdance — Therapist-Owned Clinical Memory</title>
+<meta name="description" content="A native macOS workspace for therapist-owned clinical memory. Local encrypted records, reviewed documentation and readable exits. Follow private-beta development and the transmission archive.">
+<meta name="theme-color" content="#0b1727">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"><link rel="canonical" href="https://www.concoredance.com/">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 </head>
 <body>
-<div class="vista"></div>
-<main class="page">
-  <nav class="nav" aria-label="ConCOREdance navigation">
-    <a href="#map">What Lives Where</a>
-    <a href="#workflow">Workflow</a>
-    <a href="#screenshots">Screenshots</a>
-    <a href="archive/">Archive</a>
-    <a href="archive/team/">Project Team</a>
-    <a href="archive/product/">Product Teaser</a>
-    <a href="archive/doctrine/">Doctrine</a>
-  </nav>
-
-  <section class="hero">
-    <div class="hero-copy">
-      <div class="brand-row">
-        <div class="sigil"><span class="v"></span><span class="h"></span></div>
-        <div class="brand"><h1>ConCOREdance</h1><p>Harmony in Complexity</p></div>
-      </div>
-      <p class="eyebrow">Project orientation</p>
-      <h2>Therapist-owned clinical memory. Local. Encrypted. Portable.</h2>
-      <p class="lede">ConCOREdance is an early native macOS prototype for keeping clinical records under the therapist’s control: encrypted local vaults, document import, continuity review, backup restore, and client packet export, with a public archive preserving the decisions behind the work.</p>
-      <div class="actions">
-        <a class="button primary" href="#map">Understand the project</a>
-        <a class="button" href="#screenshots">View screenshots</a>
-        <a class="button" href="archive/">Browse transmissions</a>
-      </div>
-      <div class="proof-grid">
-        <div class="proof"><b>Native App</b><span>A Swift/macOS prototype for encrypted local records, document import, search, timelines, and continuity review.</span></div>
-        <div class="proof"><b>Public Archive</b><span>This site preserves the decisions, implementation logs, doctrine, mockups, and visual evolution of the work.</span></div>
-        <div class="proof"><b>Coordination Layer</b><span>The long-term idea is not “another EHR,” but an intelligent bridge between tools therapists already use.</span></div>
-      </div>
-    </div>
-    <div class="hero-stack" aria-label="ConCOREdance app screenshot preview">
-      <figure class="cover-image">
-        <img src="archive/assets/concoredance-cover-window-crop-2026-07-03.png" alt="ConCOREdance product window concept showing a calm clinical memory dashboard" />
-      </figure>
-      <div class="hero-card">
-        <p class="caption"><strong>Current direction:</strong> a calm, atmospheric clinical workspace where record ownership, portability, backup restore, client packet export, and continuity are first-class design requirements.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="map">
-    <div class="section-title"><span>01</span><h2>What We Are Doing Where</h2></div>
-    <p class="copy">The project has several surfaces, and each one has a different job. The previous landing page blurred those together; this page makes the architecture of the work easier to understand.</p>
-    <div class="map-grid">
-      <article class="map-card">
-        <span class="tag">Private build workspace</span>
-        <h3>Native macOS app</h3>
-        <p>The application prototype lives as a Swift/macOS project. It is where encrypted vault behavior, client records, document import, search, continuity suggestions, backup, restore, and export workflows are being built and tested.</p>
-      </article>
-      <article class="map-card">
-        <span class="tag">Public memory layer</span>
-        <h3>Transmission archive</h3>
-        <p>The archive is the public project memory: implementation logs, design doctrine, product decisions, screenshots, visual references, and architectural transmissions. It explains how the product is evolving.</p>
-      </article>
-      <article class="map-card">
-        <span class="tag">Strategic direction</span>
-        <h3>Coordination platform</h3>
-        <p>The emerging product thesis is that therapists do not need yet another disconnected tool. They need a coordination layer that can connect records, documents, calendars, signatures, backups, and exports while preserving ownership.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section" id="workflow">
-    <div class="section-title"><span>02</span><h2>Core Workflow We Are Testing</h2></div>
-    <p class="copy">The alpha work centers on a practical problem: a therapist’s clinical memory gets trapped across EHRs, PDFs, portals, downloads, email attachments, and platform exports. ConCOREdance is testing a calmer path back to ownership.</p>
-    <div class="workflow">
-      <article class="step"><h3>Bring records in</h3><p>Use Print to ConCOREdance or document import to move PDFs and exported records into an encrypted review tray.</p></article>
-      <article class="step"><h3>Confirm context</h3><p>Review the document, assign the client, category, date, and clinical meaning before it becomes part of the record.</p></article>
-      <article class="step"><h3>Preserve continuity</h3><p>Search, timelines, notes, and continuity suggestions help the therapist retain context without automating clinical judgment.</p></article>
-      <article class="step"><h3>Leave cleanly</h3><p>Backups and readable exports are treated as product fundamentals, not afterthoughts or subscription hostage situations.</p></article>
-    </div>
-  </section>
-
-  <section class="section" id="screenshots">
-    <div class="section-title"><span>03</span><h2>Screenshots & Mockups</h2></div>
-    <p class="copy">These images are not decorative wallpaper, though they are admittedly wearing a nice coat. They show the current product atmosphere, interaction model, and design references guiding the prototype.</p>
-    <div class="visual-grid">
-      <a class="visual-card" href="archive/assets/concoredance-cover-cody-2026-07-02.png" target="_blank" rel="noopener">
-        <img src="archive/assets/concoredance-cover-cody-2026-07-02.png" alt="ConCOREdance public cover concept" />
-        <h3>Public cover direction</h3>
-        <p>Refines the main-site first impression around the actual product promise: therapist-owned clinical memory, local encryption, portability, and a calm Mac workspace.</p>
-      </a>
-      <a class="visual-card" href="archive/2026/CC-TX-2026-05-27-007/assets/conCOREdance-session.png" target="_blank" rel="noopener">
-        <img src="archive/2026/CC-TX-2026-05-27-007/assets/conCOREdance-session.png" alt="ConCOREdance active session workspace screenshot" />
-        <h3>Active session workspace</h3>
-        <p>Shows the early clinical workflow spine: selected session, draft generation, continuity rail, and working clinical context.</p>
-      </a>
-      <a class="visual-card" href="archive/2026/CC-TX-2026-05-27-005/assets/conCOREdance-dashboard.png" target="_blank" rel="noopener">
-        <img src="archive/2026/CC-TX-2026-05-27-005/assets/conCOREdance-dashboard.png" alt="ConCOREdance dashboard screenshot" />
-        <h3>Dashboard shell</h3>
-        <p>Shows the atmospheric shell and home orientation for the therapist-owned record workspace.</p>
-      </a>
-      <a class="visual-card" href="archive/2026/CC-TX-2026-05-27-005/assets/conCOREdance-vault.png" target="_blank" rel="noopener">
-        <img src="archive/2026/CC-TX-2026-05-27-005/assets/conCOREdance-vault.png" alt="ConCOREdance vault screenshot" />
-        <h3>Encrypted vault direction</h3>
-        <p>Represents the local-first record posture: unlock, protect, back up, restore, and keep the clinical memory portable.</p>
-      </a>
-      <a class="visual-card" href="archive/assets/mockup_shell_dark.jpeg" target="_blank" rel="noopener">
-        <img src="archive/assets/mockup_shell_dark.jpeg" alt="Dark shell product mockup" />
-        <h3>Dark shell mockup</h3>
-        <p>Visual reference for the product atmosphere: cinematic, calm, structured, and still clinically readable.</p>
-      </a>
-      <a class="visual-card" href="archive/assets/mockup_light_mode.jpeg" target="_blank" rel="noopener">
-        <img src="archive/assets/mockup_light_mode.jpeg" alt="Light mode product mockup" />
-        <h3>Light mode mockup</h3>
-        <p>Explores how the same clinical system might support brighter settings without losing hierarchy or seriousness.</p>
-      </a>
-      <a class="visual-card" href="archive/assets/onesheet_feature_list.jpeg" target="_blank" rel="noopener">
-        <img src="archive/assets/onesheet_feature_list.jpeg" alt="ConCOREdance feature one sheet" />
-        <h3>Feature one-sheet</h3>
-        <p>Summarizes the larger product ambition: records vault, imports, exports, backups, search, and trust layer.</p>
-      </a>
-    </div>
-  </section>
-
-  <section class="section" id="principles">
-    <div class="section-title"><span>04</span><h2>Product Principles</h2></div>
-    <div class="principles">
-      <article class="principle"><h3>Therapist-owned memory</h3><p>The clinical record should remain available to the clinician, even when vendors change, subscriptions lapse, or tools get replaced.</p></article>
-      <article class="principle"><h3>Offline-first trust</h3><p>The core vault should be usable without internet access, with encryption and backup treated as baseline responsibilities.</p></article>
-      <article class="principle"><h3>Readable exits</h3><p>Export paths should be human-readable and migration-friendly: PDFs, structured data, manifests, and packages another system can understand.</p></article>
-      <article class="principle"><h3>Tool coordination</h3><p>Calendars, signatures, forms, cloud backups, and existing EHRs should connect through clear provider layers instead of trapping the therapist in one monolith.</p></article>
-      <article class="principle"><h3>Clinical authorship</h3><p>Automation may assist with continuity and review, but the therapist remains the author and authority over clinical meaning.</p></article>
-      <article class="principle"><h3>Calm interface design</h3><p>The product should reduce cognitive load, not perform a Vegas residency inside a chart note.</p></article>
-    </div>
-  </section>
-
-  <section class="footer">
-    <blockquote>“The clinical record should belong to the clinician.”</blockquote>
-    <div class="actions">
-      <a class="button primary" href="archive/">Open the archive</a>
-      <a class="button" href="archive/product/">Product teaser</a>
-    </div>
-  </section>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap header-inner">
+<a class="brand" href="./" aria-label="ConCOREdance home"><span class="sigil" aria-hidden="true"><i></i><b></b></span><span class="brand-name">ConCOREdance<small>Harmony in Complexity</small></span></a>
+<button class="nav-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+<nav class="navigation" id="primary-navigation" aria-label="Main navigation"><a href="#workspace">The workspace</a><a href="#principles">Record ownership</a><a href="roadmap/">Roadmap</a><a class="nav-archive" href="archive/">Transmission archive <span aria-hidden="true">↗</span></a></nav>
+</div></header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+<img class="hero-art" src="assets/landscape-night.jpg" alt="" fetchpriority="high" width="1536" height="1024">
+<div class="wrap hero-inner"><div class="hero-copy">
+<p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Native macOS · Private beta development</p>
+<div class="tenets" aria-label="Product principles"><span>Local</span><span>Encrypted</span><span>Portable</span></div>
+<h1 id="hero-title">Therapist-owned <br>clinical <em>memory.</em></h1>
+<p>A calm workspace for keeping the clinical record under the therapist’s control. Bring the documents together, follow the thread of care, and keep a readable way out.</p>
+<div class="actions"><a class="button primary" href="#workspace">Explore the workspace <span aria-hidden="true">↓</span></a><a class="button" href="roadmap/">Where we are now <span aria-hidden="true">↗</span></a></div>
+<p class="hero-note">In development. Clinical acceptance and independent review remain in progress.</p>
+</div><figure class="hero-visual">
+<div class="window-bar" aria-hidden="true"><span></span><span></span><span></span><small>ConCOREdance · macOS</small></div>
+<a href="archive/assets/concoredance-vault-synthetic-2026-11-17.png" aria-label="Open the full November 17 native vault screenshot"><img src="assets/vault-preview.jpg" width="1280" height="980" alt="Native ConCOREdance vault entrance with the observatory artwork, warm paper panel and password-unlock controls."></a>
+<figcaption><span>The native vault entrance</span><span>Development build · November 2026</span></figcaption>
+<p class="orbit-caption">“The clinical record should belong to the clinician.”</p>
+</figure></div>
+</section>
+<div class="checkpoint-strip"><div class="wrap checkpoint-inner"><p><span class="label">Latest checkpoint · Nov 17, 2026</span><strong>Caseload clarity. Partner choice. Standalone recovery.</strong></p><a href="archive/2026/CC-TX-2026-11-17-001/">Read the development record <span aria-hidden="true">↗</span></a></div></div>
+<section class="section wrap" id="workspace" aria-labelledby="workspace-title"><span id="map"></span><span id="workflow"></span>
+<div class="section-intro"><div><p class="eyebrow"><span class="section-num">01 /</span>The clinical workspace</p><h2 id="workspace-title">A record that stays <br>connected to the care.</h2></div><p>Client records, assessments, reviewed notes and original documents share one local workspace. The atmosphere supports the work; readable surfaces and deliberate review keep the work in focus.</p></div>
+<div class="workflow"><article><span class="step-index">01</span><h3>Bring records in.</h3><p>Print, open or import PDFs into an encrypted review tray. Preserve the original document.</p></article><article><span class="step-index">02</span><h3>Confirm the context.</h3><p>Choose the client and category. Continue onboarding and the linked BPS assessment.</p></article><article><span class="step-index">03</span><h3>Keep your voice.</h3><p>Use reusable note templates, review drafts, and deliberately finalize or amend a record.</p></article><article><span class="step-index">04</span><h3>Keep a way out.</h3><p>Create complete encrypted backups locally and export readable notes, structured data and originals.</p></article></div>
+<div class="workspace-gallery" id="screenshots"><figure><a class="image-link" href="archive/assets/concoredance-caseload-synthetic-2026-11-17.png"><img src="archive/assets/concoredance-caseload-synthetic-2026-11-17.png" width="2160" height="1700" alt="Current native caseload table with synthetic clients, partner logos, selectable columns and sort controls." loading="lazy"></a><figcaption><strong>A clearer view of the caseload.</strong>Choose the columns, change the sort and open the chart. Partner assignments stay editable, including custom partners.</figcaption></figure><figure class="second-view"><a class="image-link" href="archive/assets/concoredance-note-synthetic-2026-11-17.png"><img src="archive/assets/concoredance-note-synthetic-2026-11-17.png" width="1520" height="1960" alt="A synthetic finalized note with distinct template sections, a synthetic clinician signature and linked-amendment controls." loading="lazy"></a><figcaption><strong>Readable sections. Deliberate sign-off.</strong>A finalized note retains its template and signature snapshot. Amendments stay linked to the original record. All text and the displayed signature are synthetic.</figcaption></figure></div>
+<p class="inline-note">All displayed client records are synthetic. Earlier concepts remain preserved in the <a href="archive/assets/">visual asset library</a>.</p>
+</section>
+<section class="section ownership" id="principles" aria-labelledby="ownership-title"><div class="wrap ownership-layout"><div><p class="eyebrow"><span class="section-num">02 /</span>Record ownership</p><h2 id="ownership-title">The memory should <br>stay with you.</h2><p class="ownership-lede">The product’s foundations are practical: keep the record accessible, preserve what was authored, and make leaving possible.</p><a class="text-link" href="archive/doctrine/">Explore the design doctrine <span aria-hidden="true">↗</span></a></div><div class="ownership-list"><article><span class="number">01</span><div><h3>Local first.</h3><p>The core record lives in an encrypted vault on the Mac. Access to clinical memory should not depend on a continuing subscription.</p></div></article><article><span class="number">02</span><div><h3>Clinician-authored.</h3><p>Templates and draft assistance support documentation. Deliberate review, signature snapshots and linked amendments preserve clinical authorship.</p></div></article><article><span class="number">03</span><div><h3>Portable by design.</h3><p>Complete backups include original documents. Readable packets and structured exports make record ownership more than a promise.</p></div></article><article><span class="number">04</span><div><h3>Your choice of partners.</h3><p>Therapist and client choose the billing/admin association. Change it later, use a custom partner, or leave it unassigned.</p></div></article></div></div></section>
+<section class="section wrap" id="status" aria-labelledby="status-title"><div class="section-intro"><div><p class="eyebrow"><span class="section-num">03 /</span>Development, in the open</p><h2 id="status-title">A clear view of <br>what comes next.</h2></div><p>Working features, acceptance checks and future ideas have different meanings. The roadmap keeps those boundaries visible, with the archive preserving the evidence behind them.</p></div><div class="status-layout"><div class="status-ledger"><article class="ledger-row"><span class="state">Implemented</span><div><h3>The core record workflow.</h3><p>Encrypted vaults, client management, BPS assessments, custom templates, signatures, caseload tools, backups and portable packets.</p></div></article><article class="ledger-row"><span class="state open">Acceptance open</span><div><h3>Earn the trust layer.</h3><p>Native Touch ID and live audio, independent recovery and security review, accessibility, and durable signed distribution.</p></div></article><article class="ledger-row"><span class="state planned">Future direction</span><div><h3>Coordinate without confinement.</h3><p>Partner-specific documentation profiles, shared-practice identities and broader import and provider integrations.</p></div></article><div class="actions"><a class="text-link" href="roadmap/">Read the current roadmap <span aria-hidden="true">↗</span></a></div></div><aside class="verification" aria-label="Development verification scope"><p class="eyebrow">November 17 development evidence</p><p class="test-count">245</p><p class="test-label">tests in the latest full suite <br><strong>Zero failures · Four optional skips</strong></p><p class="fine-print">Automated development checks include synthetic recovery and format-update behavior. Earlier that day, all optional renders and Apple integrations passed in a separate 244-test run. These checks do not replace independent security or clinical acceptance. <br><a href="archive/2026/CC-TX-2026-11-17-001/">Read the scope and remaining gates</a></p></aside></div></section>
+<section class="archive-callout"><div class="wrap archive-callout-inner"><div><p class="eyebrow">The product’s memory is part of the product.</p><h2>The transmission archive.</h2><p>Follow the decisions, implementation records and visual evolution of ConCOREdance. Historical entries stay intact; current-state notes explain what has changed.</p></div><div class="actions"><a class="button" href="archive/">Browse the archive <span aria-hidden="true">↗</span></a></div></div></section>
 </main>
-</body>
-</html>
+<footer class="site-footer"><div class="wrap"><div class="footer-inner"><div><p class="footer-brand">ConCOREdance</p><p class="footer-sub">Harmony in Complexity</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="roadmap/">Roadmap</a><a href="archive/">Archive</a><a href="archive/team/">Project team</a><a href="archive/product/">Product exploration</a><a href="archive/assets/">Visual library</a><a href="archive/doctrine/">Doctrine</a></nav></div><div class="footer-bottom"><span>Therapist-owned · Offline-first · Export-friendly</span><span>Private beta development · Updated November 17, 2026</span></div></div></footer>
+</body></html>

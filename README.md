@@ -61,6 +61,10 @@ archive/
     ├── CC-TX-2026-05-24-003/
     └── CC-TX-2026-05-26-001/
 
+```
+
 ## Authoritative project status
 
 Start with [CANON.md](CANON.md) for current implementation, evidence limits, preserved source and outstanding work. See the October 28 reconciliation transmission for the archive gap audit.
+
+The current public homepage is [ConCOREdance.com](https://www.concoredance.com/). The [public roadmap](roadmap/) separates implemented workflows, open beta acceptance and future direction; [the archive](archive/) preserves the historical evidence. The older `/01_Transmission_Archive/` route redirects to `/archive/`.

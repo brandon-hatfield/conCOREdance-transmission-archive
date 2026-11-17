@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-17",
+  "asset_policy": "Existing approved app landscapes and native renders from isolated synthetic vaults. Full PNG native renders are retained; JPEGs are smaller presentation derivatives. No patient records or personal clinician imagery.",
+  "files": {
+    "assets/landscape-day.jpg": {
+      "bytes": 242866,
+      "sha256": "0eb232524fb7b316d39aa3dbfa45ba09ed45c045a33840f1eff5fe02adbdf8cd"
+    },
+    "assets/landscape-night.jpg": {
+      "bytes": 319966,
+      "sha256": "314e2c9172d8244833f151871499b5b001f3b8bc655dc21d74fe643d4075fdec"
+    },
+    "assets/vault-preview.jpg": {
+      "bytes": 305912,
+      "sha256": "ff307b80b55ba05c71a29f62b33ccab3a3033fe763ceaa1d5e97f16ae44d5c1e"
+    },
+    "archive/assets/concoredance-caseload-synthetic-2026-11-17.png": {
+      "bytes": 330864,
+      "sha256": "8e5fb9869b8c380fea2ebd85216ba3b13e2b76cd2fe96d2737f4cc9c4faeb08f"
+    },
+    "archive/assets/concoredance-note-synthetic-2026-11-17.png": {
+      "bytes": 168863,
+      "sha256": "4b6f3cb758add4ea8b7bb8e886dcb0cec8da0dcb37d695a2e3699dc3da377930"
+    },
+    "archive/assets/concoredance-vault-synthetic-2026-11-17.png": {
+      "bytes": 5615519,
+      "sha256": "45ea3083b4bd040d2aacc71d1306d5153b376326b576d2500e1bd58c58672203"
+    }
+  },
+  "origins": {
+    "landscapes": "Approved ConCOREdance-Landscape-Day/Night app resources",
+    "vault": "November 17 synthetic native vault render",
+    "caseload": "November 17 synthetic native caseload render with ten synthetic clients",
+    "note": "November 17 synthetic final-note render; signature is synthetic"
+  },
+  "external_runtime_asset_requests": false
+}

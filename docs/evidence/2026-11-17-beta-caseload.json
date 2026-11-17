@@ -1,0 +1,105 @@
+{
+  "date": "2026-11-17",
+  "scope": "Public inventory of app-development verification; app tests were not rerun for archive publication.",
+  "source": {
+    "complete_local_commit": "9cbbb6aaec864915441f43027442ed270575dc43",
+    "documentation_local_commit": "d8e98860c5b5ea9cde2f932d87ed8f95dac5d2f6",
+    "branch": "codex/readability-and-practice-branding",
+    "private_source_pushed_or_merged_by_archive_update": false
+  },
+  "historical_milestones": {
+    "2026-11-15": {
+      "full_tests": 213,
+      "optional_skips": 2,
+      "failures": 0,
+      "separate_apple_tests": 20,
+      "separate_apple_skips": 0,
+      "source_was_uncommitted_at_milestone": true
+    },
+    "2026-11-16": {
+      "reported_full_tests": 237,
+      "reported_optional_skips": 5,
+      "reported_failures": 0,
+      "focused_tests": 32,
+      "focused_skips": 0,
+      "focused_failures": 0,
+      "evidence": "Historical implementation and owner-verification notes; not fresh hardware acceptance."
+    }
+  },
+  "november17_validation": {
+    "schema3FullSuite": {
+      "tests": 245,
+      "skips": 4,
+      "failures": 0
+    },
+    "precedingExpandedSuite": {
+      "tests": 244,
+      "skips": 0,
+      "failures": 0
+    },
+    "finalCaseloadSuite": {
+      "tests": 6,
+      "skips": 0,
+      "failures": 0
+    },
+    "initialAppleModelFailureObserved": true,
+    "modelRetestPassed": true
+  },
+  "package": {
+    "build": "20261117200902",
+    "sourceRevisionInBundle": "9cbbb6a",
+    "storageSchema": 3,
+    "encryptionEnvelope": 2,
+    "executableSHA256": "eb665c2061fd1dadc7927b42b3422620a78fe4f44c9e2d98826ee90e12d1266b",
+    "deepStrictSignatureVerified": true,
+    "signingType": "Apple Development; not notarized",
+    "profileExpirationUTC": "2026-11-21T02:01:01Z",
+    "bundledLogoCountVerified": 10,
+    "nativeLaunchVerified": false
+  },
+  "owner_installation_checkpoint": {
+    "date": "2026-11-16",
+    "owner_approved_envelope_v2_update": true,
+    "existing_record_reopen_and_demographic_save_reported": true,
+    "attachment_inclusive_encrypted_backup_reported": true,
+    "restoration_used_for_launch_repair": false,
+    "clinical_schema3_update_performed_on_november17": false,
+    "patient_identifiers_or_records_included": false
+  },
+  "recovery_scope": "Same-Mac synthetic standalone backup, source directory unavailable, fresh destination, authenticated reopen and independently extracted portable packet; not actual clinical-backup or independent-device recovery.",
+  "remaining_gates": [
+    "native launch/update and Touch ID owner acceptance",
+    "consented physical microphone/call capture",
+    "permission/device/long-session/sleep checks",
+    "clinical/accessibility review",
+    "independent-device recovery",
+    "independent security/key-management review",
+    "private-source review/remote preservation",
+    "durable distribution signing/notarization"
+  ],
+  "private_note_sha256": {
+    "UPDATE_2026-11-15.md": "09668e4de46c6cd8fb6a8d0d42511e154fc4afecdd4fa3eb67c96b2606bf1604",
+    "UPDATE_2026-11-16.md": "3cd6e1e6507210ac6e31e2b742b6cd260f146073d1a5581b56a1a06087564a42",
+    "UPDATE_2026-11-17.md": "cb2aecce1a112478661dd4f05437b38786f0b1c59c2937620dede69f9561c984",
+    "CLIENT_MANAGEMENT.md": "336acdde026c7a030587555b2a1d6a9fad6f832a9570bd75d03b0c5c58fd7de4",
+    "ConCOREdance_ROADMAP.md": "766a36109433ccffa4dee9121e5c0852b00b211cd556f15090631a08d852e17d",
+    "VAULT_PROTECTION_V2.md": "83c6ac5b195b3f330793aa6b4cfe8b016c5fc679b8fee001dbcb767f4197ecff",
+    "RELEASE_AUTHORIZATION_WORKFLOW.md": "bd85f4b9a234d64546237a367cbf65aeaff868c2ba9e139a23372df2f3f9f53d"
+  },
+  "synthetic_log_sha256": {
+    "packaging.log": "3ff284aad987e39421325b3584e836ae8cbd2d73cc9cd1bbb6de31e66d8c9556",
+    "concoredance-schema3-20261117.log": "08481bcfb841a476d931bcec79976d3fe57c780393b700d70a064f5f8591426b",
+    "concoredance-final-20261117.log": "e81ab8a93830cea40f2c319e155acc6215109123c8a78470367649b352e8426d",
+    "concoredance-caseload-font-20261117.log": "7039cdb3a4b4d10d75cf654b8acb1f33cbfd94580fde01efbbaad7baf99fa5cd",
+    "concoredance-model-recheck-20261117.log": "dd5c0e7f35e7ec88bf56188174e370a667307ed2209d04d93bc4778b667f6db4",
+    "concoredance-acceptance-20261117.log": "3d643baef64a10b815b5b93f4469cca7dd6fef56fcfda22c464de8487bbb6f6b",
+    "concoredance-integrations-20261117.log": "fa180dcb72f572c295a960229e3c75090097fc7d4aeea2ed2c5a800875c0a53e"
+  },
+  "publication_privacy": "No passwords, clinical content, personal imagery, private local paths, signing profiles or private keys included.",
+  "backup_destination": {
+    "exported_backups": "local Downloads directory",
+    "format_update_recovery_copies": "local adjacent recovery directory",
+    "automatic_google_drive_backup_implemented": false,
+    "automatic_cloud_upload_verified": false
+  }
+}

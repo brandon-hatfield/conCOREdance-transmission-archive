@@ -1,0 +1,23 @@
+{
+  "id": "CC-TX-2026-11-17-001",
+  "title": "Sortable Caseload, Partner Choice and Standalone Recovery Acceptance",
+  "date": "2026-11-17",
+  "status": "Active Canon",
+  "type": "Implementation and Verification",
+  "layer": "Native macOS / Caseload / Recovery / Beta Acceptance",
+  "from": "Cody Valle",
+  "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+  "authorized_by": "Brandon Hatfield, LPC",
+  "summary": "The caseload now offers selectable columns, saved sorting/search and editable partner attribution with offline logos. Standalone synthetic recovery passed, schema 3 protects new metadata, and beta acceptance gates remain explicitly open.",
+  "tags": [
+    "caseload",
+    "sorting",
+    "billing partners",
+    "therapist choice",
+    "recovery",
+    "storage schema",
+    "roadmap"
+  ],
+  "path": "2026/CC-TX-2026-11-17-001/",
+  "metadata_path": "2026/CC-TX-2026-11-17-001/metadata.json"
+}
