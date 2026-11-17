@@ -2,6 +2,12 @@
 
 Reconciled October 28, 2026; updated November 17, 2026. This file is the current-state entry point into the transmission archive. Historical transmissions preserve what was known at their dates; later corrections take precedence where explicitly stated. A statement is authoritative only within its stated evidence and verification limits.
 
+## Public homepage, roadmap and archive alignment — November 17
+
+The public homepage now reuses the native application's approved landscape/observatory direction, warm readable surfaces and synthetic native screenshots. The [public roadmap](roadmap/) and older [product roadmap section](archive/product/#roadmap) distinguish implemented workflows, open beta acceptance and future work, including partner documentation profiles, practice identities and configurable/Google Drive backup. Current app backups are local; automatic Drive backup is not implemented.
+
+The earlier `/01_Transmission_Archive/` route now redirects browser visitors to `/archive/`. Public website implementation is preserved in archive commit `0ef36cacca3b599843b5df32c00eaf39d4932fbc`. Responsive local checks cover desktop/mobile layouts, menu navigation/Escape focus, internal links and the legacy redirect. Website publication does not close native clinical beta gates. [Website transmission](archive/2026/CC-TX-2026-11-17-002/) · [Website QA inventory](docs/evidence/2026-11-17-public-site.json).
+
 ## Current checkpoint — November 17
 
 Complete local development source is preserved in `9cbbb6aaec864915441f43027442ed270575dc43`, with partner-choice and future-profile documentation in `d8e98860c5b5ea9cde2f932d87ed8f95dac5d2f6`, on `codex/readability-and-practice-branding`. These are complete **local** checkpoints. This archive publication does not push or merge the private app source; source review and remote preservation remain separate work. [Current transmission](archive/2026/CC-TX-2026-11-17-001/) · [Public verification inventory](docs/evidence/2026-11-17-beta-caseload.json) · [Current public roadmap](roadmap/).
@@ -122,6 +128,8 @@ See [reconstruction and verification](archive/2026/CC-TX-2026-10-28-002/) and [v
 The October 3 report-continuity entry already existed in GitHub main and the live site. An earlier web retrieval and a separate June SSD checkout were stale. October 3 privacy/Print follow-through and October 14–15 milestones were absent from the archive and are now recorded retrospectively. The reason the original handoff was omitted is unestablished. Historical test logs are not represented as fresh validation. See the [artifact fingerprints and test inventory](docs/evidence/2026-10-28-ssd-audit.json).
 
 ## Transmission index
+
+- [CC-TX-2026-11-17-002 — Public Homepage and Roadmap Aligned with the Native Application](archive/2026/CC-TX-2026-11-17-002/)
 
 - [CC-TX-2026-11-17-001 — Sortable Caseload, Partner Choice and Standalone Recovery Acceptance](archive/2026/CC-TX-2026-11-17-001/)
 - [CC-TX-2026-11-16-001 — Client Management, Release Tracking and the Owner Upgrade Checkpoint](archive/2026/CC-TX-2026-11-16-001/)

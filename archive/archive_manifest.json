@@ -972,6 +972,28 @@
       ],
       "path": "2026/CC-TX-2026-11-17-001/",
       "metadata_path": "2026/CC-TX-2026-11-17-001/metadata.json"
+    },
+    {
+      "id": "CC-TX-2026-11-17-002",
+      "title": "Public Homepage and Roadmap Aligned with the Native Application",
+      "date": "2026-11-17",
+      "status": "Active Canon",
+      "type": "Public Site and Archive Alignment",
+      "layer": "Public Website / Roadmap / Project Memory",
+      "from": "Cody Valle",
+      "to": "Brandon Hatfield, LPC and the ConCOREdance project team",
+      "authorized_by": "Brandon Hatfield, LPC",
+      "summary": "The public homepage now follows the native application's observatory/landscape direction, with a current evidence-based roadmap, retrospective archive updates, a repaired legacy archive route and explicit local-versus-Drive backup status.",
+      "tags": [
+        "homepage",
+        "visual evolution",
+        "roadmap",
+        "archive",
+        "backup clarity",
+        "accessibility"
+      ],
+      "path": "2026/CC-TX-2026-11-17-002/",
+      "metadata_path": "2026/CC-TX-2026-11-17-002/metadata.json"
     }
   ]
 }

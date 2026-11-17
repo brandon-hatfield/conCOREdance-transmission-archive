@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-17",
+  "implementation_commit": "0ef36cacca3b599843b5df32c00eaf39d4932fbc",
+  "scope": "Local prepublication public-site QA. Deployment readback is performed separately after push; these checks are not clinical acceptance.",
+  "homepage_viewports_without_horizontal_overflow": [
+    320,
+    390,
+    1024,
+    1440
+  ],
+  "roadmap_viewports_without_horizontal_overflow": [
+    390,
+    1440
+  ],
+  "mobile_menu": {
+    "opens": true,
+    "roadmap_navigation": true,
+    "escape_closes": true,
+    "focus_returns_to_toggle": true
+  },
+  "legacy_route": {
+    "from": "/01_Transmission_Archive/",
+    "to": "/archive/",
+    "local_browser_verified": true
+  },
+  "javascript_syntax_check": "passed",
+  "internal_link_and_fragment_check": "passed",
+  "public_content_privacy_scan": "passed",
+  "content_corrections": [
+    "implemented/open/future roadmap distinctions",
+    "current owner installation versus isolated synthetic acceptance candidate",
+    "local Downloads backup destination; automatic Google Drive backup remains planned"
+  ],
+  "asset_inventory": "2026-11-17-public-site-assets.json",
+  "homepage_render_sha256": "a2e0d34e77563926c54f4c8af9656d4e79b7d72f152d6638c9284dcab829e89c",
+  "hosting": "Existing GitHub Pages main branch root with unchanged www.concoredance.com CNAME",
+  "clinical_records_or_credentials_published": false
+}
