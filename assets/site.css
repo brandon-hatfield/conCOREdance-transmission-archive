@@ -15,12 +15,12 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.button:hover{transform:none}}
 
 /* The homepage and roadmap share the native beta wordmark. */
-.brand-name .beta-wordmark{display:block;width:142px;height:auto}
+.brand-name .beta-wordmark{display:block;width:138px;height:auto}
 .brand-name small{margin-top:3px;text-align:center;letter-spacing:1.7px;white-space:nowrap}
 .footer-brand strong{color:var(--gold-light);font-weight:600}
 @media(min-width:801px){
-  .header-inner{min-height:88px}
-  .header-inner .navigation{margin-top:10px}
+  .header-inner{min-height:96px}
+  .header-inner .navigation{margin-top:18px}
 }
-@media(max-width:800px){.header-inner{min-height:74px;padding-block:12px}.nav-toggle{margin-top:8px}}
-@media(max-width:520px){.brand-name .beta-wordmark{width:124px}.brand-name small{letter-spacing:1.5px}}
+@media(max-width:800px){.header-inner{min-height:74px;padding-block:12px}.nav-toggle{margin-top:12px}}
+@media(max-width:520px){.brand-name .beta-wordmark{width:118.5px}.brand-name small{letter-spacing:1.5px}}
