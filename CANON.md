@@ -2,6 +2,10 @@
 
 Reconciled October 28, 2026; updated November 17, 2026. This file is the current-state entry point into the transmission archive. Historical transmissions preserve what was known at their dates; later corrections take precedence where explicitly stated. A statement is authoritative only within its stated evidence and verification limits.
 
+## Public beta visuals — November 21
+
+The homepage and roadmap now use the native beta wordmark. The homepage links to fresh native renders of the vault entrance, caseload, and Calendar Connections. The November 17 images remain in the visual library. [Visual refresh transmission](transmissions/2026/CC-TX-2026-11-21-001.md).
+
 ## Public homepage, roadmap and archive alignment — November 17
 
 The public homepage now reuses the native application's approved landscape/observatory direction, warm readable surfaces and synthetic native screenshots. The [public roadmap](roadmap/) and older [product roadmap section](archive/product/#roadmap) distinguish implemented workflows, open beta acceptance and future work, including partner documentation profiles, practice identities and configurable/Google Drive backup. Current app backups are local; automatic Drive backup is not implemented.
