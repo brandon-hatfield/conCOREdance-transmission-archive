@@ -4,7 +4,7 @@ Reconciled October 28, 2026; updated November 17, 2026. This file is the current
 
 ## Public beta visuals — November 21
 
-The homepage and roadmap now use the native beta wordmark. The homepage links to fresh native renders of the vault entrance, caseload, and Calendar Connections. The November 17 images remain in the visual library. [Visual refresh transmission](transmissions/2026/CC-TX-2026-11-21-001.md).
+The homepage and roadmap use the native beta wordmark in a compact header aligned with the navigation. Public landing and archive navigation pages provide hover and keyboard focus feedback on links. The homepage links to fresh native renders of the vault entrance, caseload, and Calendar Connections. The November 17 images remain in the visual library. [Visual refresh transmission](transmissions/2026/CC-TX-2026-11-21-001.md).
 
 ## Public homepage, roadmap and archive alignment — November 17
 

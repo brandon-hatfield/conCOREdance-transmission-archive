@@ -1,0 +1,25 @@
+/* Underlines give text links a visible response on both light and dark surfaces. */
+a:any-link:hover,
+a:any-link:focus-visible {
+  text-decoration-line: underline;
+  text-decoration-thickness: max(1px, .08em);
+  text-underline-offset: .22em;
+}
+
+button:not(:disabled):hover,
+button:not(:disabled):focus-visible {
+  text-decoration: underline;
+  text-underline-offset: .22em;
+  cursor: pointer;
+}
+
+a:any-link:focus-visible,
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.brand:hover .beta-wordmark,
+.brand:focus-visible .beta-wordmark {
+  filter: brightness(1.18);
+}
